@@ -1,0 +1,69 @@
+# Site/SEO settings
+email: me@whiterabbit21m.org
+baseurl: ""
+permalink: /:year/:month/:day/:title/
+google_analytics:
+
+name: White Rabbit
+title: www.whiterabbit21m.org
+description: >
+  Thoughts about Bitcoin and other things.
+url: https://www.whiterabbit.org
+twitter_username: whiterabbit21m
+default_img: /assets/images/avatar.png
+social:
+  - name: twitter
+    url: https://twitter.com/whiterabbit21m
+  - name: telegram
+    url: https://t.me/whiterabbit21m
+  - name: github
+    url: https://github.com/whiterabbit21m
+  - name: bitcoin
+    url: https://www.whiterabbit21m.org/support
+
+# Collections
+collections_dir: collections
+collections:
+  posts:
+    title: Posts
+  threads:
+    title: Threads
+    output: true
+    permalink: /threads/:slug
+  translations:
+    title: Translations
+    output: false
+  books:
+    title: Books
+    output: true
+    permalink: /books/:slug
+  episodes:
+    title: Episodes
+    output: true
+
+# Author settings
+author:
+  - name: White Rabbit
+    bio: Writing words and code for Bitcoin.
+    url: https://www.whiterabbit21m.org/contact
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+compress_html:
+  clippings: all
+  comments: all
+  startings: [html, head, body]
+exclude:
+  - env
+  - scripts
+  - node_modules
+  - .DS_Store
+  - barber.jpg
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - package.json
+  - README.md
