@@ -17,26 +17,26 @@
     max-width: calc(100% / $xs);
 
     @media (min-width: $mq-small) {
-      flex-basis: calc(100% / $sm);
-      max-width: calc(100% / $sm);
+      flex-basis: calc(100% / $xs);
+      max-width: calc(100% / $xs);
     }
 
     @media (min-width: $mq-med) {
-      flex-basis: calc(100% / $md);
-      max-width: calc(100% / $md);
+      flex-basis: calc(100% / $xs);
+      max-width: calc(100% / $xs);
     }
 
     @if $lg {
       @media (min-width: $mq-large) {
-        flex-basis: calc(100% / $lg);
-        max-width: calc(100% / $lg);
+        flex-basis: calc(100% / $xs);
+        max-width: calc(100% / $xs);
       }
     }
 
     @if $xl {
       @media (min-width: $mq-xlarge) {
-        flex-basis: calc(100% / $xl);
-        max-width: calc(100% / $xl);
+        flex-basis: calc(100% / $xs);
+        max-width: calc(100% / $xs);
       }
     }
   }

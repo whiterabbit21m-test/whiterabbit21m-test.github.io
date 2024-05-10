@@ -134,12 +134,10 @@
   }
 
   table {
-    border: 2px solid $color-orange;
-    width: 100%;
+    border: 2px solid $color-darkergrey;
 
     thead {
-      background-color: $color-orange;
-      color: $color-black;
+      background-color: $color-darkergrey;
     }
 
     td {
@@ -151,7 +149,7 @@
     font-size: 0.6em;
     line-height: 1em !important;
     text-align: right;
-    color: $color-grey;
+    color: $color-darkgrey;
   }
 }
 
@@ -247,8 +245,13 @@
     text-align: left;
   }
 
+  p + blockquote {
+    border-top: 2px solid $color-darkergrey;
+    border-bottom: 2px solid $color-darkergrey;
+  }
+
   a {
-    color: $color-orange;
+    color: $color-blue;
   }
 
   a:hover {

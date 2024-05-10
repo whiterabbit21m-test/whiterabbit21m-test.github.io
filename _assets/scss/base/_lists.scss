@@ -20,7 +20,7 @@
 //----------------------------------------------
 .post {
   ol,
-  ul:not(.post__social):not(.way__navigation) {
+  ul:not(.post__social) {
     margin: {
       bottom: 1.5rem;
       left: 1em;
@@ -32,7 +32,7 @@
       font-size: 1.2em;
 
       &:not(:last-child) {
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.75rem;
       }
 
       p {
@@ -76,10 +76,11 @@
   }
 }
 
+
 //----------------------------------------------
-//  Lesson Navigation
+//  Article Navigation
 //----------------------------------------------
-.way {
+.article {
   &__navigation {
     @extend %no-list-style;
     @extend %no-margin-or-padding;
@@ -87,12 +88,7 @@
     display: flex;
     vertical-align: bottom;
 
-    margin: 3em 0;
-
-    img { // white rabbit
-      height: 1em;
-      margin-right: -1em;
-    }
+    margin: 0;
 
     li {
       @extend %no-margin-or-padding;

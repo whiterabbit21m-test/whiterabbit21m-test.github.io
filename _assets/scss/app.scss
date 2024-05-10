@@ -9,7 +9,6 @@
 //  Components: Modular components -> Most styles
 //  Utils:      Helper classes, utilities, animations
 //----------------------------------------------
-@charset "utf-8";
 
 //----------------------------------------------
 // Fonts
@@ -42,11 +41,15 @@
 @import 'base/_normalizer';
 
 //----------------------------------------------
+// Vendor: Rogue Code Highlight pygments
+//----------------------------------------------
+@import 'vendor/_monokai';
+
+//----------------------------------------------
 // Base
 //----------------------------------------------
 @import 'base/_buttons';
 @import 'base/_code';
-@import 'base/_forms';
 @import 'base/_links';
 @import 'base/_lists';
 @import 'base/_media';
@@ -84,4 +87,3 @@
 @import 'utils/_decor';
 @import 'utils/_helpers-grid';
 @import 'utils/_helpers';
-@import 'utils/_page-transitions';

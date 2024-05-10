@@ -1,6 +1,11 @@
 //----------------------------------------------
 // Footer
 //----------------------------------------------
+.lightning-address {
+  margin-bottom: 2em;
+  font-size: $font-xsmall;
+}
+
 .footer {
   color: $color-lightgrey;
   background-color: $color-darkergrey;
@@ -9,7 +14,7 @@
   text-align: center;
 
   a {
-    color: $color-orange;
+    color: $color-blue;
   }
 
   small {
