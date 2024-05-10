@@ -131,8 +131,8 @@
 [bitcoin-whitepaper]: https://bitcoin.org/bitcoin.pdf
 
 <!-- GitHub -->
-[issues]: https://github.com/dergigi/dergigi.github.io/issues
-[pulls]: https://github.com/dergigi/dergigi.github.io/pulls
+[issues]: 
+[pulls]: 
 
 <!-- Internal -->
 [contact]: {{ '/contact' | absolute_url }}
