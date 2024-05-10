@@ -51,7 +51,7 @@ my other lightning addresses.[^ln-addr]
 [busking]: {{ '/busking' | absolute_url }}
 [value]: {{ '/value' | absolute_url }}
 
-[^ln-addr]: A [Lightning Address](https://lightningaddress.com/) allows you to receive bitcoin payments using an e-mail style address format. Try it out yourself by signing up to [Stacker News](https://stacker.news/r/whiterabbit21m) or by using one of these Telegram bots: [LightningTipBot](https://t.me/LightningTipBot), [VentunoTipBot](https://t.me/VentunoTipBot), [SatsMobiBot](https://t.me/SatsMobiBot). My lightning addresses: [support@btcpay.whiterabbit21m.com][sats], [whiterabbit21m@ln.tips][lntips], [whiterabbit21m@21m.tips][21mtips], [whiterabbit21m@sats.mobi][satsmobi]
+[^ln-addr]: A [Lightning Address](https://lightningaddress.com/) allows you to receive bitcoin payments using an e-mail style address format. Try it out yourself by signing up to [Stacker News](https://stacker.news/r/whiterabbit21m) or by using one of these Telegram bots: [VentunoTipBot](https://t.me/VentunoTipBot), [SatsMobiBot](https://t.me/SatsMobiBot). My lightning addresses: [whiterabbit21m@21m.tips][21mtips], [whiterabbit21m@sats.mobi][satsmobi]
 
 [^paynym]: A [PayNym](https://paynym.is/about) is a shareable code for sending and receiving private bitcoin payments.
 
