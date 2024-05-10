@@ -1,16 +1,16 @@
 ---
 layout: page
 title: Contact
-subtitle: 
+subtitle: Contact Me
 ---
 
 <div style="position: relative;">
   <img src="/assets/images/whiterabbit-contact.png">
   <a href="https://twitter.com/whiterabbit21m" title="telegram/twitter" style="position:
   absolute; left: 19.87%; top: 8.24%; width: 45.79%; height: 58.79%; z-index:
-  2;"></a><a href="malito:info@whiterabbit21m.com" title="email" style="position:
+  2;"></a><a href="malito:info@whiterabbit21m.org" title="email" style="position:
   absolute; left: 9.61%; top: 8.52%; width: 9.94%; height: 58.79%; z-index:
-  2;"></a><a href="mailto:info@whiterabbit21m.com" title="email" style="position:
+  2;"></a><a href="mailto:info@whiterabbit21m.org" title="email" style="position:
   absolute; left: 9.61%; top: 67.86%; width: 80.89%; height: 26.37%; z-index:
   2;"></a>
 </div>
