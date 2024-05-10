@@ -36,7 +36,7 @@ completely up to you.
 
 ### Lightning Support
 
-You can send an arbitrary amount of sats to [whiterabbit21m@21m.tips][21m.tips] or one of
+You can send an arbitrary amount of sats to [whiterabbit21m@21m.tips][21mtips] or one of
 my other lightning addresses.[^ln-addr]
 
 [21mtips]: lightning:whiterabbit21m@21m.tips
