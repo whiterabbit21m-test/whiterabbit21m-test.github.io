@@ -1,0 +1,106 @@
+---
+layout: default
+---
+{% capture code %}{{ page.redirect_from | replace: '/', '' }}{% endcapture %}
+<div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline">{{ page.title }}</h2>
+        {% if page.subtitle %}
+          <h3 itemprop="name alternativeHeadline">{{ page.subtitle }}</h3>
+        {% endif %}
+        <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {% if page.blocktime %}
+          <a title="{{ page.date | date: '%-d %b %Y' }}" href="https://www.blockstream.info/block-height/{{ page.blocktime }}">{{ page.blocktime }}</a>
+        {% else %}
+          {{ page.date | date: '%-d %b %Y' }}
+        {% endif %}
+        </time>
+        {% if page.category == "photography" %}
+          <a href="{{ '/blog' | absolute_url }}"
+             title="Personal blog entry"
+             class="post__source">/blog</a>
+        {% endif %}
+        {% if page.source %}
+          {% capture sourceHost %}{{ page.source | remove_first: "https://" | split: "/" | first | remove_first: "www." }}{% endcapture %}
+          {% unless sourceHost == "medium.com" %}
+          <a href="{{ page.source }}" title="Also published on {{ sourceHost }}" target="_blank" class="post__source" itemprop="isBasedOn">{{ sourceHost }}</a>
+          {% endunless %}
+        {% endif %}
+        {% assign conversations = site.episodes | where: "code", code %}
+        {% assign numConvs = conversations | size %}
+        {% if numConvs > 0 %}
+          <a href="#conversations" class="post__source">{{ numConvs }}
+            {% if numConvs == 1 %}
+              conversation
+            {% else %}
+              conversations
+            {% endif %}
+          </a>
+        {% endif %}
+        {% assign translations = site.translations | where: "code", code %}
+        {% assign numTrans = translations | size %}
+        {% if numTrans > 0 %}
+          <a href="#translations" class="post__source">{{ numTrans }}
+            {% if numTrans == 1 %}
+              translation
+            {% else %}
+              translations
+            {% endif %}
+          </a>
+        {% endif %}
+        {% if page.updated_version %}
+          <a href="{{ page.updated_version }}"
+             title="Updated version"
+             target="_blank"
+             class="post__source">{{ page.updated_version | remove: "https://" | truncate: 21 }}</a>
+        {% endif %}
+        {% if page.language == "German" %}
+          <a href="https://einundzwanzig.space/" target="_blank" class="post__source">🇩🇪</a>
+        {% endif %}
+        {% if page.redirect_from %}
+            <a href="#value4value" class="post__source"
+               title="Give value back #Value4Value"
+            >
+            {% include heart.html %}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if page.image %}
+      <div class="post__img">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('{{ page.image }}');">
+          </figure>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="{{ page.numbering_style }}">
+          <img src="{{ page.image }}" style="display: none" itemprop="image"/>
+          {% if page.audio %}
+            {% capture absoluteURL %}{{ page.audio | absolute_url }}{% endcapture %}
+            {% include player.html file=absoluteURL narrator=page.narrator %}
+            <hr/>
+          {% endif %}
+          {% if page.video %}
+            {% capture absoluteVideoURL %}{{ page.video | absolute_url }}{% endcapture %}
+            {% include video.html file=absoluteVideoURL %}
+            <hr/>
+          {% endif %}
+          {{content}}
+          {% include conversations.html %}
+          {% include translations.html %}
+          <hr/>
+          {% include article-navigation.html %}
+          {% include enjoyed.html %}
+        </div>
+      </div>
+    </div>
+
+  </article>
+</div>

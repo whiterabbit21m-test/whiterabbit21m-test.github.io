@@ -1,0 +1,32 @@
+---
+layout: default
+title: Nostr
+subtitle: The bird app is dead, long live the bird app!
+tags:
+- nostr
+---
+{% assign nostrposts = "" | split: "," %}
+{% for post in site.posts %}
+  {% if post.tags contains "nostr" %}
+    {% assign nostrposts = nostrposts | push: post %}
+  {% endif %}
+{% endfor %}
+<div class="post__content section-padding">
+  <div id="markdown" class="grid">
+    <p>
+      Don't know what nostr is? Have a look at <a href="https://nostr-resources.com" target="_blank">nostr-resources.com</a>
+      <br/>
+      Know what it is? <a href="nostr:npub130fu8uxy4mgzyn4pd09msfuj8rylrv5jz2jdpuxxwxv7g9sg0pcq00j4ve">Find me there!</a>
+    </p>
+  </div>
+  <div class="posts">
+    <div class="grid-xlarge">
+      <div class="posts__container" itemscope itemtype="http://schema.org/Blog" data-columns>
+        {% for post in nostrposts %}
+          {% include post-card.html %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% include article-list.html posts=nostrposts %}
+</div>

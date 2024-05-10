@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<!-- The main content area -->
+
+<div class="post__content section-padding">
+  <div id="markdown" class="grid">
+    <p>
+      Hi, I'm <a href="{{ '/bio' | absolute_url }}">WhiteRabbit</a>.
+    </p>
+    <p>
+      I'm a bitcoiner,
+      my main focus is on privacy, security, free software, and education.
+    </p>
+    <p>
+      Unless otherwise noted, all my writing is published under a
+      permissive creative commons <a href="{{ '/license' | absolute_url }}">license</a>.
+    <p>
+      You can support me via
+      <a href="{{ '/support' | absolute_url }}">directly</a>.
+      <br/>
+      Thank you.
+      <br/>
+    </p>
+    <hr/>
+    <p>
+      Below are some of my selected essays. You can find all essays under
+      <a href="{{ '/words' | absolute_url }}">/words</a>.
+    </p>
+  </div>
+</div>
+
+<div class="posts">
+  <div class="grid-xlarge">
+    <div class="posts__container" itemscope itemtype="http://schema.org/Blog" data-columns>
+      {% for post in site.categories.bitcoin %}
+        {% if post.favorite == true %}
+          {% include post-card.html %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

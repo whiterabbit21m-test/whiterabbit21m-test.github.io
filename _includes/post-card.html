@@ -1,0 +1,29 @@
+{% assign webp = post.image | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}
+<article class="posts__post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+  <a class="posts__link" href="{{ post.url | prepend: site.baseurl }}" itemprop="url">
+    {% if post.image %}
+      <figure class="posts__img">
+        <source srcset="{{ webp }}" type="image/webp">
+        <source srcset="{{ post.image }}" type="image/jpeg">
+        <img src="{{ post.image }}" alt="{{ post.title }}" data-aos="fade-in" itemprop="image">
+      </figure>
+    {% endif %}
+    <div>
+      <h2 class="posts__text">
+        <strong itemprop="name">
+          {{ post.title }}
+          {% if post.subtitle %}
+            - {{ post.subtitle }}
+          {% endif %}
+          </strong>
+          —
+          <span itemprop="description">
+          {% if post.title == "How to Kill Bitcoin" or post.title == "Inalienable Property Rights" %}
+            {{ post.description | truncatewords: 35, "" }}
+          {% else %}
+            {{ post.content | strip_html | truncatewords: 35, "" }}
+          {% endif %}
+          </span></h2>
+    </div>
+  </a>
+</article>

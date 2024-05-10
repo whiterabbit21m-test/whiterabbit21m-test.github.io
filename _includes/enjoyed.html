@@ -1,0 +1,38 @@
+{% capture name %}{{ page.redirect_from | replace: '/', '' }}{% endcapture %}
+
+<center>
+<h3 id="value4value"><a href="{{ '/support' | absolute_url }}" title="Value4Value">{% include heart.html %}</a></h3>
+  <small>
+    Found this valuable?
+  </small>
+  <div class="action-buttons">
+    <div class="button button-transparent button-small button-wide">
+      <a> Give Value Back
+        <br>
+        <style> .btcpay-form { display: inline-flex; align-items: center; justify-content: center; } .btcpay-form--inline { flex-direction: row; } .btcpay-form--block { flex-direction: column; } .btcpay-form--inline .submit { margin-left: 15px; } .btcpay-form--block select { margin-bottom: 10px; } .btcpay-form .btcpay-custom-container{ text-align: center; }.btcpay-custom { display: flex; align-items: center; justify-content: center; } .btcpay-form .plus-minus { cursor:pointer; font-size:25px; line-height: 25px; background: #DFE0E1; height: 30px; width: 45px; border:none; border-radius: 60px; margin: auto 5px; display: inline-flex; justify-content: center; } .btcpay-form select { -moz-appearance: none; -webkit-appearance: none; appearance: none; color: currentColor; background: transparent; border:1px solid transparent; display: block; padding: 1px; margin-left: auto; margin-right: auto; font-size: 11px; cursor: pointer; } .btcpay-form select:hover { border-color: #ccc; } .btcpay-form option { color: #000; background: rgba(0,0,0,.1); } .btcpay-input-price { -moz-appearance: textfield; border: none; box-shadow: none; text-align: center; font-size: 25px; margin: auto; border-radius: 5px; line-height: 35px; background: #fff; }.btcpay-input-price::-webkit-outer-spin-button, .btcpay-input-price::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; } </style>
+<form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
+  <input type="hidden" name="storeId" value="6iVacpuWCUaiaUKGB5zWkEX6Bgsk5ZsoePBeJyaW3eLg" />
+  <input type="hidden" name="orderId" value="V4V-{{ name }}" />
+  <input type="hidden" name="checkoutDesc" value="Value for Value: Give as much as it is worth to you" />
+  <input type="hidden" name="browserRedirect" value="https://whiterabbit21m.com/thankyou" />
+  <div class="btcpay-custom-container">
+    <div class="btcpay-custom">
+      <input class="btcpay-input-price" type="number" name="price" min="1" max="100000000" step="1" value="1" data-price="1" style="width:3em;" />
+    </div>
+    <select name="currency">
+      <option value="USD" selected>USD</option>
+      <option value="GBP">GBP</option>
+      <option value="EUR">EUR</option>
+      <option value="SATS">SATS</option>
+    </select>
+  </div>
+  <input type="image" class="submit" name="submit" src="https://btcpay.whiterabbit21m.com/Storage/cfc3ba67-a5a5-4845-b94a-a1f647663a4f" style="width:209px" alt="Pay with BTCPay Server, a Self-Hosted Bitcoin Payment Processor">
+</form>
+      </a>
+    </div>
+  </div>
+  <small>
+    Confused? <a href="{{ '/value' | absolute_url }}">Learn more</a> about the
+    V4V concept.
+  </small>
+</center>

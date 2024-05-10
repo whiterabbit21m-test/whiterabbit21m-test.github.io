@@ -1,26 +1,31 @@
 # Site/SEO settings
 email: me@whiterabbit21m.org
 baseurl: ""
+paginate: 99 # TODO: Fix endless scroll / pagination
+paginate_path: "/page/:num"
 permalink: /:year/:month/:day/:title/
 google_analytics:
 
-name: White Rabbit
+name: WhiteRabbit21m
 title: www.whiterabbit21m.org
+code: WR
 description: >
   Thoughts about Bitcoin and other things.
-url: https://www.whiterabbit.org
+url: https://www.whiterabbit21m.org
 twitter_username: whiterabbit21m
-default_img: /assets/images/avatar.png
+default_img: /assets/images/avatar.jpg
 social:
   - name: twitter
     url: https://twitter.com/whiterabbit21m
+  - name: nostr
+    url: nostr:npub130fu8uxy4mgzyn4pd09msfuj8rylrv5jz2jdpuxxwxv7g9sg0pcq00j4ve
   - name: telegram
     url: https://t.me/whiterabbit21m
   - name: github
     url: https://github.com/whiterabbit21m
   - name: bitcoin
     url: https://www.whiterabbit21m.org/support
-
+  
 # Collections
 collections_dir: collections
 collections:
@@ -43,19 +48,22 @@ collections:
 
 # Author settings
 author:
-  - name: White Rabbit
+  - name: WhiteRabbit21m
     bio: Writing words and code for Bitcoin.
     url: https://www.whiterabbit21m.org/contact
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 plugins:
+  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
 compress_html:
   clippings: all
   comments: all
   startings: [html, head, body]
+include: [".well-known"]
 exclude:
   - env
   - scripts

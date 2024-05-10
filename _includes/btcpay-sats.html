@@ -1,0 +1,10 @@
+<div>
+  <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" target="_blank" class="btcpay-form btcpay-form--block">
+    <input type="hidden" name="storeId" value="6iVacpuWCUaiaUKGB5zWkEX6Bgsk5ZsoePBeJyaW3eLg" />
+    <input type="hidden" name="price" value="{{ include.amount }}" />
+    <input type="hidden" name="currency" value="SATS" />
+    <button type="submit" class="btcpay-submit" name="submit">
+      <span>{{ include.text }}{{ include.amount }} sats</span>
+    </button>
+  </form>
+</div>
