@@ -11,7 +11,7 @@ title: www.whiterabbit21m.org
 code: WR
 description: >
   Thoughts about Bitcoin and other things.
-url: https://whiterabbit21m-test.github.io
+url: https://www.whiterabbit21m.org
 twitter_username: whiterabbit21m
 default_img: /assets/images/avatar.jpg
 social:
@@ -24,7 +24,7 @@ social:
   - name: github
     url: https://github.com/whiterabbit21m
   - name: bitcoin
-    url: https://whiterabbit21m-test.github.io/support
+    url: https://www.whiterabbit21m.org/support
   
 # Collections
 collections_dir: collections
@@ -50,7 +50,7 @@ collections:
 author:
   - name: WhiteRabbit21m
     bio: Writing words and code for Bitcoin.
-    url: https://whiterabbit21m-test.github.io/contact
+    url: https://www.whiterabbit21m.org/contact
 
 # Build settings
 markdown: kramdown
