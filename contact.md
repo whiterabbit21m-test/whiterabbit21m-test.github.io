@@ -5,7 +5,7 @@ subtitle: Contact Me
 ---
 
 <div style="position: relative;">
-  <img src="/assets/images/whiterabbit-contact.png">
+  <img src="/assets/images/contact.png">
   <a href="https://twitter.com/whiterabbit21m" title="telegram/twitter" style="position:
   absolute; left: 19.87%; top: 8.24%; width: 45.79%; height: 58.79%; z-index:
   2;"></a><a href="malito:info@whiterabbit21m.org" title="email" style="position:
