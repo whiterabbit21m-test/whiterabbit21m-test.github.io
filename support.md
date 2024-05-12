@@ -21,10 +21,6 @@ encouraged to give value back.
 [value]: {{ '/value' | absolute_url }}
 
 <div class="action-buttons">
-  <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" target="_blank" class="btcpay-form btcpay-form--block">
-    <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
-    <input type="hidden" name="price" value="50" />
-    <input type="hidden" name="currency" value="USD" />
     <button class="button button-blue button-medium" type="submit">
       <span>Give Value Back 💸</span>
     </button>
