@@ -20,6 +20,18 @@ encouraged to give value back.
 
 [value]: {{ '/value' | absolute_url }}
 
+<div class="action-buttons">
+  <div class="button button-blue button-medium">
+    <a>
+       <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" target="_blank" class="btcpay-form btcpay-form--block">
+	 <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
+         <input type="hidden" name="price" value="50" />
+         <input type="hidden" name="currency" value="USD" />
+  </form>
+      Give Value Back 💸
+    </a>
+  </div>
+</div>
 
 Some give [10 SATS][10], some give [$21 USD][21], some give [$100 USD][100], [1 BTC][1btc], or more. It's
 completely up to you.
