@@ -12,7 +12,7 @@
 	<div>
  	  <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" target="_blank" class="btcpay-form btcpay-form--block">
    	    <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
-            <input type="hidden" name="price" value="{{ include.amount }}" />
+            <input class="btcpay-input-price" type="number" name="price" min="1" max="100000000" step="1" value="1" data-price="1" style="width:3em;" />
             <input type="hidden" name="currency" value="USD" />
             <button type="submit" class="btcpay-submit" name="submit">
               <span>{{ include.text }}${{ include.amount }}</span>
