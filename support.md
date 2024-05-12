@@ -25,7 +25,7 @@ encouraged to give value back.
      <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
      <input type="hidden" name="price" value="50" />
      <input type="hidden" name="currency" value="USD" />
-     <button type="submit" class="button button-blue button-medium">
+     <button class="button button-blue button-medium">
        <span>Give Value Back 💸</span>
      </button>
    </form>
