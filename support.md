@@ -21,10 +21,9 @@ encouraged to give value back.
 [value]: {{ '/value' | absolute_url }}
 
 <div class="action-buttons">
-    <button class="button button-blue button-medium" type="submit">
+    <div class="button button-blue button-medium" type="submit">
       <span>Give Value Back 💸</span>
-    </button>
-  </form>
+    </div>
 </div>
 
 Some give [10 SATS][10], some give [$21 USD][21], some give [$100 USD][100], [1 BTC][1btc], or more. It's
