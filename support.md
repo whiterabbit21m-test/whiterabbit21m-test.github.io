@@ -22,9 +22,14 @@ encouraged to give value back.
 
 <div class="action-buttons">
     <div class="button button-blue button-medium" type="submit">
-     <a>
-      Give Value Back 💸
-     </a>
+      <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" target="_blank" class="btcpay-form btcpay-form--block">
+        <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
+        <input type="hidden" name="price" value="50" />
+        <input type="hidden" name="currency" value="USD" />
+        <button type="submit">
+        Give Value Back 💸
+        </button>
+      </form>
     </div>
 </div>
 
