@@ -13,20 +13,16 @@
 <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
   <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
   <input type="hidden" name="orderId" value="V4V-{{ name }}" />
+  <input type="hidden" name="currency" value="SATS" />
   <input type="hidden" name="checkoutDesc" value="Value for Value: Give as much as it is worth to you" />
   <input type="hidden" name="browserRedirect" value="https://www.whiterabbit21m.org/thankyou" />
   <div class="btcpay-custom-container">
     <div class="btcpay-custom">
-      <input class="btcpay-input-price" type="hidden" name="price" min="1" max="100000000" step="1" value="1" data-price="1" style="width:3em;" />
+      <input class="btcpay-input-price" type="hidden" value="{{ include.amount }}" />
     </div>
-    <select name="currency">
-      <option value="SAT" selected>USD</option>
-      <option value="USD">EUR</option>
-      <option value="EUR">SATS</option>
-    </select>
   </div>
   <button type="submit" class="btcpay-submit" name="submit">
-    <span>{{ include.text }}${{ include.amount }}</span>
+    <span>{{ include.text }}Value4Value{{ include.amount }}</span>
   </button>
 </form>
       </a>
