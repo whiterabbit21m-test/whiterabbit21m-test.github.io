@@ -58,13 +58,12 @@ encouraged to give value back.
   </form>
 </div>
 
-Some give 10 SATS, some give$21 USD, some give [$100 USD][100], [1 BTC][1btc], or more. It's
+Some give 10 SATS, some give $21 USD, some give [$100 USD][100], [1 BTC][1btc], or more. It's
 completely up to you.
 
 [100]: https://btcpay.whiterabbit21m.com/api/v1/invoices?storeId=6iVacpuWCUaiaUKGB5zWkEX6Bgsk5ZsoePBeJyaW3eLg&orderId=V4V-100&checkoutDesc=Value+for+Value%3A+Give+as+much+as+it+is+worth+to+you.&browserRedirect=https%3A%2F%2Fwhiterabbit21m.com%2Fthankyou%2F&notifyEmail=info%40whiterabbit21m.org&currency=USD&price=100
 
 [1btc]: https://btcpay.whiterabbit21m.com/api/v1/invoices?storeId=6iVacpuWCUaiaUKGB5zWkEX6Bgsk5ZsoePBeJyaW3eLg&orderId=V4V-1BTC&checkoutDesc=Value+for+Value%3A+Give+as+much+as+it+is+worth+to+you.&browserRedirect=https%3A%2F%2Fwhiterabbit21m.com%2Fthankyou%2F&notifyEmail=info%40whiterabbit21m.org&currency=BTC&price=1
-<a id="recurring"></a>
 
 
 ### Lightning Support
