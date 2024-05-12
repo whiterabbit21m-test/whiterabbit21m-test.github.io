@@ -20,6 +20,50 @@ encouraged to give value back.
 
 [value]: {{ '/value' | absolute_url }}
 
+<div>
+  <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
+    <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
+    <input type="hidden" name="price" value="3.12" />
+    <input type="hidden" name="currency" value="USD" />
+    <input type="image" class="submit" name="submit" src="https://btcpay.whiterabbit21m.com/Storage/c119c397-fc06-4486-9469-4823aa1c9e38" style="width:168px" alt="Pay with BTCPay Server, a Self-Hosted Bitcoin Payment Processor">
+  </form>
+</div>
+
+<div>
+  <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
+    <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
+    <input type="hidden" name="price" value="6.25" />
+    <input type="hidden" name="currency" value="USD" />
+    <input type="image" class="submit" name="submit" src="https://btcpay.whiterabbit21m.com/Storage/4daec36e-a026-468c-8989-f1bdd2bc6a4c" style="width:168px" alt="Pay with BTCPay Server, a Self-Hosted Bitcoin Payment Processor">
+  </form>
+</div>
+
+<div>
+  <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
+    <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
+    <input type="hidden" name="price" value="12.50" />
+    <input type="hidden" name="currency" value="USD" />
+    <input type="image" class="submit" name="submit" src="https://btcpay.whiterabbit21m.com/Storage/c5f8bdcc-36a5-46de-a4fa-b684bb6c6c03" style="width:168px" alt="Pay with BTCPay Server, a Self-Hosted Bitcoin Payment Processor">
+  </form>
+</div>
+
+<div>
+  <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
+    <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
+    <input type="hidden" name="price" value="25.00" />
+    <input type="hidden" name="currency" value="USD" />
+    <input type="image" class="submit" name="submit" src="https://https://btcpay.whiterabbit21m.com/Storage/03810fd4-953e-4fa8-bfe7-15b88e15cdd6" style="width:168px" alt="Pay with BTCPay Server, a Self-Hosted Bitcoin Payment Processor">
+  </form>
+</div>
+
+<div>
+  <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
+    <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
+    <input type="hidden" name="price" value="50.00" />
+    <input type="hidden" name="currency" value="USD" />
+    <input type="image" class="submit" name="submit" src="https://btcpay.whiterabbit21m.com/Storage/b2e7cf51-e135-424c-9ab7-3f560eb68217" style="width:168px" alt="Pay with BTCPay Server, a Self-Hosted Bitcoin Payment Pr>
+  </form>
+</div>
 
 Some give [10 SATS][10], some give [$21 USD][21], some give [$100 USD][100], [1 BTC][1btc], or more. It's
 completely up to you.
