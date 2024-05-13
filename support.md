@@ -32,7 +32,7 @@ function submitForm() {
     <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
     <input type="hidden" name="price" value="3.12" />
     <input type="hidden" name="currency" value="USD" />
-    <input type="button" class="button button-blue" name="submit" value="Pay with Bitcoin" onclick="submitForm()">
+    <input type="button" class="button button-blue button-medium" name="submit" value="Pay with Bitcoin" onclick="submitForm()">
   </form>
 
   <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
