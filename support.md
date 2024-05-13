@@ -26,7 +26,7 @@ encouraged to give value back.
     <input type="hidden" name="storeId" value="6qLXuo76ZUGV7NfKHQQC2xBVeH69ebKT2axvhjb3WQYn" />
     <input type="hidden" name="price" value="3.12" />
     <input type="hidden" name="currency" value="USD" />
-    <input type="image" class="submit" name="submit" src="https://btcpay.whiterabbit21m.com/Storage/c119c397-fc06-4486-9469-4823aa1c9e38" style="width:168px" alt="Pay with BTCPay Server, a Self-Hosted Bitcoin Payment Processor">
+    <input type="image" class="submit" name="submit" src="https://btcpay.whiterabbit21m.com/Storage/76aa3ebb-db59-42a4-b43b-58b0e46927b8" style="width:168px" alt="Pay with BTCPay Server, a Self-Hosted Bitcoin Payment Processor">
   </form>
 
   <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
