@@ -1,0 +1,98 @@
+/* Palette di colori personalizzata */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #e74c3c;
+    --text-color: #34495e;
+    --background-color: #ecf0f1;
+}
+
+/* Stili personalizzati per il body */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Stili personalizzati per l'header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Stili personalizzati per la navigazione */
+nav ul li a {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Stili personalizzati per i pulsanti */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--primary-color);
+}
+
+/* Stili personalizzati per i post */
+.post-title a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+    color: var(--accent-color);
+}
+
+/* Stili personalizzati per il footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Classi di utilità */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.mt-1 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 1rem; }
+.ml-1 { margin-left: 1rem; }
+.mr-1 { margin-right: 1rem; }
+
+/* Stile per immagini responsive */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Media query per tablet */
+@media (max-width: 768px) {
+    /* Aggiungi stili specifici per tablet qui */
+}
+
+/* Media query per smartphone */
+@media (max-width: 480px) {
+    /* Aggiungi stili specifici per smartphone qui */
+}
