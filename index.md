@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Home
-custom_css: home
 ---
 
 <div class="hero">
