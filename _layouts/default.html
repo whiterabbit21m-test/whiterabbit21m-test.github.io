@@ -4,7 +4,9 @@
 <body>
     {% include header.html %}
 
-    {{ content }}
+    <main>
+        {{ content }}
+    </main>
 
     {% include footer.html %}
 
@@ -16,8 +18,12 @@
         {% endfor %}
     {% endif %}
 
+    {% comment %}
+    Se vuoi aggiungere Google Analytics in futuro, decommenta le seguenti righe
+    e assicurati di avere un file analytics.html nella cartella _includes
     {% if jekyll.environment == "production" %}
         {% include analytics.html %}
     {% endif %}
+    {% endcomment %}
 </body>
 </html>
