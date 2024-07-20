@@ -1,25 +1,28 @@
 .site-footer {
   background-color: #333;
   color: #fff;
-  padding: 80px 0; // Aumentato significativamente il padding
-  font-size: 1.1em;
+  padding: 120px 0 60px; // Aumentato ulteriormente il padding superiore
+  font-size: 1.2em; // Aumentato leggermente la dimensione del testo
   
   .footer-content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 60px; // Aggiunto spazio sotto il contenuto principale
   }
 
   .footer-section {
     flex: 1;
-    margin-bottom: 30px;
-    min-width: 250px; // Assicura che le sezioni non diventino troppo strette
-    padding: 0 20px;
+    margin-bottom: 40px;
+    min-width: 300px; // Aumentato la larghezza minima
+    padding: 0 30px;
 
     h3 {
-      font-size: 1.4em;
-      margin-bottom: 20px;
-      color: #2ecc71; // Colore accent per i titoli
+      font-size: 1.8em; // Titoli più grandi
+      margin-bottom: 30px;
+      color: #2ecc71;
+      border-bottom: 2px solid #2ecc71;
+      padding-bottom: 10px;
     }
 
     ul {
@@ -27,7 +30,31 @@
       padding: 0;
 
       li {
-        margin-bottom: 10px;
+        margin-bottom: 15px; // Più spazio tra gli elementi della lista
+      }
+    }
+
+    p {
+      line-height: 1.8; // Aumentato l'interlinea per una migliore leggibilità
+    }
+  }
+
+  .social-icons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px; // Aggiunto spazio sotto le icone social
+
+    a {
+      color: #fff;
+      font-size: 36px; // Icone molto più grandi
+      margin: 0 25px;
+      transition: color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        color: #2ecc71;
+        transform: translateY(-5px) scale(1.1);
       }
     }
   }
@@ -35,42 +62,29 @@
   .copyright {
     width: 100%;
     text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
+    padding-top: 30px;
     border-top: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-
-    a {
-      color: #fff;
-      font-size: 24px;
-      margin: 0 15px;
-      transition: color 0.3s ease, transform 0.3s ease;
-
-      &:hover {
-        color: #2ecc71;
-        transform: translateY(-3px);
-      }
-    }
+    font-size: 1em;
   }
 }
 
 // Media query per rendere il footer responsive
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .site-footer {
-    padding: 50px 0;
+    padding: 80px 0 40px;
 
     .footer-content {
       flex-direction: column;
     }
 
     .footer-section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       text-align: center;
+    }
+
+    .social-icons a {
+      font-size: 30px;
+      margin: 0 15px;
     }
   }
 }
