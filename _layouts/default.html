@@ -1,29 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-</head>
+<html lang="it">
+{% include head.html %}
 <body>
-    <header>
-        <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-        <nav>
-            <ul>
-                <li><a href="{{ '/' | relative_url }}">Home</a></li>
-                <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-                <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-            </ul>
-        </nav>
-    </header>
+    {% include header.html %}
 
-    <main>
-        {{ content }}
-    </main>
+    {{ content }}
 
-    <footer>
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}</p>
-    </footer>
+    {% include footer.html %}
+
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
+    {% if page.custom_js %}
+        {% for js_file in page.custom_js %}
+            <script src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
+        {% endfor %}
+    {% endif %}
+
+    {% if jekyll.environment == "production" %}
+        {% include analytics.html %}
+    {% endif %}
 </body>
 </html>
