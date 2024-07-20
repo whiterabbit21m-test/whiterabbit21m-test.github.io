@@ -1,0 +1,44 @@
+// Aggiungi questo al tuo file main.scss o crea un file _footer.scss e importalo in main.scss
+
+.site-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .social-icons {
+    a {
+      color: #fff;
+      font-size: 24px;
+      margin-left: 15px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #2ecc71; // Colore al passaggio del mouse, puoi cambiarlo
+      }
+    }
+  }
+}
+
+// Media query per rendere il footer responsive
+@media (max-width: 768px) {
+  .site-footer {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .social-icons {
+      margin-top: 15px;
+
+      a {
+        margin: 0 7px;
+      }
+    }
+  }
+}
