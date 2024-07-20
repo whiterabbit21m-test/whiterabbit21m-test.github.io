@@ -1,19 +1,47 @@
-<!-- File: _includes/footer.html -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-content">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. Tutti i diritti riservati.</p>
-      <div class="social-icons">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>{{ site.description }}</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li>Email: {{ site.email }}</li>
+          <li>Phone: +1 234 567 8900</li>
+          <li>Address: 123 Street Name, City, Country</li>
+        </ul>
+      </div>
+    </div>
+    <div class="social-icons">
+      {% if site.twitter_username %}
         <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-twitter"></i>
         </a>
+      {% endif %}
+      {% if site.github_username %}
         <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-github"></i>
         </a>
+      {% endif %}
+      {% if site.telegram_username %}
         <a href="https://t.me/{{ site.telegram_username }}" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-telegram"></i>
         </a>
-      </div>
+      {% endif %}
+    </div>
+    <div class="copyright">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. All rights reserved.</p>
     </div>
   </div>
 </footer>
