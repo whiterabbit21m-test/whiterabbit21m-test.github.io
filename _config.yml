@@ -2,8 +2,8 @@
 title: Il Mio Sito Jekyll
 email: tuo@email.com
 description: >- # questo significa ignorare newline fino a "baseurl:"
-  Scrivi qui una breve descrizione del tuo sito. Apparirà nei risultati di ricerca
-  e nel feed RSS.
+  Questo è il mio sito personale creato con Jekyll. Qui condivido i miei pensieri
+  su sviluppo web, design e tecnologia.
 baseurl: "" # il sottopath del tuo sito, e.g. /blog
 url: "https://www.tuosito.com" # l'host base & protocollo per il tuo sito, e.g. http://example.com
 
@@ -15,7 +15,7 @@ facebook_username: tuousername
 instagram_username: tuousername
 linkedin_username: tuousername
 
-# Impostazioni di build
+# Build settings
 markdown: kramdown
 theme: minima
 plugins:
@@ -61,7 +61,7 @@ defaults:
       comments: true
 
 # Impostazioni di paginazione
-paginate: 5
+paginate: 6
 paginate_path: "/blog/page:num/"
 
 # Impostazioni SEO
@@ -78,13 +78,12 @@ social:
     - https://github.com/tuousername
     - https://t.me/tuousername
 
-# Analytics
-google_analytics: UA-XXXXXXXX-X
-google_site_verification: your-google-site-verification-code
+# Analytics (decommentare e aggiungere il tuo ID quando pronto)
+# google_analytics: UA-XXXXXXXX-X
 
-# Commenti (esempio con Disqus)
-disqus:
-  shortname: your-disqus-shortname
+# Commenti (esempio con Disqus, decommentare quando pronto)
+# disqus:
+#   shortname: your-disqus-shortname
 
 # Altre impostazioni personalizzate
 author: Il tuo nome
@@ -99,7 +98,7 @@ feed:
   path: feed.xml
 
 # Impostazioni per la ricerca (se utilizzi un plugin di ricerca)
-search: true
+# search: true
 
 # Impostazioni per la compressione HTML (se utilizzi un plugin di compressione)
 compress_html:
@@ -109,13 +108,12 @@ compress_html:
   ignore:
     envs: [development]
 
-# Impostazioni per il caching
-# Uncomment the following line if you want to enable caching
-# jekyll-cache: true
-
 # Impostazioni per i link permanenti
 permalink: /:categories/:title/
 
 # Impostazioni per i tag
 tag_page_layout: tag_page
 tag_page_dir: tag
+
+# Configurazione del livereload (utile durante lo sviluppo)
+livereload: true
