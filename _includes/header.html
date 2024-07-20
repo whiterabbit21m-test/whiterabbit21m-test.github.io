@@ -1,17 +1,40 @@
-<!-- File: _includes/header.html -->
 <header class="site-header">
   <div class="container">
     <div class="logo">
       <a href="{{ '/' | relative_url }}">
-        <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }} Logo">
+        {% if site.logo %}
+          <img src="{{ site.logo | relative_url }}" alt="{{ site.title | escape }}">
+        {% else %}
+          <span class="site-title">{{ site.title | escape }}</span>
+        {% endif %}
       </a>
     </div>
+
     <nav class="main-nav">
       <ul>
-        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-        <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        <li><a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+        <li><a href="{{ '/about/' | relative_url }}" {% if page.url == "/about/" %}class="active"{% endif %}>About</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}" {% if page.url contains "/blog/" %}class="active"{% endif %}>Blog</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == "/contact/" %}class="active"{% endif %}>Contact</a></li>
       </ul>
     </nav>
+
+    <div class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  menuToggle.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+});
+</script>
