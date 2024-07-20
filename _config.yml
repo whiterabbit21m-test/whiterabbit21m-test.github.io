@@ -1,20 +1,22 @@
 # Informazioni sul sito
-title: My Website
-description: A brief description of my website
-author: Your Name
+title: Il Mio Sito Jekyll
+email: tuo@email.com
+description: >- # questo significa ignorare newline fino a "baseurl:"
+  Scrivi qui una breve descrizione del tuo sito. Apparirà nei risultati di ricerca
+  e nel feed RSS.
+baseurl: "" # il sottopath del tuo sito, e.g. /blog
+url: "" # l'host base & protocollo per il tuo sito, e.g. http://example.com
+twitter_username: tuousername
+github_username:  tuousername
 
-# URL del sito (lascia vuoto se usi GitHub Pages)
-url: ""
-baseurl: ""
-
-# Impostazioni di costruzione
+# Build settings
 markdown: kramdown
-permalink: /:year/:month/:day/:title/
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# File e cartelle da escludere dalla generazione del sito
+# Esclusioni dalla conversione
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -23,8 +25,20 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - README.md
 
-# Impostazioni predefinite per i post
+# Impostazioni Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Impostazioni delle collezioni
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Impostazioni di default per i post
 defaults:
   -
     scope:
@@ -32,8 +46,34 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: Your Name
+      author: "Il tuo nome"
+      comments: true
+
+# Impostazioni di paginazione
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Impostazioni SEO
+twitter:
+  username: tuousername
+  card: summary
+logo: /assets/images/logo.png
+social:
+  name: Il tuo nome
+  links:
+    - https://twitter.com/tuousername
+    - https://www.facebook.com/tuousername
+    - https://www.linkedin.com/in/tuousername
+    - https://github.com/tuousername
+
+# Analytics
+google_analytics: UA-XXXXXXXX-X
+
+# Commenti (esempio con Disqus)
+disqus:
+  shortname: your-disqus-shortname
 
 # Altre impostazioni personalizzate
+author: Il tuo nome
 timezone: Europe/Rome
-lang: en
+lang: it
