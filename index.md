@@ -3,7 +3,6 @@ layout: home
 title: Home
 ---
 
-<body class="home">
 <!-- Hero Section -->
 <section class="hero">
   <div class="container">
@@ -56,4 +55,3 @@ title: Home
     </div>
   </div>
 </section>
-</body>
