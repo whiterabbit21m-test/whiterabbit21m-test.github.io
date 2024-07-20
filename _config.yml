@@ -1,0 +1,39 @@
+# Informazioni sul sito
+title: My Website
+description: A brief description of my website
+author: Your Name
+
+# URL del sito (lascia vuoto se usi GitHub Pages)
+url: ""
+baseurl: ""
+
+# Impostazioni di costruzione
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# File e cartelle da escludere dalla generazione del sito
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Impostazioni predefinite per i post
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: Your Name
+
+# Altre impostazioni personalizzate
+timezone: Europe/Rome
+lang: en
