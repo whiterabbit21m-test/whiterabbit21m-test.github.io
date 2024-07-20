@@ -1,10 +1,19 @@
-<footer>
-    <div class="container">
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
-        <ul class="social-links">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Instagram</a></li>
-        </ul>
+<!-- File: _includes/footer.html -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. Tutti i diritti riservati.</p>
+      <div class="social-icons">
+        <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://t.me/{{ site.telegram_username }}" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-telegram"></i>
+        </a>
+      </div>
     </div>
+  </div>
 </footer>
