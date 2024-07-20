@@ -1,77 +1,57 @@
 ---
 layout: default
 title: Home
-custom_css: home
 ---
 
-<div class="hero">
-    <div class="container">
-        <h1>Benvenuto nel mio sito Jekyll</h1>
-        <p>Questo è un esempio di sito creato con Jekyll e personalizzato con vari componenti.</p>
-        <a href="#" class="button">Scopri di più</a>
-    </div>
-</div>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1>Benvenuto nel Mio Sito Jekyll</h1>
+    <p>Esplora il mondo dello sviluppo web e del design creativo</p>
+    <a href="#" class="cta-button">Scopri di più</a>
+  </div>
+</section>
 
-<main class="container">
-    <section class="featured-posts">
-        <h2>Post in evidenza</h2>
-        <div class="post-grid">
-            {% for post in site.posts limit:3 %}
-                <div class="post-card">
-                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                    {% include post-meta.html %}
-                    <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-                    <a href="{{ post.url | relative_url }}" class="button">Leggi di più</a>
-                </div>
-            {% endfor %}
+<!-- Features Section -->
+<section class="features">
+  <div class="container">
+    <h2>Cosa offriamo</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <i class="fas fa-code"></i>
+        <h3>Sviluppo Web</h3>
+        <p>Creiamo siti web performanti e responsive utilizzando le ultime tecnologie.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Design Creativo</h3>
+        <p>Progettiamo interfacce utente intuitive e visivamente accattivanti.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Mobile First</h3>
+        <p>Sviluppiamo con un approccio mobile-first per un'esperienza ottimale su tutti i dispositivi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent Posts Section -->
+<section class="recent-posts">
+  <div class="container">
+    <h2>Articoli Recenti</h2>
+    <div class="post-grid">
+      {% for post in site.posts limit:3 %}
+        <div class="post-card">
+          <img src="{{ post.image | default: '/assets/images/post-default.jpg' | relative_url }}" alt="{{ post.title }}">
+          <div class="post-content">
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+            <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            <a href="{{ post.url | relative_url }}" class="read-more">Leggi di più</a>
+          </div>
         </div>
-    </section>
-
-    <section class="about-section">
-        <h2>Chi sono</h2>
-        <p>Sono un appassionato di web development e questo è il mio sito personale creato con Jekyll.</p>
-        <a href="{{ '/about/' | relative_url }}" class="button">Scopri di più su di me</a>
-    </section>
-
-    <section class="contact-form">
-        <h2>Contattami</h2>
-        <form id="contact-form">
-            <input type="text" name="name" placeholder="Il tuo nome" required>
-            <input type="email" name="email" placeholder="La tua email" required>
-            <textarea name="message" placeholder="Il tuo messaggio" required></textarea>
-            <button type="submit" class="button">Invia messaggio</button>
-        </form>
-    </section>
-</main>
-
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="modal-close">&times;</span>
-        <h2>Grazie per il tuo messaggio!</h2>
-        <p>Ti risponderò al più presto.</p>
+      {% endfor %}
     </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contact-form');
-    const modal = document.getElementById('modal');
-    const modalClose = document.querySelector('.modal-close');
-
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Qui andrebbe la logica per inviare il form
-        modal.style.display = 'block';
-    });
-
-    modalClose.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', function(e) {
-        if (e.target == modal) {
-            modal.style.display = 'none';
-        }
-    });
-});
-</script>
+  </div>
+</section>
