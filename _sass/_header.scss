@@ -18,12 +18,10 @@
   .logo-link {
     display: inline-block;
   }
-
   .logo-image {
     max-height: 50px;
     width: auto;
   }
-
   .site-title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -38,16 +36,13 @@
     margin: 0;
     display: flex;
   }
-
   .nav-item {
     margin-left: 1rem;
   }
-
   .nav-link {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
-
     &:hover,
     &.active {
       color: #4CAF50;
@@ -55,12 +50,31 @@
   }
 }
 
-// Aggiunge uno spazio sotto l'header per compensare la sua posizione fixed
-body {
-  padding-top: 70px; // Regola questo valore in base all'altezza effettiva del tuo header
-}
+// Responsive styles
+@media (max-width: 768px) {
+  .site-header {
+    .header-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px 20px;
+    }
 
-// Assicurati che il contenuto principale inizi dopo l'header
-.page-content {
-  margin-top: 1rem;
+    .logo {
+      margin-bottom: 10px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .main-nav {
+      width: 100%;
+      
+      .nav-list {
+        justify-content: center;
+        
+        .nav-item {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
 }
