@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post
 title: "Il Mio Primo Post"
 date: 2024-07-20 12:00:00 +0200
 categories: [blog, tecnologia]
