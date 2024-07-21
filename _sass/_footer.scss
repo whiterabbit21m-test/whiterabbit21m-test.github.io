@@ -5,37 +5,36 @@
   
   .footer-content {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     margin-bottom: 20px;
   }
 
-  .footer-section {
-    flex: 1;
-    min-width: 250px;
-    margin-bottom: 20px;
+  .footer-email,
+  .footer-made-by {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+  }
 
-    h3 {
-      color: #4CAF50;
-      margin-bottom: 15px;
-    }
-
-    p {
-      margin-bottom: 10px;
-    }
+  .footer-email {
+    color: #4CAF50; // Colore verde per l'email
   }
 
   .social-icons {
     display: flex;
-    gap: 15px;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 
     a {
       color: #fff;
       font-size: 24px;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, transform 0.3s ease;
 
       &:hover {
         color: #4CAF50;
+        transform: translateY(-3px);
       }
     }
   }
@@ -44,16 +43,14 @@
     text-align: center;
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 20px;
+    font-size: 0.9em;
+    color: #999;
   }
 }
 
 @media (max-width: 768px) {
   .site-footer {
     .footer-content {
-      flex-direction: column;
-    }
-
-    .footer-section {
       margin-bottom: 30px;
     }
   }
