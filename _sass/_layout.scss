@@ -29,12 +29,14 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%; // Assicura che il container occupi tutta la larghezza
 }
 
 .content-wrapper {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
+  width: 100%; // Assicura che il wrapper occupi tutta la larghezza
 }
 
 .wrapper {
@@ -68,6 +70,7 @@ body {
   color: $text-color;
   padding: 20px 0;
   margin-top: auto;
+  width: 100%; // Assicura che il footer occupi tutta la larghezza
 
   .footer-container {
     display: flex;
@@ -76,6 +79,7 @@ body {
     max-width: $max-width;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%; // Assicura che il contenuto del footer si estenda
   }
 
   .footer-content {
@@ -152,6 +156,13 @@ h1, h2, h3, h4, h5, h6 {
   color: $secondary-color;
 }
 
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+
 p {
   margin-bottom: 20px;
 }
@@ -193,6 +204,10 @@ a {
       padding: 0 15px;
     }
   }
+
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.75em; }
+  h3 { font-size: 1.5em; }
 }
 
 @media (max-width: 480px) {
@@ -200,7 +215,12 @@ a {
     font-size: 14px;
   }
 
-  h1 { font-size: 2em; }
-  h2 { font-size: 1.75em; }
-  h3 { font-size: 1.5em; }
+  .site-footer {
+    .social-icons {
+      a {
+        font-size: 20px;
+        margin: 0 8px;
+      }
+    }
+  }
 }
