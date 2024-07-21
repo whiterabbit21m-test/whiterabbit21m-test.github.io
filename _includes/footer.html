@@ -1,35 +1,28 @@
 <footer class="site-footer">
   <div class="container footer-container">
-    <div class="footer-logo">
-      {% if site.logo %}
-        <img src="{{ site.logo | relative_url }}" alt="{{ site.title | escape }}" class="footer-logo-image">
-      {% else %}
-        <span class="site-title">{{ site.title | escape }}</span>
-      {% endif %}
-    </div>
     <div class="footer-content">
-      <p class="footer-email">⚡ whiterabbit21m@21m.tips</p>
+      <p class="footer-email">Support: ⚡ whiterabbit21m@21m.tips</p>
       <p class="footer-made-by">Made with ❤️ by WhiteRabbit</p>
       <div class="social-icons">
         {% if site.twitter_username %}
-          <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener noreferrer">
+          <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener noreferrer" class="social-icon">
             <i class="fab fa-twitter"></i>
           </a>
         {% endif %}
         {% if site.github_username %}
-          <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" class="social-icon">
             <i class="fab fa-github"></i>
           </a>
         {% endif %}
         {% if site.telegram_username %}
-          <a href="https://t.me/{{ site.telegram_username }}" target="_blank" rel="noopener noreferrer">
+          <a href="https://t.me/{{ site.telegram_username }}" target="_blank" rel="noopener noreferrer" class="social-icon">
             <i class="fab fa-telegram"></i>
           </a>
         {% endif %}
       </div>
     </div>
-  </div>
-  <div class="copyright">
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. Tutti i diritti riservati.</p>
+    <div class="copyright">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. Tutti i diritti riservati.</p>
+    </div>
   </div>
 </footer>
