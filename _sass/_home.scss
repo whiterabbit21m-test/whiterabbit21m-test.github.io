@@ -1,8 +1,8 @@
-// Variabili colore (puoi spostarle in un file _variables.scss se preferisci)
-$home-bg-color: #1a1a1a;
-$text-color-light: #fff;
-$accent-color: #2ecc71;
-$card-bg-color: rgba(255, 255, 255, 0.05);
+// Variabili colore
+$home-bg-color: #121212; // Sfondo molto scuro, quasi nero
+$text-color-light: #ffffff;
+$accent-color: #4CAF50; // Verde più brillante per il contrasto
+$card-bg-color: #1E1E1E; // Grigio scuro per le card
 
 .home {
   background-color: $home-bg-color;
@@ -12,6 +12,7 @@ $card-bg-color: rgba(255, 255, 255, 0.05);
   .hero {
     padding: 100px 0;
     text-align: center;
+    background-color: darken($home-bg-color, 3%); // Leggermente più scuro dello sfondo principale
 
     h1 {
       font-size: 3.5em;
@@ -22,7 +23,7 @@ $card-bg-color: rgba(255, 255, 255, 0.05);
     p {
       font-size: 1.2em;
       margin-bottom: 30px;
-      color: rgba($text-color-light, 0.8);
+      color: rgba($text-color-light, 0.9);
     }
 
     .cta-button {
@@ -44,7 +45,7 @@ $card-bg-color: rgba(255, 255, 255, 0.05);
   // Features Section
   .features {
     padding: 80px 0;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: lighten($home-bg-color, 5%); // Leggermente più chiaro dello sfondo principale
 
     h2 {
       text-align: center;
@@ -61,6 +62,13 @@ $card-bg-color: rgba(255, 255, 255, 0.05);
     .feature-item {
       text-align: center;
       padding: 20px;
+      background-color: $card-bg-color;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
 
       i {
         font-size: 3em;
@@ -82,6 +90,7 @@ $card-bg-color: rgba(255, 255, 255, 0.05);
   // Recent Posts Section
   .recent-posts {
     padding: 80px 0;
+    background-color: $home-bg-color;
 
     h2 {
       text-align: center;
@@ -97,7 +106,7 @@ $card-bg-color: rgba(255, 255, 255, 0.05);
 
     .post-card {
       background-color: $card-bg-color;
-      border-radius: 5px;
+      border-radius: 8px;
       overflow: hidden;
       transition: transform 0.3s ease;
 
@@ -151,6 +160,41 @@ $card-bg-color: rgba(255, 255, 255, 0.05);
       }
     }
   }
+
+  // Contenuto aggiuntivo
+  .additional-content {
+    padding: 60px 0;
+    background-color: lighten($home-bg-color, 3%);
+
+    h2, h3 {
+      color: $text-color-light;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: rgba($text-color-light, 0.9);
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        color: rgba($text-color-light, 0.9);
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+
+        &:before {
+          content: "•";
+          color: $accent-color;
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
 }
 
 // Responsive design
@@ -164,7 +208,7 @@ $card-bg-color: rgba(255, 255, 255, 0.05);
       }
     }
 
-    .features, .recent-posts {
+    .features, .recent-posts, .additional-content {
       padding: 60px 0;
     }
 
