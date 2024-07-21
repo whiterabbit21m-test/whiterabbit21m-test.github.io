@@ -1,0 +1,84 @@
+---
+layout: default
+title: Bitcoin Dashboard
+permalink: /dashboard/
+---
+
+<div class="dashboard-container">
+    <div class="header">
+        <img id="bitcoin-logo" src="https://bitcoin.org/img/icons/opengraph.png" alt="Bitcoin Logo">
+        <div id="current-block">Block: ...</div>
+    </div>
+    <div class="content-wrapper">
+        <!-- Broadcast Transaction -->
+        <div class="card full-width">
+            <div class="card-title">Broadcast Transaction</div>
+            <div class="broadcast-transaction">
+                <textarea id="tx-hex" placeholder="Enter signed transaction hex"></textarea>
+                <button id="broadcast-btn">Broadcast Transaction</button>
+                <div id="broadcast-result"></div>
+            </div>
+        </div>
+        
+        <!-- Next Bitcoin Halving -->
+        <div class="card">
+            <div class="card-title">Next Bitcoin Halving</div>
+            <div id="halving-date">Calculating...</div>
+            <div id="countdown">Loading...</div>
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+                <div id="progress-percentage">0%</div>
+            </div>
+        </div>
+        
+        <!-- Network Fees -->
+        <div class="card">
+            <div class="card-title">Network Fees (sat/vB)</div>
+            <div class="fee-row">
+                <span class="fee-label">High Priority:</span>
+                <span class="fee-value" id="high-fee">...</span>
+            </div>
+            <div class="fee-row">
+                <span class="fee-label">Medium Priority:</span>
+                <span class="fee-value" id="medium-fee">...</span>
+            </div>
+            <div class="fee-row">
+                <span class="fee-label">Low Priority:</span>
+                <span class="fee-value" id="low-fee">...</span>
+            </div>
+        </div>
+        
+        <!-- Latest Block Details -->
+        <div class="card full-width">
+            <div class="card-title">Latest Block Details</div>
+            <div class="block-detail-row">
+                <span class="block-detail-label">Hash:</span>
+                <span class="block-detail-value" id="block-hash">...</span>
+            </div>
+            <div class="block-detail-row">
+                <span class="block-detail-label">Timestamp:</span>
+                <span class="block-detail-value" id="block-timestamp">...</span>
+            </div>
+            <div class="block-detail-row">
+                <span class="block-detail-label">Size:</span>
+                <span class="block-detail-value" id="block-size">...</span>
+            </div>
+            <div class="block-detail-row">
+                <span class="block-detail-label">Weight:</span>
+                <span class="block-detail-value" id="block-weight">...</span>
+            </div>
+            <div class="block-detail-row">
+                <span class="block-detail-label">Total Fees:</span>
+                <span class="block-detail-value" id="block-fees">...</span>
+            </div>
+        </div>
+        
+        <!-- Latest Mempool Transactions -->
+        <div class="card full-width">
+            <div class="card-title">Latest Mempool Transactions</div>
+            <div id="mempool-container">
+                <ul class="transaction-list" id="transaction-list"></ul>
+            </div>
+        </div>
+    </div>
+</div>
