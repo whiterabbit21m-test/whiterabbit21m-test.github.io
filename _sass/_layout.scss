@@ -1,5 +1,5 @@
 // Variables
-$header-height: 80px; // Aumentato da 60px a 80px
+$header-height: 80px;
 $footer-height: 100px;
 $max-width: 1200px;
 $primary-color: #333;
@@ -22,6 +22,7 @@ body {
   line-height: 1.6;
   color: $text-color;
   background-color: $background-color;
+  padding-top: $header-height; // Compensazione per l'header fisso
 }
 
 .site-container {
@@ -34,7 +35,6 @@ body {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  padding-top: $header-height; // Adattato all'altezza dell'header
 }
 
 .wrapper {
@@ -47,66 +47,13 @@ body {
   flex-direction: column;
 }
 
-// Header
-.site-header {
-  background-color: $primary-color;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: $header-height; // Altezza fissa per l'header
-  z-index: 1000;
-
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: 0 20px;
-    height: 100%; // Assicura che il contenuto occupi tutta l'altezza dell'header
-  }
-
-  .logo {
-    a {
-      color: $text-color;
-      text-decoration: none;
-      font-size: 1.8rem; // Aumentato leggermente
-      font-weight: bold;
-    }
-  }
-
-  .main-nav {
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-
-      li {
-        margin-left: 20px;
-
-        a {
-          color: $text-color;
-          text-decoration: none;
-          transition: color 0.3s ease;
-          font-size: 1.1rem; // Aumentato leggermente
-
-          &:hover, &.active {
-            color: $secondary-color;
-          }
-        }
-      }
-    }
-  }
-}
-
 // Main content
 .page-content {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   padding: 40px 0;
+  margin-top: 1rem;
 }
 
 // Footer
@@ -263,35 +210,7 @@ body {
 
 // Responsive styles
 @media (max-width: 768px) {
-  .site-header {
-    height: auto; // Permette all'header di adattarsi al contenuto su mobile
-
-    .header-container {
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 10px 20px; // Aggiunto padding verticale
-    }
-
-    .logo {
-      margin-bottom: 10px;
-      text-align: center;
-      width: 100%;
-    }
-
-    .main-nav {
-      width: 100%;
-      
-      ul {
-        justify-content: center;
-        
-        li {
-          margin: 0 10px;
-        }
-      }
-    }
-  }
-
-  .content-wrapper {
+  body {
     padding-top: 120px; // Aumentato per compensare l'header più grande su mobile
   }
 
