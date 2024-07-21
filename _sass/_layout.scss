@@ -5,6 +5,7 @@ $max-width: 1200px;
 $primary-color: #333;
 $secondary-color: #4CAF50;
 $text-color: #ffffff;
+$background-color: #121212;
 
 // Base layout
 html, body {
@@ -20,7 +21,7 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: $text-color;
-  background-color: #121212;
+  background-color: $background-color;
 }
 
 .site-container {
@@ -41,6 +42,9 @@ body {
   max-width: $max-width;
   margin: 0 auto;
   padding: 0 20px;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 // Header
@@ -58,6 +62,9 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 
   .logo {
@@ -96,6 +103,8 @@ body {
 // Main content
 .page-content {
   flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
   padding: 40px 0;
 }
 
@@ -110,6 +119,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 
   .footer-content {
@@ -148,6 +160,10 @@ body {
 
 // Post styles
 .post {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+
   .post-header {
     margin-bottom: 30px;
 
@@ -164,6 +180,8 @@ body {
   }
 
   .post-content {
+    flex: 1 0 auto;
+
     h2, h3, h4, h5, h6 {
       color: $secondary-color;
       margin-top: 30px;
@@ -207,6 +225,37 @@ body {
       border-radius: 5px;
       overflow-x: auto;
       margin-bottom: 20px;
+    }
+  }
+}
+
+// Home page specific styles
+.home {
+  .post-list {
+    list-style: none;
+    padding: 0;
+
+    .post-item {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 5px;
+
+      .post-link {
+        font-size: 1.5rem;
+        color: $secondary-color;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .post-meta {
+        font-size: 0.9rem;
+        color: #888;
+        margin-top: 5px;
+      }
     }
   }
 }
