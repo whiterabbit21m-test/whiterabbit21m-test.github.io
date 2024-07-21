@@ -2,52 +2,92 @@
   background-color: #121212;
   color: #ffffff;
   padding: 60px 0;
-
+  
   .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
   }
-
+  
   .post-header {
     margin-bottom: 40px;
-
+    
     .post-title {
       font-size: 2.5em;
       color: #4CAF50;
       margin-bottom: 10px;
     }
-
+    
     .post-meta {
       font-size: 0.9em;
       color: #999;
     }
   }
-
+  
   .post-content {
     line-height: 1.8;
-
+    
     h2, h3, h4, h5, h6 {
       color: #4CAF50;
       margin-top: 30px;
       margin-bottom: 15px;
     }
-
+    
     p {
       margin-bottom: 20px;
     }
-
+    
     a {
       color: #4CAF50;
       text-decoration: none;
       transition: color 0.3s ease;
-
+      
       &:hover {
         color: lighten(#4CAF50, 10%);
         text-decoration: underline;
       }
     }
+    
+    ul, ol {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
 
-    // ... altri stili per il contenuto del post ...
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    code {
+      background-color: #2c2c2c;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    pre {
+      background-color: #2c2c2c;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// Responsive styles for posts
+@media (max-width: 768px) {
+  .post {
+    padding: 40px 0;
+
+    .container {
+      padding: 0 15px;
+    }
+
+    .post-header {
+      .post-title {
+        font-size: 2rem;
+      }
+    }
   }
 }
