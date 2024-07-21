@@ -4,24 +4,31 @@ layout: default
 
 <div class="blog-page">
   <div class="container">
-    <h1 class="page-heading">{{ page.title }}</h1>
+    <header class="page-header">
+      <h1 class="page-title">{{ page.title }}</h1>
+    </header>
 
-    {{ content }}
+    <div class="page-content">
+      {{ content }}
+    </div>
 
     {%- if site.posts.size > 0 -%}
       <ul class="post-list">
         {%- for post in site.posts -%}
-        <li>
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <span class="post-meta">{{ post.date | date: date_format }}</span>
-          <h3>
+        <li class="post-item">
+          <h2>
             <a class="post-link" href="{{ post.url | relative_url }}">
               {{ post.title | escape }}
             </a>
-          </h3>
+          </h2>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
           {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
+            <div class="post-excerpt">
+              {{ post.excerpt }}
+            </div>
           {%- endif -%}
+          <a href="{{ post.url | relative_url }}" class="read-more">Leggi di più</a>
         </li>
         {%- endfor -%}
       </ul>
@@ -30,15 +37,15 @@ layout: default
         <div class="pagination">
           {% if paginator.previous_page %}
             <a href="{{ paginator.previous_page_path }}" class="previous">
-              Previous
+              Precedente
             </a>
           {% endif %}
           <span class="page_number">
-            Page: {{ paginator.page }} of {{ paginator.total_pages }}
+            Pagina: {{ paginator.page }} di {{ paginator.total_pages }}
           </span>
           {% if paginator.next_page %}
             <a href="{{ paginator.next_page_path }}" class="next">
-              Next
+              Successiva
             </a>
           {% endif %}
         </div>
