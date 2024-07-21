@@ -1,11 +1,14 @@
+// Variabile per la larghezza massima (deve corrispondere a quella in _layout.scss)
+$max-width: 1200px;
+
 .post {
   background-color: #121212;
   color: #ffffff;
   padding: 60px 0;
-  width: 100%; // Assicura che il post occupi tutta la larghezza
+  width: 100%;
   
   .container {
-    max-width: 800px;
+    max-width: $max-width;
     margin: 0 auto;
     padding: 0 20px;
   }
