@@ -1,57 +1,41 @@
 ---
 layout: home
 title: Home
+hero_title: "Benvenuto nel Mio Sito Jekyll"
+hero_subtitle: "Esplora il mondo dello sviluppo web e del design creativo"
+hero_button_text: "Scopri di più"
+hero_button_link: "/about/"
+features_title: "Cosa offriamo"
+features:
+  - icon: code
+    title: "Sviluppo Web"
+    description: "Creiamo siti web performanti e responsive utilizzando le ultime tecnologie."
+  - icon: paint-brush
+    title: "Design Creativo"
+    description: "Progettiamo interfacce utente intuitive e visivamente accattivanti."
+  - icon: mobile-alt
+    title: "Mobile First"
+    description: "Sviluppiamo con un approccio mobile-first per un'esperienza ottimale su tutti i dispositivi."
+recent_posts_title: "Articoli Recenti"
 ---
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="container">
-    <h1>Benvenuto nel Mio Sito Jekyll</h1>
-    <p>Esplora il mondo dello sviluppo web e del design creativo</p>
-    <a href="#" class="cta-button">Scopri di più</a>
-  </div>
-</section>
+## Benvenuto nel mio sito
 
-<!-- Features Section -->
-<section class="features">
-  <div class="container">
-    <h2>Cosa offriamo</h2>
-    <div class="feature-grid">
-      <div class="feature-item">
-        <i class="fas fa-code"></i>
-        <h3>Sviluppo Web</h3>
-        <p>Creiamo siti web performanti e responsive utilizzando le ultime tecnologie.</p>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-paint-brush"></i>
-        <h3>Design Creativo</h3>
-        <p>Progettiamo interfacce utente intuitive e visivamente accattivanti.</p>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Mobile First</h3>
-        <p>Sviluppiamo con un approccio mobile-first per un'esperienza ottimale su tutti i dispositivi.</p>
-      </div>
-    </div>
-  </div>
-</section>
+Questo è il contenuto principale della tua home page. Qui puoi aggiungere qualsiasi testo o contenuto Markdown che desideri visualizzare sotto le sezioni predefinite del layout home.
 
-<!-- Recent Posts Section -->
-<section class="recent-posts">
-  <div class="container">
-    <h2>Articoli Recenti</h2>
-    <div class="post-grid">
-      {% for post in site.posts limit:3 %}
-        <div class="post-card">
-          <img src="{{ post.image | default: '/assets/images/post-default.jpg' | relative_url }}" alt="{{ post.title }}">
-          <div class="post-content">
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
-            <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-            <a href="{{ post.url | relative_url }}" class="read-more">Leggi di più</a>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+### Chi sono
+
+Sono uno sviluppatore web appassionato di creare esperienze digitali uniche e coinvolgenti. Con una solida base in HTML, CSS e JavaScript, mi dedico a costruire siti web che non solo sono visivamente attraenti, ma anche altamente funzionali e user-friendly.
+
+### La mia missione
+
+La mia missione è aiutare aziende e individui a stabilire una forte presenza online attraverso siti web ben progettati e ottimizzati. Credo che un buon design web possa fare la differenza nel successo di un progetto online.
+
+### Perché scegliere me?
+
+- **Esperienza**: Ho anni di esperienza nello sviluppo web e ho lavorato su una vasta gamma di progetti.
+- **Attenzione ai dettagli**: Mi assicuro che ogni aspetto del tuo sito web sia curato alla perfezione.
+- **Approccio collaborativo**: Lavoro a stretto contatto con i miei clienti per assicurarmi che il risultato finale soddisfi e superi le loro aspettative.
+- **Tecnologie all'avanguardia**: Utilizzo le ultime tecnologie e best practice per garantire che il tuo sito sia moderno e performante.
+
+Non vedo l'ora di lavorare con te sul tuo prossimo progetto web!
