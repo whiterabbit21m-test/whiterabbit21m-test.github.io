@@ -6,7 +6,6 @@
 
   .footer-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     max-width: $max-width;
     margin: 0 auto;
@@ -16,9 +15,10 @@
   .footer-logo {
     flex: 0 0 auto;
     margin-right: 40px;
+    align-self: flex-start; // Allinea il logo all'inizio del container
 
     .footer-logo-image {
-      max-width: 150px; // Adjust this value to make the logo larger
+      max-width: 150px; // Mantieni questa dimensione o modifica secondo necessità
       height: auto;
     }
   }
@@ -26,6 +26,7 @@
   .footer-content {
     flex: 1 1 auto;
     text-align: center;
+    padding: 20px 0; // Aggiunge un po' di padding verticale per centrare il contenuto
   }
 
   .footer-email,
@@ -65,11 +66,16 @@
   .site-footer {
     .footer-container {
       flex-direction: column;
+      align-items: center;
     }
 
     .footer-logo {
       margin-right: 0;
       margin-bottom: 20px;
+    }
+
+    .footer-content {
+      padding: 0;
     }
   }
 }
