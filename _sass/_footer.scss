@@ -1,81 +1,57 @@
 .site-footer {
-  background-color: $primary-color;
-  color: $text-color;
-  padding: 40px 0 20px;
-  margin-top: auto;
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 0;
+  width: 100%;
+  margin-top: auto; // Questo aiuta a spingere il footer verso il basso
+}
 
-  .footer-container {
-    display: flex;
-    align-items: center;
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .footer-logo {
-    flex: 0 0 auto;
-    margin-right: 40px;
-    align-self: flex-start; // Allinea il logo all'inizio del container
+.footer-content {
+  text-align: center;
+  margin-bottom: 1rem;
+}
 
-    .footer-logo-image {
-      max-width: 150px; // Mantieni questa dimensione o modifica secondo necessità
-      height: auto;
-    }
-  }
+.footer-email,
+.footer-made-by {
+  margin-bottom: 0.5rem;
+}
 
-  .footer-content {
-    flex: 1 1 auto;
-    text-align: center;
-    padding: 20px 0; // Aggiunge un po' di padding verticale per centrare il contenuto
-  }
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
 
-  .footer-email,
-  .footer-made-by {
-    margin-bottom: 10px;
-  }
+.social-icon {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
 
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-
-    a {
-      color: $text-color;
-      font-size: 24px;
-      margin: 0 10px;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: $secondary-color;
-      }
-    }
-  }
-
-  .copyright {
-    text-align: center;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.9rem;
-    opacity: 0.8;
+  &:hover {
+    color: #4CAF50;
   }
 }
 
-// Responsive adjustments
-@media (max-width: 768px) {
-  .site-footer {
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-    }
+.copyright {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
 
-    .footer-logo {
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
+// Assicurati che il contenuto principale si espanda per spingere il footer verso il basso
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-    .footer-content {
-      padding: 0;
-    }
-  }
+.page-content {
+  flex: 1 0 auto;
 }
