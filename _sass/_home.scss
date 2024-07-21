@@ -1,148 +1,175 @@
 // Variabili colore (puoi spostarle in un file _variables.scss se preferisci)
-$header-footer-color: #333;
-$home-bg-color: #1a1a1a; // Un grigio molto scuro, quasi nero
+$home-bg-color: #1a1a1a;
 $text-color-light: #fff;
-$accent-color: #2ecc71; // Verde, puoi cambiarlo secondo le tue preferenze
+$accent-color: #2ecc71;
+$card-bg-color: rgba(255, 255, 255, 0.05);
 
-body.home {
+.home {
   background-color: $home-bg-color;
   color: $text-color-light;
-}
 
-.hero {
-  background-color: transparent; // Rimuove il colore di sfondo precedente
-  padding: 100px 0;
-  text-align: center;
-
-  h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
-    color: $text-color-light;
-  }
-
-  p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    color: rgba($text-color-light, 0.8);
-  }
-
-  .cta-button {
-    display: inline-block;
-    background-color: $accent-color;
-    color: $text-color-light;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: darken($accent-color, 10%);
-    }
-  }
-}
-
-.features {
-  padding: 80px 0;
-  background-color: rgba(255, 255, 255, 0.05); // Leggermente più chiaro dello sfondo
-
-  h2 {
+  // Hero Section
+  .hero {
+    padding: 100px 0;
     text-align: center;
-    margin-bottom: 50px;
-    color: $text-color-light;
-  }
 
-  .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-  }
-
-  .feature-item {
-    text-align: center;
-    padding: 20px;
-
-    i {
-      font-size: 3em;
-      color: $accent-color;
+    h1 {
+      font-size: 3.5em;
       margin-bottom: 20px;
-    }
-
-    h3 {
       color: $text-color-light;
-      margin-bottom: 15px;
     }
 
     p {
-      color: rgba($text-color-light, 0.8);
-    }
-  }
-}
-
-.recent-posts {
-  padding: 80px 0;
-
-  h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    color: $text-color-light;
-  }
-
-  .post-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-  }
-
-  .post-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 5px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
-
-    img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .post-content {
-      padding: 20px;
-    }
-
-    h3 a {
-      color: $text-color-light;
-      text-decoration: none;
-      
-      &:hover {
-        color: $accent-color;
-      }
-    }
-
-    .post-meta {
-      color: rgba($text-color-light, 0.6);
-      font-size: 0.9em;
-      margin-bottom: 10px;
-    }
-
-    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
       color: rgba($text-color-light, 0.8);
     }
 
-    .read-more {
+    .cta-button {
       display: inline-block;
-      margin-top: 10px;
-      color: $accent-color;
+      background-color: $accent-color;
+      color: $text-color-light;
+      padding: 15px 30px;
+      border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
+      transition: background-color 0.3s ease;
 
       &:hover {
-        text-decoration: underline;
+        background-color: darken($accent-color, 10%);
       }
+    }
+  }
+
+  // Features Section
+  .features {
+    padding: 80px 0;
+    background-color: rgba(255, 255, 255, 0.05);
+
+    h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      color: $text-color-light;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-item {
+      text-align: center;
+      padding: 20px;
+
+      i {
+        font-size: 3em;
+        color: $accent-color;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        color: $text-color-light;
+        margin-bottom: 15px;
+      }
+
+      p {
+        color: rgba($text-color-light, 0.8);
+      }
+    }
+  }
+
+  // Recent Posts Section
+  .recent-posts {
+    padding: 80px 0;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      color: $text-color-light;
+    }
+
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .post-card {
+      background-color: $card-bg-color;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .post-content {
+        padding: 20px;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+
+        a {
+          color: $text-color-light;
+          text-decoration: none;
+          
+          &:hover {
+            color: $accent-color;
+          }
+        }
+      }
+
+      .post-meta {
+        color: rgba($text-color-light, 0.6);
+        font-size: 0.9em;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: rgba($text-color-light, 0.8);
+      }
+
+      .read-more {
+        display: inline-block;
+        margin-top: 10px;
+        color: $accent-color;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .home {
+    .hero {
+      padding: 60px 0;
+
+      h1 {
+        font-size: 2.5em;
+      }
+    }
+
+    .features, .recent-posts {
+      padding: 60px 0;
+    }
+
+    .feature-grid, .post-grid {
+      grid-template-columns: 1fr;
     }
   }
 }
