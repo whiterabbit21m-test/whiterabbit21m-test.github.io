@@ -70,21 +70,31 @@ body {
   color: $text-color;
   padding: 20px 0;
   margin-top: auto;
-  width: 100%; // Assicura che il footer occupi tutta la larghezza
+  width: 100%;
 
   .footer-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     max-width: $max-width;
     margin: 0 auto;
     padding: 0 20px;
-    width: 100%; // Assicura che il contenuto del footer si estenda
+    width: 100%;
+  }
+
+  .footer-logo {
+    flex: 0 0 auto;
+    margin-right: 20px;
+
+    img {
+      max-width: 150px;
+      height: auto;
+    }
   }
 
   .footer-content {
+    flex: 1 1 auto;
     text-align: center;
-    margin-bottom: 20px;
   }
 
   .footer-email,
@@ -113,6 +123,22 @@ body {
     margin-top: 20px;
     font-size: 0.9rem;
     opacity: 0.8;
+    text-align: center;
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .site-footer {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-logo {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 }
 
