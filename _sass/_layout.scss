@@ -100,6 +100,30 @@ body {
   }
 }
 
+// Responsive styles
+@media (max-width: 768px) {
+  .site-header {
+    .header-container {
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      margin-bottom: 10px;
+    }
+
+    .main-nav {
+      width: 100%;
+      
+      ul {
+        justify-content: center;
+        
+        li {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
 // Main content
 .page-content {
   flex: 1 0 auto;
