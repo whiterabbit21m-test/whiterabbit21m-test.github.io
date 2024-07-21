@@ -1,29 +1,37 @@
 <!DOCTYPE html>
-<html lang="it">
-{% include head.html %}
-<body>
-    {% include header.html %}
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- seo -%}
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    {%- feed_meta -%}
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+      {%- include google-analytics.html -%}
+    {%- endif -%}
+    <!-- Aggiungi qui altri meta tag, link a fogli di stile o script se necessario -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
 
-    <main>
+  <body class="{{ page.layout }} {% if page.url == "/" %}home{% endif %}">
+    
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
         {{ content }}
+      </div>
     </main>
 
-    {% include footer.html %}
+    {%- include footer.html -%}
 
-    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
+    <!-- Script JavaScript -->
+    <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
     {% if page.custom_js %}
-        {% for js_file in page.custom_js %}
-            <script src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
-        {% endfor %}
+      {% for js_file in page.custom_js %}
+        <script src='{{ site.baseurl }}/assets/js/{{ js_file }}.js' type="text/javascript"></script>
+      {% endfor %}
     {% endif %}
-
-    {% comment %}
-    Se vuoi aggiungere Google Analytics in futuro, decommenta le seguenti righe
-    e assicurati di avere un file analytics.html nella cartella _includes
-    {% if jekyll.environment == "production" %}
-        {% include analytics.html %}
-    {% endif %}
-    {% endcomment %}
-</body>
+  </body>
 </html>
