@@ -1,90 +1,60 @@
 .site-footer {
   background-color: #333;
   color: #fff;
-  padding: 120px 0 60px; // Aumentato ulteriormente il padding superiore
-  font-size: 1.2em; // Aumentato leggermente la dimensione del testo
+  padding: 40px 0;
   
   .footer-content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 60px; // Aggiunto spazio sotto il contenuto principale
+    margin-bottom: 20px;
   }
 
   .footer-section {
     flex: 1;
-    margin-bottom: 40px;
-    min-width: 300px; // Aumentato la larghezza minima
-    padding: 0 30px;
+    min-width: 250px;
+    margin-bottom: 20px;
 
     h3 {
-      font-size: 1.8em; // Titoli più grandi
-      margin-bottom: 30px;
-      color: #2ecc71;
-      border-bottom: 2px solid #2ecc71;
-      padding-bottom: 10px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-
-      li {
-        margin-bottom: 15px; // Più spazio tra gli elementi della lista
-      }
+      color: #4CAF50;
+      margin-bottom: 15px;
     }
 
     p {
-      line-height: 1.8; // Aumentato l'interlinea per una migliore leggibilità
+      margin-bottom: 10px;
     }
   }
 
   .social-icons {
-    width: 100%;
     display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 50px; // Aggiunto spazio sotto le icone social
+    gap: 15px;
 
     a {
       color: #fff;
-      font-size: 36px; // Icone molto più grandi
-      margin: 0 25px;
-      transition: color 0.3s ease, transform 0.3s ease;
+      font-size: 24px;
+      transition: color 0.3s ease;
 
       &:hover {
-        color: #2ecc71;
-        transform: translateY(-5px) scale(1.1);
+        color: #4CAF50;
       }
     }
   }
 
   .copyright {
-    width: 100%;
     text-align: center;
-    padding-top: 30px;
     border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 1em;
+    padding-top: 20px;
   }
 }
 
-// Media query per rendere il footer responsive
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .site-footer {
-    padding: 80px 0 40px;
-
     .footer-content {
       flex-direction: column;
     }
 
     .footer-section {
-      margin-bottom: 50px;
-      text-align: center;
-    }
-
-    .social-icons a {
-      font-size: 30px;
-      margin: 0 15px;
+      margin-bottom: 30px;
     }
   }
 }
