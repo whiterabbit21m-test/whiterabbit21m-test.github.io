@@ -1,9 +1,26 @@
+// Variables
+$header-height: 60px;
+$footer-height: 100px;
+$max-width: 1200px;
+$primary-color: #333;
+$secondary-color: #4CAF50;
+$text-color: #ffffff;
+
+// Base layout
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: $text-color;
   background-color: #121212;
-  color: #ffffff;
 }
 
 .site-container {
@@ -12,39 +29,201 @@ body {
   min-height: 100vh;
 }
 
-.site-header {
-  background-color: #333;
-  padding: 1rem 0;
-}
-
-.page-content {
+.content-wrapper {
   flex: 1 0 auto;
-  padding: 2rem 0;
-}
-
-.site-footer {
-  background-color: #333;
-  padding: 1rem 0;
-  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: $header-height; // To account for fixed header
 }
 
 .wrapper {
-  max-width: 1200px;
+  width: 100%;
+  max-width: $max-width;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 20px;
 }
 
-// Stili specifici per i post
-.post {
-  .post-header {
-    margin-bottom: 2rem;
+// Header
+.site-header {
+  background-color: $primary-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $header-height;
+  z-index: 1000;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
   }
 
-  .post-title {
-    color: #4CAF50;
+  .logo {
+    a {
+      color: $text-color;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .main-nav {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+
+      li {
+        margin-left: 20px;
+
+        a {
+          color: $text-color;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover, &.active {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Main content
+.page-content {
+  flex: 1 0 auto;
+  padding: 40px 0;
+}
+
+// Footer
+.site-footer {
+  background-color: $primary-color;
+  color: $text-color;
+  padding: 20px 0;
+  margin-top: auto;
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-email,
+  .footer-made-by {
+    margin-bottom: 10px;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    a {
+      color: $text-color;
+      font-size: 24px;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  .copyright {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+}
+
+// Post styles
+.post {
+  .post-header {
+    margin-bottom: 30px;
+
+    .post-title {
+      font-size: 2.5rem;
+      color: $secondary-color;
+      margin-bottom: 10px;
+    }
+
+    .post-meta {
+      font-size: 0.9rem;
+      color: #888;
+    }
   }
 
   .post-content {
-    line-height: 1.6;
+    h2, h3, h4, h5, h6 {
+      color: $secondary-color;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    ul, ol {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    code {
+      background-color: #2c2c2c;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    pre {
+      background-color: #2c2c2c;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .site-header {
+    .main-nav {
+      display: none; // You might want to implement a mobile menu
+    }
+  }
+
+  .post {
+    .post-header {
+      .post-title {
+        font-size: 2rem;
+      }
+    }
   }
 }
