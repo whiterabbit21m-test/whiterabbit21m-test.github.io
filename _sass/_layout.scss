@@ -1,5 +1,5 @@
 // Variables
-$header-height: 60px;
+$header-height: 80px; // Aumentato da 60px a 80px
 $footer-height: 100px;
 $max-width: 1200px;
 $primary-color: #333;
@@ -34,7 +34,7 @@ body {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  padding-top: $header-height;
+  padding-top: $header-height; // Adattato all'altezza dell'header
 }
 
 .wrapper {
@@ -54,8 +54,8 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  height: $header-height; // Altezza fissa per l'header
   z-index: 1000;
-  padding: 10px 0;
 
   .header-container {
     display: flex;
@@ -64,13 +64,14 @@ body {
     max-width: $max-width;
     margin: 0 auto;
     padding: 0 20px;
+    height: 100%; // Assicura che il contenuto occupi tutta l'altezza dell'header
   }
 
   .logo {
     a {
       color: $text-color;
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: 1.8rem; // Aumentato leggermente
       font-weight: bold;
     }
   }
@@ -89,6 +90,7 @@ body {
           color: $text-color;
           text-decoration: none;
           transition: color 0.3s ease;
+          font-size: 1.1rem; // Aumentato leggermente
 
           &:hover, &.active {
             color: $secondary-color;
@@ -262,9 +264,12 @@ body {
 // Responsive styles
 @media (max-width: 768px) {
   .site-header {
+    height: auto; // Permette all'header di adattarsi al contenuto su mobile
+
     .header-container {
       flex-wrap: wrap;
       justify-content: center;
+      padding: 10px 20px; // Aggiunto padding verticale
     }
 
     .logo {
@@ -287,7 +292,7 @@ body {
   }
 
   .content-wrapper {
-    padding-top: 100px; // Adjust this value based on your mobile header height
+    padding-top: 120px; // Aumentato per compensare l'header più grande su mobile
   }
 
   .post {
