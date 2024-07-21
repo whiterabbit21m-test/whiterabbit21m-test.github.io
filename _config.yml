@@ -1,6 +1,6 @@
 # Informazioni sul sito
-title: Il Mio Sito Jekyll
-email: tuo@email.com
+title: Twentyone
+email: me@whiterabbit21m.com
 description: >- # questo significa ignorare newline fino a "baseurl:"
   Questo è il mio sito personale creato con Jekyll. Qui condivido i miei pensieri
   su sviluppo web, design e tecnologia.
@@ -8,9 +8,9 @@ baseurl: "" # il sottopath del tuo sito, e.g. /blog
 url: "https://www.tuosito.com" # l'host base & protocollo per il tuo sito, e.g. http://example.com
 
 # Social media
-twitter_username: tuousername
-github_username:  tuousername
-telegram_username: tuousername
+twitter_username: whiterabbit21m
+github_username:  whiterabbit21m
+telegram_username: whiterabbit21m
 facebook_username: tuousername
 instagram_username: tuousername
 linkedin_username: tuousername
@@ -57,7 +57,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Il tuo nome"
+      author: "whiterabbit21m"
       comments: true
 
 # Impostazioni di paginazione
@@ -66,17 +66,17 @@ paginate_path: "/blog/page:num/"
 
 # Impostazioni SEO
 twitter:
-  username: tuousername
+  username: whiterabbit21m
   card: summary_large_image
 logo: /assets/images/logo.png
 social:
-  name: Il tuo nome
+  name: whiterabbit21m
   links:
-    - https://twitter.com/tuousername
+    - https://twitter.com/whiterabbit21m
     - https://www.facebook.com/tuousername
     - https://www.linkedin.com/in/tuousername
-    - https://github.com/tuousername
-    - https://t.me/tuousername
+    - https://github.com/whiterabbit21m
+    - https://t.me/whiterabbit21m
 
 # Analytics (decommentare e aggiungere il tuo ID quando pronto)
 # google_analytics: UA-XXXXXXXX-X
@@ -86,7 +86,7 @@ social:
 #   shortname: your-disqus-shortname
 
 # Altre impostazioni personalizzate
-author: Il tuo nome
+author: whiterabbit21m
 timezone: Europe/Rome
 lang: it
 
