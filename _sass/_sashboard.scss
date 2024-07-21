@@ -1,0 +1,228 @@
+// Variables (assicurati che corrispondano a quelle del tuo _variables.scss o _layout.scss)
+$primary-color: #ffffff;
+$secondary-color: #4CAF50;
+$background-color: #121212;
+$card-background: #1E1E1E;
+$text-color: #ffffff;
+$max-width: 1200px;
+
+.dashboard-container {
+    max-width: $max-width;
+    width: 95%;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#bitcoin-logo {
+    width: 100px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+#current-block {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: $secondary-color;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    
+    &:hover {
+        color: lighten($secondary-color, 10%);
+    }
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: $card-background;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.card-title {
+    font-weight: bold;
+    color: $secondary-color;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    border-bottom: 2px solid $secondary-color;
+    padding-bottom: 10px;
+}
+
+#countdown {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+#halving-date {
+    color: $secondary-color;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+#progress-container {
+    width: 100%;
+    height: 30px;
+    background-color: rgba($secondary-color, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 20px 0;
+    position: relative;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: $secondary-color;
+    transition: width 0.5s ease-in-out;
+    border-radius: 4px;
+}
+
+#progress-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $text-color;
+    font-weight: bold;
+}
+
+.highlight {
+    color: $secondary-color;
+    font-weight: bold;
+}
+
+.fee-row, .block-detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.fee-label, .block-detail-label {
+    text-align: left;
+    opacity: 0.8;
+}
+
+.fee-value, .block-detail-value {
+    text-align: right;
+    font-weight: bold;
+    background-color: rgba($primary-color, 0.1);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+#block-hash {
+    word-break: break-all;
+    font-size: 0.9em;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.broadcast-transaction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#tx-hex {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: $card-background;
+    border: 1px solid $secondary-color;
+    border-radius: 4px;
+    color: $text-color;
+    font-family: monospace;
+    resize: none;
+    overflow-y: auto;
+    height: 100px;
+}
+
+#broadcast-btn {
+    width: 200px;
+    background-color: $secondary-color;
+    color: $text-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+        background-color: darken($secondary-color, 10%);
+    }
+}
+
+#broadcast-result {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#mempool-container {
+    width: 100%;
+    height: 400px;
+    background-color: $card-background;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+.transaction-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.transaction-item {
+    padding: 10px;
+    border-bottom: 1px solid rgba($primary-color, 0.1);
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+        background-color: rgba($primary-color, 0.1);
+    }
+}
+
+.transaction-item span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.txid {
+    color: $secondary-color;
+    cursor: pointer;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
