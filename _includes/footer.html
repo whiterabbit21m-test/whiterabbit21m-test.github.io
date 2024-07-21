@@ -1,31 +1,24 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-content">
-      <div class="footer-section">
-        <h3>Contatti</h3>
-        <p>Email: {{ site.email }}</p>
-        <p>Telefono: {{ site.phone }}</p>
-        <p>Indirizzo: {{ site.address }}</p>
-      </div>
-      <div class="footer-section">
-        <h3>Social Media</h3>
-        <div class="social-icons">
-          {% if site.twitter_username %}
-            <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-twitter"></i>
-            </a>
-          {% endif %}
-          {% if site.github_username %}
-            <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i>
-            </a>
-          {% endif %}
-          {% if site.telegram_username %}
-            <a href="https://t.me/{{ site.telegram_username }}" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-telegram"></i>
-            </a>
-          {% endif %}
-        </div>
+      <p class="footer-email">⚡ whiterabbit21m@21m.tips</p>
+      <p class="footer-made-by">Made with ❤️ by WhiteRabbit</p>
+      <div class="social-icons">
+        {% if site.twitter_username %}
+          <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i>
+          </a>
+        {% endif %}
+        {% if site.github_username %}
+          <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+          </a>
+        {% endif %}
+        {% if site.telegram_username %}
+          <a href="https://t.me/{{ site.telegram_username }}" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-telegram"></i>
+          </a>
+        {% endif %}
       </div>
     </div>
     <div class="copyright">
