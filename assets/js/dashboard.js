@@ -31,6 +31,7 @@ async function getLatestBlockDetails() {
         const blocks = await response.json();
         const latestBlock = blocks[0];
         return {
+            height: latestBlock.height,
             hash: latestBlock.id,
             timestamp: new Date(latestBlock.timestamp * 1000).toLocaleString(),
             size: (latestBlock.size / 1024 / 1024).toFixed(2) + ' MB',
@@ -95,11 +96,11 @@ function updateNetworkFees(fees) {
 
 function updateBlockDetails(details) {
     if (details) {
-        ["hash", "timestamp", "size", "weight", "fees"].forEach(key => {
+        ["height", "hash", "timestamp", "size", "weight", "fees"].forEach(key => {
             document.getElementById(`block-${key}`).textContent = details[key];
         });
     } else {
-        ["hash", "timestamp", "size", "weight", "fees"].forEach(key => {
+        ["height", "hash", "timestamp", "size", "weight", "fees"].forEach(key => {
             document.getElementById(`block-${key}`).textContent = "Error";
         });
     }
