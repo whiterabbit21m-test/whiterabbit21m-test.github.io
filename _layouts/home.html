@@ -2,58 +2,47 @@
 layout: default
 ---
 
-<div class="home">
+<div class="home-container">
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
-      <h1>{{ page.hero_title | default: "Benvenuto nel Mio Sito Jekyll" }}</h1>
-      <p>{{ page.hero_subtitle | default: "Esplora il mondo dello sviluppo web e del design creativo" }}</p>
-      <a href="{{ page.hero_button_link | default: '#' }}" class="cta-button">{{ page.hero_button_text | default: "Scopri di più" }}</a>
+    <div class="hero-content">
+      <h1>{{ page.title | default: "Lightning Network Wallet" }}</h1>
+      <p>{{ page.subtitle | default: "Il tuo wallet Lightning Network preferito" }}</p>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="features">
-    <div class="container">
-      <h2>{{ page.features_title | default: "Cosa offriamo" }}</h2>
-      <div class="feature-grid">
-        {% for feature in page.features %}
-          <div class="feature-item">
-            <i class="fas fa-{{ feature.icon }}"></i>
-            <h3>{{ feature.title }}</h3>
-            <p>{{ feature.description }}</p>
-          </div>
-        {% endfor %}
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Wallet Info and Smartphone Image -->
+    <section class="wallet-info">
+      <div class="info-text">
+        <h2>{{ page.wallet_title | default: "Il Nostro Wallet Lightning" }}</h2>
+        {{ content }}
+        <a href="{{ page.cta_link | default: '#' }}" class="cta-button">{{ page.cta_text | default: "Visita il Sito del Wallet" }}</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Recent Posts Section -->
-  <section class="recent-posts">
-    <div class="container">
-      <h2>{{ page.recent_posts_title | default: "Articoli Recenti" }}</h2>
-      <div class="post-grid">
-        {% for post in site.posts limit:3 %}
-          <div class="post-card">
-            {% if post.image %}
-              <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-            {% endif %}
-            <div class="post-content">
-              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-              <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
-              <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-              <a href="{{ post.url | relative_url }}" class="read-more">Leggi di più</a>
-            </div>
-          </div>
-        {% endfor %}
+      <div class="smartphone-image">
+        <img src="{{ page.wallet_image | default: '/assets/images/wallet-screenshot.png' }}" alt="Schermata principale del wallet">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Additional Content Section -->
-  <section class="additional-content">
-    <div class="container">
-      {{ content }}
-    </div>
-  </section>
+    <!-- QR Code Section -->
+    <section class="qr-code">
+      <h2>{{ page.qr_title | default: "Connettiti al Wallet" }}</h2>
+      <img src="{{ page.qr_image | default: '/assets/images/wallet-qr-code.png' }}" alt="QR Code per la connessione">
+      <p>{{ page.qr_description | default: "Scansiona questo codice QR per connetterti al wallet" }}</p>
+    </section>
+
+    <!-- Open Source Software Section -->
+    <section class="open-source">
+      <h2>{{ page.opensource_title | default: "Software Open Source" }}</h2>
+      <p>{{ page.opensource_description | default: "Il nostro wallet utilizza il seguente software open source per funzionare:" }}</p>
+      {% if page.opensource_list %}
+        <ul>
+          {% for item in page.opensource_list %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </section>
+  </main>
 </div>
