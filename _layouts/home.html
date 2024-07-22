@@ -1,7 +1,59 @@
 ---
 layout: default
 ---
-{{ content }}
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="{{ '/assets/js/bitcoin-uptime.js' | relative_url }}"></script>
+<div class="home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>{{ page.hero_title | default: "Benvenuto nel Mio Sito Jekyll" }}</h1>
+      <p>{{ page.hero_subtitle | default: "Esplora il mondo dello sviluppo web e del design creativo" }}</p>
+      <a href="{{ page.hero_button_link | default: '#' }}" class="cta-button">{{ page.hero_button_text | default: "Scopri di più" }}</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <h2>{{ page.features_title | default: "Cosa offriamo" }}</h2>
+      <div class="feature-grid">
+        {% for feature in page.features %}
+          <div class="feature-item">
+            <i class="fas fa-{{ feature.icon }}"></i>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Posts Section -->
+  <section class="recent-posts">
+    <div class="container">
+      <h2>{{ page.recent_posts_title | default: "Articoli Recenti" }}</h2>
+      <div class="post-grid">
+        {% for post in site.posts limit:3 %}
+          <div class="post-card">
+            {% if post.image %}
+              <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+            {% endif %}
+            <div class="post-content">
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+              <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+              <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+              <a href="{{ post.url | relative_url }}" class="read-more">Leggi di più</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Content Section -->
+  <section class="additional-content">
+    <div class="container">
+      {{ content }}
+    </div>
+  </section>
+</div>
