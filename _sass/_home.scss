@@ -56,27 +56,78 @@ $card-bg-color: #1E1E1E;
       border-radius: 8px;
     }
 
-    .feature-list {
-      list-style-type: none;
-      padding: 0;
+    .tech-overview {
+      h2 {
+        color: $accent-color;
+        font-size: 2em;
+        margin-bottom: 20px;
+        text-align: center;
+      }
 
-      li {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
+      p {
+        color: rgba($text-color, 0.9);
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        text-align: center;
+      }
 
-        i {
-          color: $accent-color;
-          margin-right: 10px;
+      .tech-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+
+        .feature-card {
+          background-color: darken($card-bg-color, 5%);
+          padding: 20px;
+          border-radius: 8px;
+          text-align: center;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: translateY(-5px);
+          }
+
+          i {
+            font-size: 2.5em;
+            color: $accent-color;
+            margin-bottom: 15px;
+          }
+
+          h3 {
+            color: $text-color;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+          }
+
+          p {
+            color: rgba($text-color, 0.8);
+            font-size: 0.9em;
+            line-height: 1.4;
+          }
         }
       }
     }
 
-    .app-item {
-      margin-bottom: 20px;
-
-      h3 {
+    .applications {
+      h2 {
         color: $accent-color;
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      .app-item {
+        margin-bottom: 20px;
+
+        h3 {
+          color: $text-color;
+          font-size: 1.2em;
+          margin-bottom: 10px;
+        }
+
+        p {
+          color: rgba($text-color, 0.8);
+        }
       }
     }
   }
@@ -85,6 +136,10 @@ $card-bg-color: #1E1E1E;
   .cta {
     text-align: center;
     background-color: darken($bg-color, 3%);
+
+    h2 {
+      margin-bottom: 30px;
+    }
 
     .cta-button {
       display: inline-block;
@@ -98,6 +153,24 @@ $card-bg-color: #1E1E1E;
 
       &:hover {
         background-color: darken($accent-color, 10%);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    section {
+      padding: 40px 0;
+    }
+
+    .hero h1 {
+      font-size: 2em;
+    }
+
+    .main-content {
+      .tech-overview, .applications {
+        padding: 20px;
       }
     }
   }
