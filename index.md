@@ -1,44 +1,48 @@
 ---
 layout: home
-hero_title: "Bitcoin: La Rivoluzione della Blockchain"
-hero_subtitle: "Scopri come la tecnologia dietro Bitcoin sta trasformando il mondo digitale"
-hero_button_text: "Esplora la Tecnologia"
-hero_button_link: "#technology"
+hero_title: "Bitcoin: Oltre la Criptovaluta"
+hero_subtitle: "Esplorando la Rivoluzione Tecnologica della Blockchain"
 
-technology_title: "Fondamenti della Blockchain"
-technologies:
-  - icon: cubes
-    title: "Decentralizzazione"
-    description: "Nessuna autorità centrale controlla la rete Bitcoin."
+overview_title: "La Tecnologia Blockchain"
+overview_description: "La blockchain è il cuore pulsante di Bitcoin, offrendo un nuovo paradigma per la gestione dei dati e delle transazioni in modo decentralizzato e sicuro."
+tech_features:
+  - icon: network-wired
+    name: "Rete Decentralizzata"
   - icon: lock
-    title: "Sicurezza Crittografica"
-    description: "Transazioni protette da crittografia avanzata."
+    name: "Crittografia Avanzata"
   - icon: link
-    title: "Immutabilità"
-    description: "Una volta registrati, i dati non possono essere alterati."
+    name: "Catena Immutabile"
   - icon: eye
-    title: "Trasparenza"
-    description: "Tutte le transazioni sono pubblicamente verificabili."
+    name: "Trasparenza Totale"
 
-innovations_title: "Innovazioni Chiave"
+innovation_title: "Innovazioni Chiave"
 innovations:
   - title: "Proof of Work"
-    description: "Meccanismo di consenso che garantisce la sicurezza della rete."
+    description: "Un meccanismo di consenso rivoluzionario che garantisce la sicurezza e l'integrità della rete Bitcoin."
   - title: "Smart Contracts"
-    description: "Contratti auto-eseguibili che operano sulla blockchain."
+    description: "Contratti auto-eseguibili che aprono nuove possibilità per transazioni e applicazioni decentralizzate."
   - title: "Lightning Network"
-    description: "Soluzione di secondo livello per transazioni veloci e a basso costo."
+    description: "Una soluzione di scalabilità che permette transazioni istantanee e a basso costo sulla rete Bitcoin."
 
-applications_title: "Applicazioni Reali"
+applications_title: "Applicazioni nel Mondo Reale"
 applications:
-  - "Finanza decentralizzata (DeFi)"
-  - "Sistemi di identità digitale"
-  - "Supply chain e tracciabilità"
-  - "Votazioni elettroniche sicure"
+  - icon: chart-line
+    title: "Finanza Decentralizzata"
+    description: "Rivoluzionare i servizi finanziari tradizionali con soluzioni peer-to-peer."
+  - icon: id-card
+    title: "Identità Digitale"
+    description: "Creare sistemi di identità sicuri, verificabili e controllati dagli utenti."
+  - icon: box
+    title: "Supply Chain"
+    description: "Migliorare la tracciabilità e la trasparenza nelle catene di approvvigionamento globali."
+  - icon: vote-yea
+    title: "Votazioni Elettroniche"
+    description: "Implementare sistemi di voto sicuri, trasparenti e verificabili."
 
-recent_posts_title: "Ultimi Aggiornamenti Tecnologici"
+developments_title: "Ultimi Sviluppi"
+
+cta_title: "Unisciti alla Rivoluzione Tecnologica"
+cta_description: "Scopri come puoi essere parte di questa trasformazione digitale. Esplora, impara e contribuisci al futuro della tecnologia blockchain."
+cta_button_text: "Inizia il Tuo Viaggio"
+cta_button_link: "/get-started"
 ---
-
-# Esplora il Futuro della Tecnologia Blockchain
-
-Bitcoin non è solo una criptovaluta, ma una rivoluzione tecnologica che sta ridefinendo il concetto di fiducia digitale. Qui esploriamo gli aspetti più innovativi e le applicazioni pratiche di questa tecnologia rivoluzionaria.
