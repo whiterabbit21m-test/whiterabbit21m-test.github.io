@@ -42,12 +42,11 @@
   .nav-link {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease;
     font-weight: bold;
     &:hover,
     &.active {
       color: #4CAF50;
-      transform: scale(2.05);
     }
   }
 }
