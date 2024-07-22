@@ -1,4 +1,8 @@
-// _sass/layout/_navigation.scss
+// Assicurati che queste variabili siano coerenti con il resto del tuo SCSS
+$text-color: #ffffff;
+$accent-color: #4CAF50;
+$background-color: #121212;
+
 .main-nav {
   .nav-list {
     list-style: none;
@@ -6,17 +10,42 @@
     margin: 0;
     display: flex;
   }
+
   .nav-item {
-    margin-left: 1rem;
+    margin-left: 1.5rem; // Aumentato leggermente per più spazio
+
+    &:first-child {
+      margin-left: 0; // Rimuove il margine dal primo elemento
+    }
   }
+
   .nav-link {
-    color: #fff;
+    color: rgba($text-color, 0.8); // Leggera trasparenza per un look più sofisticato
     text-decoration: none;
-    transition: color 0.3s ease;
-    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+    font-weight: 600; // Leggermente meno bold per un look più moderno
+    padding: 5px 0; // Aggiunge un po' di padding verticale
+    position: relative; // Per l'effetto underline
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: $accent-color;
+      transition: width 0.3s ease;
+    }
+
     &:hover,
     &.active {
-      color: #4CAF50;
+      color: $accent-color;
+      transform: translateY(-2px); // Leggero effetto di sollevamento
+
+      &::after {
+        width: 100%; // Effetto underline al passaggio del mouse o quando attivo
+      }
     }
   }
 }
@@ -27,10 +56,16 @@
     width: 100%;
     
     .nav-list {
-      justify-content: center;
+      flex-direction: column; // Cambia in colonna su schermi piccoli
+      align-items: center;
       
       .nav-item {
-        margin: 0 10px;
+        margin: 10px 0; // Spazio verticale tra gli elementi
+      }
+
+      .nav-link {
+        font-size: 1.1rem; // Aumenta leggermente la dimensione per una migliore leggibilità su mobile
+        padding: 8px 0; // Aumenta l'area cliccabile su mobile
       }
     }
   }
