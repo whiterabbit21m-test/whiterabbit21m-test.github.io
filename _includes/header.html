@@ -1,3 +1,4 @@
+<!-- _includes/header.html -->
 <header class="site-header">
   <div class="container header-container">
     <div class="logo">
@@ -9,15 +10,6 @@
         {% endif %}
       </a>
     </div>
-    <nav class="main-nav">
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a href="{{ '/dashboard/' | relative_url }}" class="nav-link {% if page.url == "/dashboard/" %}active{% endif %}">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a href="{{ '/contact/' | relative_url }}" class="nav-link {% if page.url == "/contact/" %}active{% endif %}">Contact</a>
-        </li>
-      </ul>
-    </nav>
+    {% include navigation.html %}
   </div>
 </header>
