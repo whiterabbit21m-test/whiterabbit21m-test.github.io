@@ -13,7 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }));
 
     // Crea il grafico
-    const ctx = document.getElementById('uptime-chart').getContext('2d');
+    const ctx = document.getElementById('uptime-chart');
+    
+    // Imposta una dimensione fissa per il canvas
+    ctx.style.width = '100%';
+    ctx.style.height = '400px';
+
     new Chart(ctx, {
         type: 'line',
         data: {
@@ -27,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 x: {
                     type: 'time',
