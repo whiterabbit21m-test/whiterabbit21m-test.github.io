@@ -2,81 +2,42 @@
 layout: default
 ---
 <div class="home">
-  <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1>{{ page.hero_title | default: "Bitcoin: Oltre la Criptovaluta" }}</h1>
-      <p>{{ page.hero_subtitle | default: "Esplorando la Rivoluzione Tecnologica della Blockchain" }}</p>
+      <h1>{{ page.title | default: "Bitcoin: Tecnologia del Futuro" }}</h1>
+      <p>{{ page.subtitle | default: "Esplorando l'innovazione blockchain oltre la criptovaluta" }}</p>
     </div>
   </section>
 
-  <!-- Main Content Grid -->
-  <div class="main-grid">
-    <!-- Left Column: Technology Overview -->
-    <section class="tech-overview">
-      <h2>{{ page.overview_title | default: "La Tecnologia Blockchain" }}</h2>
-      <p>{{ page.overview_description }}</p>
-      <ul class="tech-features">
-        {% for feature in page.tech_features %}
-          <li>
-            <i class="fas fa-{{ feature.icon }}"></i>
-            <span>{{ feature.name }}</span>
-          </li>
-        {% endfor %}
-      </ul>
-    </section>
-
-    <!-- Right Column: Innovation Showcase -->
-    <section class="innovation-showcase">
-      <h2>{{ page.innovation_title | default: "Innovazioni Chiave" }}</h2>
-      {% for innovation in page.innovations %}
-        <div class="innovation-card">
-          <h3>{{ innovation.title }}</h3>
-          <p>{{ innovation.description }}</p>
+  <section class="main-content">
+    <div class="container">
+      <div class="content-grid">
+        <div class="tech-overview">
+          <h2>La Tecnologia Blockchain</h2>
+          <p>{{ page.tech_description }}</p>
+          <ul class="feature-list">
+            {% for feature in page.tech_features %}
+              <li><i class="fas fa-{{ feature.icon }}"></i> {{ feature.name }}</li>
+            {% endfor %}
+          </ul>
         </div>
-      {% endfor %}
-    </section>
-  </div>
-
-  <!-- Applications Section -->
-  <section class="applications">
-    <div class="container">
-      <h2>{{ page.applications_title | default: "Applicazioni nel Mondo Reale" }}</h2>
-      <div class="application-grid">
-        {% for application in page.applications %}
-          <div class="application-item">
-            <i class="fas fa-{{ application.icon }}"></i>
-            <h3>{{ application.title }}</h3>
-            <p>{{ application.description }}</p>
-          </div>
-        {% endfor %}
+        <div class="applications">
+          <h2>Applicazioni Reali</h2>
+          {% for app in page.applications %}
+            <div class="app-item">
+              <h3>{{ app.title }}</h3>
+              <p>{{ app.description }}</p>
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Latest Developments Section -->
-  <section class="latest-developments">
-    <div class="container">
-      <h2>{{ page.developments_title | default: "Ultimi Sviluppi" }}</h2>
-      <div class="development-grid">
-        {% for post in site.posts limit:3 %}
-          <div class="development-card">
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
-            <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-            <a href="{{ post.url | relative_url }}" class="read-more">Approfondisci</a>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action -->
   <section class="cta">
     <div class="container">
-      <h2>{{ page.cta_title | default: "Unisciti alla Rivoluzione Tecnologica" }}</h2>
-      <p>{{ page.cta_description }}</p>
-      <a href="{{ page.cta_button_link | default: '#' }}" class="cta-button">{{ page.cta_button_text | default: "Inizia Ora" }}</a>
+      <h2>{{ page.cta_title | default: "Unisciti alla Rivoluzione" }}</h2>
+      <a href="{{ page.cta_link | default: '#' }}" class="cta-button">{{ page.cta_text | default: "Scopri di Più" }}</a>
     </div>
   </section>
 </div>
