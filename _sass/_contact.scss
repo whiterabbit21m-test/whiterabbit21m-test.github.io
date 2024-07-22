@@ -3,6 +3,12 @@
   color: #ffffff;
   padding: 60px 0;
 
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
   .page-header {
     text-align: center;
     margin-bottom: 40px;
@@ -17,12 +23,14 @@
     margin-bottom: 40px;
   }
 
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
+  .contact-image {
+    margin-bottom: 40px;
+    
+    .contact-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
     }
   }
 
@@ -68,22 +76,6 @@
       &:hover {
         background-color: #45a049;
       }
-    }
-  }
-
-  .contact-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1E1E1E;
-    padding: 30px;
-    border-radius: 8px;
-
-    .contact-img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
     }
   }
 }
