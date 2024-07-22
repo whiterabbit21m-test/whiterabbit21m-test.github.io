@@ -1,37 +1,63 @@
 ---
 layout: default
 ---
-
 <div class="home">
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1>{{ page.hero_title | default: "Benvenuto nel Mio Sito Jekyll" }}</h1>
-      <p>{{ page.hero_subtitle | default: "Esplora il mondo dello sviluppo web e del design creativo" }}</p>
-      <a href="{{ page.hero_button_link | default: '#' }}" class="cta-button">{{ page.hero_button_text | default: "Scopri di più" }}</a>
+      <h1>{{ page.hero_title | default: "Bitcoin: La Rivoluzione della Blockchain" }}</h1>
+      <p>{{ page.hero_subtitle | default: "Scopri come la tecnologia dietro Bitcoin sta trasformando il mondo digitale" }}</p>
+      <a href="{{ page.hero_button_link | default: '#technology' }}" class="cta-button">{{ page.hero_button_text | default: "Esplora la Tecnologia" }}</a>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="features">
+  <!-- Technology Section (ex Features Section) -->
+  <section id="technology" class="features">
     <div class="container">
-      <h2>{{ page.features_title | default: "Cosa offriamo" }}</h2>
+      <h2>{{ page.technology_title | default: "Fondamenti della Blockchain" }}</h2>
       <div class="feature-grid">
-        {% for feature in page.features %}
+        {% for tech in page.technologies %}
           <div class="feature-item">
-            <i class="fas fa-{{ feature.icon }}"></i>
-            <h3>{{ feature.title }}</h3>
-            <p>{{ feature.description }}</p>
+            <i class="fas fa-{{ tech.icon }}"></i>
+            <h3>{{ tech.title }}</h3>
+            <p>{{ tech.description }}</p>
           </div>
         {% endfor %}
       </div>
     </div>
   </section>
 
+  <!-- Innovations Section (New) -->
+  <section class="innovations">
+    <div class="container">
+      <h2>{{ page.innovations_title | default: "Innovazioni Chiave" }}</h2>
+      <div class="innovation-grid">
+        {% for innovation in page.innovations %}
+          <div class="innovation-item">
+            <h3>{{ innovation.title }}</h3>
+            <p>{{ innovation.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications Section (New) -->
+  <section class="applications">
+    <div class="container">
+      <h2>{{ page.applications_title | default: "Applicazioni Reali" }}</h2>
+      <ul class="application-list">
+        {% for application in page.applications %}
+          <li>{{ application }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
   <!-- Recent Posts Section -->
   <section class="recent-posts">
     <div class="container">
-      <h2>{{ page.recent_posts_title | default: "Articoli Recenti" }}</h2>
+      <h2>{{ page.recent_posts_title | default: "Ultimi Aggiornamenti Tecnologici" }}</h2>
       <div class="post-grid">
         {% for post in site.posts limit:3 %}
           <div class="post-card">
