@@ -15,19 +15,21 @@ $card-bg-color: #1E1E1E;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
+    text-align: center;
   }
 
-  .footer-col {
-    margin: 10px 0;
+  .footer-text {
+    font-size: 0.9em;
+    color: rgba($text-color, 0.7);
+    margin-bottom: 15px;
   }
 
   .social-icons {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-bottom: 15px;
 
     a {
       color: $text-color;
@@ -41,25 +43,16 @@ $card-bg-color: #1E1E1E;
     }
   }
 
-  .footer-text {
-    font-size: 0.9em;
-    color: rgba($text-color, 0.7);
+  .copyright {
+    font-size: 0.8em;
+    color: rgba($text-color, 0.6);
   }
 }
 
 @media (max-width: 768px) {
   .site-footer {
     .footer-container {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .footer-col {
-      margin: 10px 0;
-    }
-
-    .social-icons {
-      margin-top: 15px;
+      padding: 0 15px;
     }
   }
 }
