@@ -1,34 +1,219 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+// Variabili colore
+$home-bg-color: #121212; // Sfondo molto scuro, quasi nero
+$text-color-light: #ffffff;
+$accent-color: #4CAF50; // Verde più brillante per il contrasto
+$card-bg-color: #1E1E1E; // Grigio scuro per le card
 
-.bitcoin-uptime {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+.home {
+  background-color: $home-bg-color;
+  color: $text-color-light;
+
+  // Hero Section
+  .hero {
+    padding: 100px 0;
     text-align: center;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 5px;
+    background-color: darken($home-bg-color, 3%); // Leggermente più scuro dello sfondo principale
 
     h1 {
-        margin-bottom: 20px;
-        color: #1a1a1a;
-    }
-
-    #uptime-chart {
-        width: 100%;
-        height: 400px;
-        margin-bottom: 20px;
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      color: $text-color-light;
     }
 
     p {
-        font-size: 1.2em;
-        color: #4a4a4a;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: rgba($text-color-light, 0.9);
     }
+
+    .cta-button {
+      display: inline-block;
+      background-color: $accent-color;
+      color: $text-color-light;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+    }
+  }
+
+  // Features Section
+  .features {
+    padding: 80px 0;
+    background-color: lighten($home-bg-color, 5%); // Leggermente più chiaro dello sfondo principale
+
+    h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      color: $text-color-light;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-item {
+      text-align: center;
+      padding: 20px;
+      background-color: $card-bg-color;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      i {
+        font-size: 3em;
+        color: $accent-color;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        color: $text-color-light;
+        margin-bottom: 15px;
+      }
+
+      p {
+        color: rgba($text-color-light, 0.8);
+      }
+    }
+  }
+
+  // Recent Posts Section
+  .recent-posts {
+    padding: 80px 0;
+    background-color: $home-bg-color;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      color: $text-color-light;
+    }
+
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .post-card {
+      background-color: $card-bg-color;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .post-content {
+        padding: 20px;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+
+        a {
+          color: $text-color-light;
+          text-decoration: none;
+          
+          &:hover {
+            color: $accent-color;
+          }
+        }
+      }
+
+      .post-meta {
+        color: rgba($text-color-light, 0.6);
+        font-size: 0.9em;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: rgba($text-color-light, 0.8);
+      }
+
+      .read-more {
+        display: inline-block;
+        margin-top: 10px;
+        color: $accent-color;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // Contenuto aggiuntivo
+  .additional-content {
+    padding: 60px 0;
+    background-color: lighten($home-bg-color, 3%);
+
+    h2, h3 {
+      color: $text-color-light;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: rgba($text-color-light, 0.9);
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        color: rgba($text-color-light, 0.9);
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+
+        &:before {
+          content: "•";
+          color: $accent-color;
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .home {
+    .hero {
+      padding: 60px 0;
+
+      h1 {
+        font-size: 2.5em;
+      }
+    }
+
+    .features, .recent-posts, .additional-content {
+      padding: 60px 0;
+    }
+
+    .feature-grid, .post-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 }
