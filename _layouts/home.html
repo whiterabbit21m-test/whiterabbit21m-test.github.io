@@ -1,56 +1,11 @@
 ---
 layout: default
 ---
-<div class="bitcoin-status-home">
-  <section class="hero">
-    <div class="container">
-      <h1>Bitcoin: Ininterrottamente Online dal 2009</h1>
-      <p>Esplorando l'affidabilità e la resilienza della blockchain Bitcoin</p>
-    </div>
-  </section>
-
-  <section class="realtime-status">
-    <div class="container">
-      <div class="uptime-counter">
-        <h2>Tempo di Attività</h2>
-        <div id="uptime-clock">
-          <!-- JavaScript inserirà qui il contatore del tempo di uptime -->
-        </div>
-      </div>
-
-      <div class="key-stats">
-        <div class="stat-item">
-          <h3>Blocchi Minati</h3>
-          <p id="block-count"><!-- JavaScript inserirà qui il numero di blocchi --></p>
-        </div>
-        <div class="stat-item">
-          <h3>Hash Rate della Rete</h3>
-          <p id="hash-rate"><!-- JavaScript inserirà qui l'hash rate --></p>
-        </div>
-        <div class="stat-item">
-          <h3>Difficoltà Attuale</h3>
-          <p id="difficulty"><!-- JavaScript inserirà qui la difficoltà --></p>
-        </div>
-      </div>
-
-      <div class="network-graph">
-        <h2>Attività della Rete nelle Ultime 24 Ore</h2>
-        <div id="transaction-chart">
-          <!-- Qui verrà inserito un grafico delle transazioni -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="blockchain-info">
-    <div class="container">
-      <h2>Perché Bitcoin Non Si Ferma Mai?</h2>
-      <p>La natura decentralizzata di Bitcoin, con migliaia di nodi distribuiti globalmente, garantisce che la rete rimanga operativa 24/7, resistendo a guasti localizzati e tentativi di censura.</p>
-      <a href="#" class="learn-more-btn">Scopri di Più sulla Resilienza di Bitcoin</a>
-    </div>
-  </section>
+<div class="bitcoin-uptime">
+  <h1>Bitcoin: Online Ininterrottamente dal 2009</h1>
+  <div id="uptime-chart"></div>
+  <p>Giorni di funzionamento: <span id="days-count"></span></p>
 </div>
 
-<script src="{{ '/assets/js/bitcoin-status.js' | relative_url }}"></script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ '/assets/js/bitcoin-uptime.js' | relative_url }}"></script>
