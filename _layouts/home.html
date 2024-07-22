@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <div class="home-container">
   <!-- Hero Section -->
   <section class="hero">
@@ -27,24 +26,24 @@ layout: default
       </div>
     </section>
 
-    <!-- QR Code Section -->
-    <section class="qr-code">
-      <h2>{{ page.qr_title | default: "Connettiti al Wallet" }}</h2>
-      <img src="{{ page.qr_image | default: '/assets/images/wallet-qr-code.png' }}" alt="QR Code per la connessione">
-      <p>{{ page.qr_description | default: "Scansiona questo codice QR per connetterti al wallet" }}</p>
-    </section>
-
-    <!-- Open Source Software Section -->
-    <section class="open-source">
-      <h2>{{ page.opensource_title | default: "Software Open Source" }}</h2>
-      <p>{{ page.opensource_description | default: "Il nostro wallet utilizza il seguente software open source per funzionare:" }}</p>
-      {% if page.opensource_list %}
-        <ul>
-          {% for item in page.opensource_list %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
+    <!-- Combined QR Code and Open Source Section -->
+    <section class="combined-section">
+      <div class="qr-code-column">
+        <h2>{{ page.qr_title | default: "Connettiti al Wallet" }}</h2>
+        <img src="{{ page.qr_image | default: '/assets/images/wallet-qr-code.png' }}" alt="QR Code per la connessione">
+        <p>{{ page.qr_description | default: "Scansiona questo codice QR per connetterti al wallet" }}</p>
+      </div>
+      <div class="open-source-column">
+        <h2>{{ page.opensource_title | default: "Software Open Source" }}</h2>
+        <p>{{ page.opensource_description | default: "Il nostro wallet utilizza il seguente software open source per funzionare:" }}</p>
+        {% if page.opensource_list %}
+          <ul>
+            {% for item in page.opensource_list %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
     </section>
   </main>
 </div>
