@@ -2,6 +2,7 @@
 $text-color: #ffffff;
 $accent-color: #4CAF50;
 $background-color: #121212;
+$card-bg-color: #1E1E1E; // Aggiunto per il background del menu mobile
 
 .main-nav {
   .nav-list {
@@ -10,23 +11,20 @@ $background-color: #121212;
     margin: 0;
     display: flex;
   }
-
   .nav-item {
-    margin-left: 1.5rem; // Aumentato leggermente per più spazio
-
+    margin-left: 1.5rem;
     &:first-child {
-      margin-left: 0; // Rimuove il margine dal primo elemento
+      margin-left: 0;
     }
   }
-
   .nav-link {
-    color: rgba($text-color, 0.8); // Leggera trasparenza per un look più sofisticato
+    color: rgba($text-color, 0.8);
     text-decoration: none;
     transition: color 0.3s ease, transform 0.2s ease;
-    font-weight: 600; // Leggermente meno bold per un look più moderno
-    padding: 5px 0; // Aggiunge un po' di padding verticale
-    position: relative; // Per l'effetto underline
-
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+    
     &::after {
       content: '';
       position: absolute;
@@ -37,35 +35,96 @@ $background-color: #121212;
       background-color: $accent-color;
       transition: width 0.3s ease;
     }
-
+    
     &:hover,
     &.active {
       color: $accent-color;
-      transform: translateY(-2px); // Leggero effetto di sollevamento
-
+      transform: translateY(-2px);
+      
       &::after {
-        width: 100%; // Effetto underline al passaggio del mouse o quando attivo
+        width: 100%;
       }
     }
   }
 }
 
+// Styles for mobile menu toggle button
+.menu-toggle {
+  display: none;
+}
+
 // Responsive styles
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: $text-color;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+  }
+
   .main-nav {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: $card-bg-color;
+    transition: right 0.3s ease;
+    z-index: 1000;
     
     .nav-list {
-      flex-direction: column; // Cambia in colonna su schermi piccoli
-      align-items: center;
+      flex-direction: column;
+      padding-top: 60px;
       
       .nav-item {
-        margin: 10px 0; // Spazio verticale tra gli elementi
+        margin: 0;
       }
-
+      
       .nav-link {
-        font-size: 1.1rem; // Aumenta leggermente la dimensione per una migliore leggibilità su mobile
-        padding: 8px 0; // Aumenta l'area cliccabile su mobile
+        display: block;
+        padding: 15px 20px;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba($text-color, 0.1);
+        
+        &::after {
+          display: none;
+        }
+        
+        &:hover,
+        &.active {
+          transform: none;
+          background-color: rgba($accent-color, 0.1);
+        }
+      }
+    }
+  }
+
+  // Styles for when the menu is open
+  .menu-open {
+    .main-nav {
+      right: 0;
+    }
+
+    .menu-toggle {
+      span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
       }
     }
   }
