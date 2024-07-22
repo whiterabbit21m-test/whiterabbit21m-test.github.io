@@ -1,5 +1,7 @@
 // Reset di base
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,13 +13,25 @@ $text-color: #ffffff;
 $accent-color: #4CAF50;
 $link-color: #4CAF50;
 
-// Stili di base per il body
+// Variabili aggiuntive
+$font-size-base: 16px;
+$line-height-base: 1.6;
+$font-family-base: Arial, sans-serif;
+
+// Stili di base per html e body
+html {
+  font-size: $font-size-base;
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
+  font-family: $font-family-base;
+  font-size: 1rem;
+  line-height: $line-height-base;
   color: $text-color;
   background-color: $background-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 // Stili di base per i link
@@ -25,39 +39,44 @@ a {
   color: $link-color;
   text-decoration: none;
   transition: color 0.3s ease;
-
-  &:hover {
+  
+  &:hover,
+  &:focus {
     color: lighten($link-color, 10%);
+    outline: none;
   }
 }
 
 // Stili di base per i titoli
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 15px;
+  margin-bottom: 0.5em;
   font-weight: bold;
   color: $accent-color;
+  line-height: 1.2;
 }
 
 // Stili di base per i paragrafi
 p {
-  margin-bottom: 20px;
+  margin-bottom: 1em;
 }
 
 // Stili di base per le liste
 ul, ol {
-  margin-bottom: 20px;
-  padding-left: 20px;
+  margin-bottom: 1em;
+  padding-left: 1.5em;
 }
 
 // Stili di base per le immagini
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 // Container di base
 .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -68,5 +87,24 @@ img {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// Media query di base
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
 }
