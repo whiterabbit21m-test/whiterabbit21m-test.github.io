@@ -22,6 +22,7 @@ $card-bg-color: #1E1E1E;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative; // Aggiunto per il posizionamento assoluto del toggle
 }
 
 .logo {
@@ -55,24 +56,20 @@ $card-bg-color: #1E1E1E;
   }
 }
 
-// Stili per il toggle del menu
 .menu-toggle {
-  display: none; // Nascosto di default
+  display: none;
 }
 
-// Responsive styles
 @media (max-width: 768px) {
   .site-header {
     .header-container {
-      flex-wrap: nowrap; // Cambiato da wrap a nowrap
-      justify-content: space-between; // Cambiato da center a space-between
+      justify-content: center; // Centra il contenuto
       padding: 10px 20px;
     }
 
     .logo {
-      flex-grow: 1; // Permette al logo di occupare lo spazio disponibile
       text-align: center;
-
+      
       .site-title {
         display: block;
         margin-left: 0;
@@ -86,15 +83,17 @@ $card-bg-color: #1E1E1E;
       border: none;
       cursor: pointer;
       padding: 10px;
-      margin-left: auto; // Spinge il toggle a destra
+      position: absolute; // Posizionamento assoluto
+      right: 20px; // Allinea a destra
+      top: 50%; // Centra verticalmente
+      transform: translateY(-50%); // Aggiusta il centramento verticale
     }
 
     .site-nav {
-      display: none; // Nasconde la navigazione su mobile
+      display: none;
     }
   }
 
-  // Stili per il menu mobile aperto (da aggiungere al tuo CSS esistente per il menu mobile)
   body.menu-open .site-nav {
     display: block;
     position: fixed;
