@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Bitcoin: Online Ininterrottamente dal 2009
+title: "Bitcoin: Online Ininterrottamente dal 2009"
 ---
 
 <div class="bitcoin-uptime">
