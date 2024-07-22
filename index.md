@@ -5,7 +5,7 @@ subtitle: Bitcoin Lightning Wallet on Telegram ⚡️ w built-in POS and Scrub.
 wallet_title: Launch the wallet on Telegram
 cta_link: https://t.me/VentunoTipBot
 cta_text: Go to @VentunoTipBot
-wallet_screenshot: /assets/images/tuo-screenshot.png
+wallet_screenshot: /assets/images/wallet-screenshot.png
 qr_title: Connect
 qr_image: /assets/images/wallet-qr-code.png
 qr_description: Scan on your mobile and connect to the Bot
