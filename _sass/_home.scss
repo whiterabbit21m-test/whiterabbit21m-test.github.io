@@ -137,7 +137,9 @@ $smartphone-color: #333333;
       }
 
       img {
-        max-width: 200px;
+        max-width: 300px; // Aumentato da 200px a 300px
+        width: 100%; // Assicura che l'immagine si adatti ai contenitori più piccoli
+        height: auto; // Mantiene le proporzioni
         margin-bottom: 20px;
       }
 
@@ -214,7 +216,7 @@ $smartphone-color: #333333;
       }
 
       .qr-code img {
-        max-width: 150px;
+        max-width: 250px;
       }
 
       .open-source {
