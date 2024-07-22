@@ -13,15 +13,17 @@ layout: default
 
   <!-- Main Content -->
   <main class="main-content">
-    <!-- Wallet Info and Smartphone Image -->
+    <!-- Wallet Info Section -->
     <section class="wallet-info">
       <div class="info-text">
         <h2>{{ page.wallet_title | default: "Il Nostro Wallet Lightning" }}</h2>
         {{ content }}
         <a href="{{ page.cta_link | default: '#' }}" class="cta-button">{{ page.cta_text | default: "Visita il Sito del Wallet" }}</a>
       </div>
-      <div class="smartphone-image">
-        <img src="{{ page.wallet_image | default: '/assets/images/wallet-screenshot.png' }}" alt="Schermata principale del wallet">
+      <div class="smartphone-container">
+        <div class="smartphone">
+          <div class="screenshot" style="background-image: url('{{ page.wallet_screenshot | default: "/assets/images/wallet-screenshot.png" }}');"></div>
+        </div>
       </div>
     </section>
 
