@@ -1,6 +1,6 @@
 ---
 layout: home
-title: @VentunoTipBot
+title: VentunoTipBot
 subtitle: Bitcoin Lightning Wallet on Telegram ⚡️ w built-in POS and Scrub.
 wallet_title: Launch the wallet on Telegram
 cta_link: https://t.me/VentunoTipBot
