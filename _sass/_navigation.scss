@@ -2,7 +2,16 @@
 $text-color: #ffffff;
 $accent-color: #4CAF50;
 $background-color: #121212;
-$card-bg-color: #1E1E1E; // Aggiunto per il background del menu mobile
+$card-bg-color: #1E1E1E;
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: none; // Nascosto di default
+}
 
 .main-nav {
   .nav-list {
@@ -11,12 +20,15 @@ $card-bg-color: #1E1E1E; // Aggiunto per il background del menu mobile
     margin: 0;
     display: flex;
   }
+
   .nav-item {
     margin-left: 1.5rem;
+
     &:first-child {
       margin-left: 0;
     }
   }
+
   .nav-link {
     color: rgba($text-color, 0.8);
     text-decoration: none;
@@ -48,13 +60,11 @@ $card-bg-color: #1E1E1E; // Aggiunto per il background del menu mobile
   }
 }
 
-// Styles for mobile menu toggle button
-.menu-toggle {
-  display: none;
-}
-
-// Responsive styles
 @media (max-width: 768px) {
+  .nav-wrapper {
+    justify-content: flex-end; // Spinge il bottone a destra
+  }
+
   .menu-toggle {
     display: block;
     background: none;
@@ -76,7 +86,7 @@ $card-bg-color: #1E1E1E; // Aggiunto per il background del menu mobile
   .main-nav {
     position: fixed;
     top: 0;
-    right: -250px;
+    right: -250px; // Nascosto fuori dallo schermo
     width: 250px;
     height: 100vh;
     background-color: $card-bg-color;
@@ -85,35 +95,33 @@ $card-bg-color: #1E1E1E; // Aggiunto per il background del menu mobile
     
     .nav-list {
       flex-direction: column;
-      padding-top: 60px;
-      
-      .nav-item {
-        margin: 0;
+      padding-top: 60px; // Spazio per il pulsante di toggle
+    }
+
+    .nav-item {
+      margin: 0;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 15px 20px;
+      border-bottom: 1px solid rgba($text-color, 0.1);
+
+      &::after {
+        display: none;
       }
-      
-      .nav-link {
-        display: block;
-        padding: 15px 20px;
-        font-size: 1.1rem;
-        border-bottom: 1px solid rgba($text-color, 0.1);
-        
-        &::after {
-          display: none;
-        }
-        
-        &:hover,
-        &.active {
-          transform: none;
-          background-color: rgba($accent-color, 0.1);
-        }
+
+      &:hover,
+      &.active {
+        transform: none;
+        background-color: rgba($accent-color, 0.1);
       }
     }
   }
 
-  // Styles for when the menu is open
-  .menu-open {
+  body.menu-open {
     .main-nav {
-      right: 0;
+      right: 0; // Mostra il menu
     }
 
     .menu-toggle {
@@ -128,4 +136,40 @@ $card-bg-color: #1E1E1E; // Aggiunto per il background del menu mobile
       }
     }
   }
+
+  // Previeni lo scrolling del body quando il menu è aperto
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  // Overlay scuro quando il menu è aperto
+  body.menu-open::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
+
+// Animazione per il menu mobile
+@keyframes slideIn {
+  from { right: -250px; }
+  to { right: 0; }
+}
+
+@keyframes slideOut {
+  from { right: 0; }
+  to { right: -250px; }
+}
+
+body.menu-open .main-nav {
+  animation: slideIn 0.3s forwards;
+}
+
+body:not(.menu-open) .main-nav {
+  animation: slideOut 0.3s forwards;
 }
