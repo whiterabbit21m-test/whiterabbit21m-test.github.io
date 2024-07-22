@@ -13,6 +13,7 @@ $card-bg-color: #1E1E1E;
   left: 0;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: padding 0.3s ease;
 }
 
 .header-container {
@@ -22,7 +23,7 @@ $card-bg-color: #1E1E1E;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  position: relative; // Aggiunto per il posizionamento assoluto del toggle
+  position: relative;
 }
 
 .logo {
@@ -34,6 +35,7 @@ $card-bg-color: #1E1E1E;
     max-height: 50px;
     width: auto;
     vertical-align: middle;
+    transition: max-height 0.3s ease;
   }
   .site-title {
     font-size: 1.5rem;
@@ -41,6 +43,7 @@ $card-bg-color: #1E1E1E;
     color: $text-color;
     margin-left: 10px;
     vertical-align: middle;
+    transition: font-size 0.3s ease;
   }
 }
 
@@ -62,53 +65,66 @@ $card-bg-color: #1E1E1E;
 
 @media (max-width: 768px) {
   .site-header {
-    .header-container {
-      justify-content: center; // Centra il contenuto
-      padding: 10px 20px;
-    }
+    padding: 0.5rem 0; // Ridotto il padding verticale
+  }
 
-    .logo {
-      text-align: center;
-      
-      .site-title {
-        display: block;
-        margin-left: 0;
-        margin-top: 5px;
-      }
-    }
+  .header-container {
+    padding: 0 10px; // Ridotto il padding orizzontale
+  }
 
-    .menu-toggle {
-      display: block;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      position: absolute; // Posizionamento assoluto
-      right: 20px; // Allinea a destra
-      top: 50%; // Centra verticalmente
-      transform: translateY(-50%); // Aggiusta il centramento verticale
+  .logo {
+    .logo-image {
+      max-height: 40px; // Ridotta l'altezza massima del logo
     }
+    .site-title {
+      font-size: 1.2rem; // Ridotta la dimensione del testo del titolo
+    }
+  }
 
-    .site-nav {
-      display: none;
-    }
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px; // Ridotto il padding
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem; // Ridotta la dimensione dell'icona del menu
+  }
+
+  .site-nav {
+    display: none;
   }
 
   body.menu-open .site-nav {
     display: block;
     position: fixed;
-    top: 70px; // Regola questo valore in base all'altezza del tuo header
+    top: 60px; // Regolato in base alla nuova altezza dell'header
     left: 0;
     right: 0;
     background-color: $card-bg-color;
-    padding: 20px;
+    padding: 15px; // Ridotto il padding
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 
     .nav-link {
       display: block;
-      margin: 10px 0;
-      padding: 10px;
+      margin: 8px 0; // Ridotto il margine
+      padding: 8px; // Ridotto il padding
       text-align: center;
+      font-size: 1rem; // Ridotta la dimensione del testo dei link
     }
+  }
+}
+
+// Stile per il pulsante toggle (se stai usando un'icona hamburger)
+.menu-toggle {
+  span {
+    display: block;
+    width: 20px; // Ridotta la larghezza
+    height: 2px; // Ridotta l'altezza
+    background-color: $text-color;
+    margin: 4px 0; // Ridotto il margine
   }
 }
