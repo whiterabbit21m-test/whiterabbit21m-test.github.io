@@ -156,7 +156,8 @@ $smartphone-color: #333333;
       background-color: $card-bg-color;
       padding: 40px;
       border-radius: 8px;
-
+      width: 100%;
+      box-sizing: border-box;
       h2 {
         color: $text-color-light;
         margin-bottom: 20px;
