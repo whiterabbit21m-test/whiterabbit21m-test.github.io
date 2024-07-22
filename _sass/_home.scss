@@ -185,7 +185,7 @@ $smartphone-color: #333333;
 }
 
 // Responsive design
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .home-container {
     .hero {
       padding: 60px 0;
@@ -200,26 +200,6 @@ $smartphone-color: #333333;
 
       .wallet-info {
         flex-direction: column;
-
-        .info-text {
-          padding-right: 0;
-          margin-bottom: 40px;
-        }
-
-        .smartphone-container {
-          max-width: 250px;
-        }
-      }
-    }
-  }
-}
-
-// Media query per dispositivi mobili
-@media screen and (max-width: 768px) {
-  .home-container {
-    .main-content {
-      .wallet-info {
-        flex-direction: column;
         align-items: center;
 
         .info-text {
@@ -231,6 +211,14 @@ $smartphone-color: #333333;
         .smartphone-container {
           display: none; // Nasconde il container smartphone su schermi piccoli
         }
+      }
+
+      .qr-code img {
+        max-width: 150px;
+      }
+
+      .open-source {
+        padding: 30px;
       }
     }
   }
