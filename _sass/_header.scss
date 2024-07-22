@@ -5,26 +5,21 @@ $accent-color: #4CAF50;
 $card-bg-color: #1E1E1E;
 
 .site-header {
-  background-color: $card-bg-color; // Cambiato da #333 per coerenza
+  background-color: $card-bg-color;
   padding: 1rem 0;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); // Aggiunto per dare profondità
-  transition: background-color 0.3s ease; // Transizione fluida per eventuali cambiamenti
-
-  &:hover {
-    background-color: lighten($card-bg-color, 5%); // Leggero effetto hover
-  }
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px; // Consistente con il resto del layout
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -32,30 +27,25 @@ $card-bg-color: #1E1E1E;
 .logo {
   .logo-link {
     display: inline-block;
-    text-decoration: none; // Assicura che non ci siano sottolineature indesiderate
-    transition: opacity 0.3s ease;
-
-    &:hover {
-      opacity: 0.8; // Leggero effetto hover
-    }
+    text-decoration: none;
   }
 
   .logo-image {
     max-height: 50px;
     width: auto;
-    vertical-align: middle; // Allinea meglio l'immagine con il testo
+    vertical-align: middle;
   }
 
   .site-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: $text-color; // Cambiato da #fff per coerenza
-    margin-left: 10px; // Spazio tra logo e testo, se presenti entrambi
+    color: $text-color;
+    margin-left: 10px;
     vertical-align: middle;
   }
 }
 
-// Aggiunto per la navigazione, se presente
+// Stili per la navigazione, se presente
 .site-nav {
   .nav-link {
     color: rgba($text-color, 0.8);
@@ -84,7 +74,7 @@ $card-bg-color: #1E1E1E;
       width: 100%;
 
       .site-title {
-        display: block; // Mette il titolo sotto il logo su schermi piccoli
+        display: block;
         margin-left: 0;
         margin-top: 5px;
       }
