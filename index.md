@@ -16,13 +16,11 @@ tech_features:
 applications:
   - title: "Finanza Decentralizzata"
     description: "Rivoluziona i servizi finanziari tradizionali con soluzioni peer-to-peer, offrendo maggiore accessibilità e controllo agli utenti."
-  - title: "Supply Chain"
-    description: "Migliora la tracciabilità e la trasparenza nelle catene di approvvigionamento globali, riducendo frodi e inefficienze."
 cta_title: "Unisciti alla Rivoluzione Bitcoin"
 cta_text: "Scopri di Più"
 cta_link: "/learn-more"
 ---
 
-# Benvenuti nel Futuro della Tecnologia Blockchain
+# Benvenuti nel Futuro della Tecnologia Bitcoin
 
 Bitcoin sta trasformando il mondo digitale. Esplora le innovazioni e le applicazioni che stanno plasmando il futuro.
