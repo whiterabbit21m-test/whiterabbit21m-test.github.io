@@ -5,6 +5,9 @@ $accent-color: #4CAF50;
 $card-bg-color: #1E1E1E;
 $smartphone-color: #333333;
 
+// Variabile per la larghezza massima
+$max-width: 1200px;
+
 .home-container {
   background-color: $home-bg-color;
   color: $text-color-light;
@@ -32,12 +35,18 @@ $smartphone-color: #333333;
   // Main Content
   .main-content {
     padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     // Wallet Info Section
     .wallet-info {
       display: flex;
       align-items: center;
+      justify-content: center;
       margin-bottom: 60px;
+      width: 100%;
+      max-width: $max-width;
 
       .info-text {
         flex: 1;
@@ -78,7 +87,7 @@ $smartphone-color: #333333;
           position: relative;
           width: 100%;
           height: 0;
-          padding-bottom: 200%; // Rapporto d'aspetto 2:1 per uno smartphone
+          padding-bottom: 200%;
           background-color: $smartphone-color;
           border-radius: 30px;
           box-shadow: 0 0 0 10px lighten($smartphone-color, 10%),
@@ -102,7 +111,7 @@ $smartphone-color: #333333;
           &::after {
             content: '';
             position: absolute;
-            bottom: 10px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
             height: 40px;
@@ -113,11 +122,11 @@ $smartphone-color: #333333;
 
           .screenshot {
             position: absolute;
-            top: 5%; // Ridotto da 20px a 5%
-            left: 5%; // Modificato da 10px a 5%
-            right: 5%; // Modificato da 10px a 5%
-            bottom: 10%; // Modificato da 60px a 5%
-            background-size: contain; // Cambiato da 'cover' a 'contain'
+            top: 5%;
+            left: 5%;
+            right: 5%;
+            bottom: 15%;
+            background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
             border-radius: 2px;
@@ -126,59 +135,71 @@ $smartphone-color: #333333;
       }
     }
 
-    // QR Code Section
-    .qr-code {
-      text-align: center;
+    // Combined QR Code and Open Source Section
+    .combined-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
       margin-bottom: 60px;
+      max-width: $max-width;
+      width: 100%;
 
-      h2 {
-        color: $text-color-light;
-        margin-bottom: 20px;
+      .qr-code-column,
+      .open-source-column {
+        flex: 1;
+        padding: 20px;
       }
 
-      img {
-        max-width: 300px; // Aumentato da 200px a 300px
-        width: 100%; // Assicura che l'immagine si adatti ai contenitori più piccoli
-        height: auto; // Mantiene le proporzioni
-        margin-bottom: 20px;
-      }
+      .qr-code-column {
+        text-align: center;
 
-      p {
-        color: rgba($text-color-light, 0.9);
-      }
-    }
+        h2 {
+          color: $text-color-light;
+          margin-bottom: 20px;
+        }
 
-    // Open Source Software Section
-    .open-source {
-      background-color: $card-bg-color;
-      padding: 40px;
-      border-radius: 8px;
+        img {
+          max-width: 250px;
+          width: 100%;
+          height: auto;
+          margin-bottom: 20px;
+        }
 
-      h2 {
-        color: $text-color-light;
-        margin-bottom: 20px;
-      }
-
-      p {
-        color: rgba($text-color-light, 0.9);
-        margin-bottom: 20px;
-      }
-
-      ul {
-        list-style-type: none;
-        padding-left: 0;
-
-        li {
+        p {
           color: rgba($text-color-light, 0.9);
-          margin-bottom: 10px;
-          padding-left: 20px;
-          position: relative;
+        }
+      }
 
-          &:before {
-            content: "•";
-            color: $accent-color;
-            position: absolute;
-            left: 0;
+      .open-source-column {
+        background-color: $card-bg-color;
+        border-radius: 8px;
+
+        h2 {
+          color: $text-color-light;
+          margin-bottom: 20px;
+        }
+
+        p {
+          color: rgba($text-color-light, 0.9);
+          margin-bottom: 20px;
+        }
+
+        ul {
+          list-style-type: none;
+          padding-left: 0;
+
+          li {
+            color: rgba($text-color-light, 0.9);
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+
+            &:before {
+              content: "•";
+              color: $accent-color;
+              position: absolute;
+              left: 0;
+            }
           }
         }
       }
@@ -215,12 +236,14 @@ $smartphone-color: #333333;
         }
       }
 
-      .qr-code img {
-        max-width: 250px;
-      }
+      .combined-section {
+        flex-direction: column;
 
-      .open-source {
-        padding: 30px;
+        .qr-code-column,
+        .open-source-column {
+          width: 100%;
+          margin-bottom: 30px;
+        }
       }
     }
   }
