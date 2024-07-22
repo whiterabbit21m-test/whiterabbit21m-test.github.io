@@ -1,15 +1,39 @@
-// Variabili
+// Variabili (assicurati che corrispondano a quelle del tuo file principale di variabili)
 $background-color: #121212;
 $text-color: #ffffff;
 $accent-color: #4CAF50;
 $card-background: #1E1E1E;
 $meta-color: #999;
 
-body {
-  background-color: $background-color;
-  color: $text-color;
+// Mixins
+@mixin card-style {
+  background-color: $card-background;
+  border-radius: 8px;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
 }
 
+@mixin button-style {
+  display: inline-block;
+  background-color: $accent-color;
+  color: $text-color;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  
+  &:hover, &:focus {
+    background-color: darken($accent-color, 10%);
+    outline: none;
+  }
+}
+
+// Stili generali
 .blog-page,
 .post {
   background-color: $background-color;
@@ -22,10 +46,10 @@ body {
 .page-header {
   text-align: center;
   margin-bottom: 40px;
-
+  
   .page-title {
     font-size: 2.5em;
-    color: $accent-color;
+    color: $text-color; // Cambiato da $accent-color per coerenza
   }
 }
 
@@ -33,55 +57,40 @@ body {
 .post-list {
   list-style-type: none;
   padding: 0;
-
+  
   .post-item {
-    background-color: $card-background;
-    border-radius: 8px;
-    padding: 30px;
+    @include card-style;
     margin-bottom: 30px;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
-
+    
     h2 {
       margin-bottom: 10px;
-
+      
       .post-link {
         color: $accent-color;
         text-decoration: none;
         font-size: 1.5em;
-
-        &:hover {
+        transition: color 0.3s ease;
+        
+        &:hover, &:focus {
           text-decoration: underline;
+          color: lighten($accent-color, 10%);
         }
       }
     }
-
+    
     .post-meta {
       font-size: 0.9em;
       color: $meta-color;
       margin-bottom: 15px;
       display: block;
     }
-
+    
     .post-excerpt {
       margin-bottom: 15px;
     }
-
+    
     .read-more {
-      display: inline-block;
-      background-color: $accent-color;
-      color: $text-color;
-      padding: 8px 15px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: darken($accent-color, 10%);
-      }
+      @include button-style;
     }
   }
 }
@@ -90,21 +99,11 @@ body {
 .pagination {
   text-align: center;
   margin-top: 40px;
-
+  
   .previous, .next {
-    display: inline-block;
-    background-color: $accent-color;
-    color: $text-color;
-    padding: 8px 15px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: darken($accent-color, 10%);
-    }
+    @include button-style;
   }
-
+  
   .page_number {
     margin: 0 15px;
     color: $meta-color;
@@ -115,62 +114,62 @@ body {
 .post {
   .post-header {
     margin-bottom: 40px;
-
+    
     .post-title {
       font-size: 2.5em;
-      color: $accent-color;
+      color: $text-color; // Cambiato da $accent-color per coerenza
       margin-bottom: 10px;
     }
-
+    
     .post-meta {
       font-size: 0.9em;
       color: $meta-color;
     }
   }
-
+  
   .post-content {
     line-height: 1.8;
-
+    
     h2, h3, h4, h5, h6 {
-      color: $accent-color;
+      color: $text-color; // Cambiato da $accent-color per coerenza
       margin-top: 30px;
       margin-bottom: 15px;
     }
-
+    
     p {
       margin-bottom: 20px;
     }
-
+    
     a {
       color: $accent-color;
       text-decoration: none;
       transition: color 0.3s ease;
-
-      &:hover {
+      
+      &:hover, &:focus {
         color: lighten($accent-color, 10%);
         text-decoration: underline;
       }
     }
-
+    
     ul, ol {
       margin-bottom: 20px;
       padding-left: 20px;
     }
-
+    
     img {
       max-width: 100%;
       height: auto;
       margin: 20px 0;
       border-radius: 8px;
     }
-
+    
     code {
       background-color: #2c2c2c;
       color: $accent-color;
       padding: 2px 5px;
       border-radius: 3px;
     }
-
+    
     pre {
       background-color: #2c2c2c;
       color: $text-color;
@@ -178,14 +177,14 @@ body {
       border-radius: 5px;
       overflow-x: auto;
       margin-bottom: 20px;
-
+      
       code {
         background-color: transparent;
         color: inherit;
         padding: 0;
       }
     }
-
+    
     blockquote {
       border-left: 4px solid $accent-color;
       padding-left: 20px;
@@ -200,18 +199,25 @@ body {
 @media (max-width: 768px) {
   .blog-page,
   .post {
-    padding: 40px 0;
+    padding: 40px 20px; // Aggiunto padding orizzontale
   }
-
+  
   .page-header .page-title {
     font-size: 2em;
   }
-
+  
   .post-item h2 .post-link {
     font-size: 1.3em;
   }
-
+  
   .post .post-header .post-title {
     font-size: 2em;
+  }
+  
+  .pagination {
+    .previous, .next {
+      display: block;
+      margin-bottom: 10px;
+    }
   }
 }
