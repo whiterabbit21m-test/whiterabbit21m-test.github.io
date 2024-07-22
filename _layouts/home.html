@@ -4,8 +4,8 @@ layout: default
 <div class="home">
   <section class="hero">
     <div class="container">
-      <h1>{{ page.title | default: "Bitcoin: Tecnologia del Futuro" }}</h1>
-      <p>{{ page.subtitle | default: "Esplorando l'innovazione blockchain oltre la criptovaluta" }}</p>
+      <h1>{{ page.title }}</h1>
+      <p>{{ page.subtitle }}</p>
     </div>
   </section>
 
@@ -15,11 +15,15 @@ layout: default
         <div class="tech-overview">
           <h2>La Tecnologia Blockchain</h2>
           <p>{{ page.tech_description }}</p>
-          <ul class="feature-list">
+          <div class="tech-features">
             {% for feature in page.tech_features %}
-              <li><i class="fas fa-{{ feature.icon }}"></i> {{ feature.name }}</li>
+              <div class="feature-card">
+                <i class="fas fa-{{ feature.icon }}"></i>
+                <h3>{{ feature.name }}</h3>
+                <p>{{ feature.description }}</p>
+              </div>
             {% endfor %}
-          </ul>
+          </div>
         </div>
         <div class="applications">
           <h2>Applicazioni Reali</h2>
@@ -36,8 +40,8 @@ layout: default
 
   <section class="cta">
     <div class="container">
-      <h2>{{ page.cta_title | default: "Unisciti alla Rivoluzione" }}</h2>
-      <a href="{{ page.cta_link | default: '#' }}" class="cta-button">{{ page.cta_text | default: "Scopri di Più" }}</a>
+      <h2>{{ page.cta_title }}</h2>
+      <a href="{{ page.cta_link }}" class="cta-button">{{ page.cta_text }}</a>
     </div>
   </section>
 </div>
