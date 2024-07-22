@@ -1,10 +1,9 @@
-// Variabili
-$bg-color: #121212;
-$text-color: #ffffff;
-$accent-color: #4CAF50;
-$card-bg-color: #1E1E1E;
+$bg-color: #f0f0f0;
+$text-color: #333;
+$accent-color: #ff9900;
+$card-bg: #ffffff;
 
-.home {
+.bitcoin-status-home {
   background-color: $bg-color;
   color: $text-color;
 
@@ -18,15 +17,14 @@ $card-bg-color: #1E1E1E;
     padding: 60px 0;
   }
 
-  h1, h2 {
-    color: $text-color;
+  h1, h2, h3 {
     margin-bottom: 20px;
   }
 
-  // Hero Section
   .hero {
+    background-color: $accent-color;
+    color: white;
     text-align: center;
-    background-color: darken($bg-color, 3%);
 
     h1 {
       font-size: 2.5em;
@@ -38,113 +36,71 @@ $card-bg-color: #1E1E1E;
     }
   }
 
-  // Main Content Section
-  .main-content {
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+  .realtime-status {
+    .uptime-counter {
+      text-align: center;
+      margin-bottom: 40px;
 
-      @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .tech-overview, .applications {
-      background-color: $card-bg-color;
-      padding: 30px;
-      border-radius: 8px;
-    }
-
-    .tech-overview {
-      h2 {
-        color: $accent-color;
+      #uptime-clock {
         font-size: 2em;
-        margin-bottom: 20px;
-        text-align: center;
-      }
-
-      p {
-        color: rgba($text-color, 0.9);
-        font-size: 1.1em;
-        line-height: 1.6;
-        margin-bottom: 30px;
-        text-align: center;
-      }
-
-      .tech-features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-
-        .feature-card {
-          background-color: darken($card-bg-color, 5%);
-          padding: 20px;
-          border-radius: 8px;
-          text-align: center;
-          transition: transform 0.3s ease;
-
-          &:hover {
-            transform: translateY(-5px);
-          }
-
-          i {
-            font-size: 2.5em;
-            color: $accent-color;
-            margin-bottom: 15px;
-          }
-
-          h3 {
-            color: $text-color;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-          }
-
-          p {
-            color: rgba($text-color, 0.8);
-            font-size: 0.9em;
-            line-height: 1.4;
-          }
-        }
+        font-weight: bold;
+        color: $accent-color;
       }
     }
 
-    .applications {
-      h2 {
-        color: $accent-color;
-        font-size: 2em;
-        margin-bottom: 20px;
-      }
+    .key-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 40px;
 
-      .app-item {
-        margin-bottom: 20px;
+      .stat-item {
+        background-color: $card-bg;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        text-align: center;
 
         h3 {
-          color: $text-color;
-          font-size: 1.2em;
-          margin-bottom: 10px;
+          color: $accent-color;
         }
 
         p {
-          color: rgba($text-color, 0.8);
+          font-size: 1.5em;
+          font-weight: bold;
         }
+      }
+    }
+
+    .network-graph {
+      background-color: $card-bg;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      #transaction-chart {
+        height: 300px;
+        // Il grafico verrà stilizzato dal JavaScript/libreria di grafici
       }
     }
   }
 
-  // CTA Section
-  .cta {
+  .blockchain-info {
     text-align: center;
-    background-color: darken($bg-color, 3%);
 
-    h2 {
-      margin-bottom: 30px;
+    p {
+      max-width: 800px;
+      margin: 0 auto 30px;
     }
 
-    .cta-button {
+    .learn-more-btn {
       display: inline-block;
       background-color: $accent-color;
-      color: $text-color;
+      color: white;
       padding: 12px 24px;
       border-radius: 5px;
       text-decoration: none;
@@ -159,18 +115,14 @@ $card-bg-color: #1E1E1E;
 }
 
 @media (max-width: 768px) {
-  .home {
-    section {
-      padding: 40px 0;
-    }
+  .bitcoin-status-home {
+    .realtime-status {
+      .key-stats {
+        flex-direction: column;
 
-    .hero h1 {
-      font-size: 2em;
-    }
-
-    .main-content {
-      .tech-overview, .applications {
-        padding: 20px;
+        .stat-item {
+          margin-bottom: 20px;
+        }
       }
     }
   }
