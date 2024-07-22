@@ -1,9 +1,15 @@
-// Variabile per la larghezza massima (deve corrispondere a quella in _layout.scss)
+// Variabili (assicurati che corrispondano a quelle del tuo file principale di variabili)
 $max-width: 1200px;
+$background-color: #121212;
+$text-color: #ffffff;
+$accent-color: #4CAF50;
+$meta-color: #999;
+$border-color: #444;
+$code-bg-color: #2c2c2c;
 
 .post {
-  background-color: #121212;
-  color: #ffffff;
+  background-color: $background-color;
+  color: $text-color;
   padding: 60px 0;
   width: 100%;
   
@@ -18,13 +24,13 @@ $max-width: 1200px;
     
     .post-title {
       font-size: 2.5em;
-      color: #4CAF50;
+      color: $text-color; // Cambiato da $accent-color per coerenza
       margin-bottom: 10px;
     }
     
     .post-meta {
       font-size: 0.9em;
-      color: #999;
+      color: $meta-color;
     }
   }
   
@@ -32,7 +38,7 @@ $max-width: 1200px;
     line-height: 1.8;
     
     h2, h3, h4, h5, h6 {
-      color: #4CAF50;
+      color: $text-color; // Cambiato da $accent-color per coerenza
       margin-top: 30px;
       margin-bottom: 15px;
     }
@@ -48,12 +54,12 @@ $max-width: 1200px;
     }
     
     a {
-      color: #4CAF50;
+      color: $accent-color;
       text-decoration: none;
       transition: color 0.3s ease;
       
-      &:hover {
-        color: lighten(#4CAF50, 10%);
+      &:hover, &:focus {
+        color: lighten($accent-color, 10%);
         text-decoration: underline;
       }
     }
@@ -62,11 +68,11 @@ $max-width: 1200px;
       margin-bottom: 20px;
       padding-left: 20px;
     }
-
+    
     li {
       margin-bottom: 10px;
     }
-
+    
     img {
       max-width: 100%;
       height: auto;
@@ -74,104 +80,104 @@ $max-width: 1200px;
       display: block;
       border-radius: 5px;
     }
-
+    
     blockquote {
-      border-left: 4px solid #4CAF50;
+      border-left: 4px solid $accent-color;
       padding-left: 20px;
       margin: 20px 0;
       font-style: italic;
-      color: #bbb;
+      color: $meta-color;
     }
-
+    
     code {
-      background-color: #2c2c2c;
+      background-color: $code-bg-color;
       padding: 2px 5px;
       border-radius: 3px;
       font-family: 'Courier New', Courier, monospace;
     }
-
+    
     pre {
-      background-color: #2c2c2c;
+      background-color: $code-bg-color;
       padding: 15px;
       border-radius: 5px;
       overflow-x: auto;
       margin-bottom: 20px;
-
+      
       code {
         background-color: transparent;
         padding: 0;
       }
     }
-
+    
     table {
       width: 100%;
       border-collapse: collapse;
       margin-bottom: 20px;
-
+      
       th, td {
-        border: 1px solid #444;
+        border: 1px solid $border-color;
         padding: 8px;
         text-align: left;
       }
-
+      
       th {
-        background-color: #2c2c2c;
+        background-color: $code-bg-color;
       }
     }
   }
 }
 
-// Stili per la navigazione tra i post (se presente)
+// Stili per la navigazione tra i post
 .post-navigation {
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 1px solid #444;
+  border-top: 1px solid $border-color;
   display: flex;
   justify-content: space-between;
-
+  
   .prev-post,
   .next-post {
     flex: 1;
   }
-
+  
   .next-post {
     text-align: right;
   }
-
+  
   a {
-    color: #4CAF50;
+    color: $accent-color;
     text-decoration: none;
     transition: color 0.3s ease;
-
-    &:hover {
-      color: lighten(#4CAF50, 10%);
+    
+    &:hover, &:focus {
+      color: lighten($accent-color, 10%);
       text-decoration: underline;
     }
   }
 }
 
-// Stili per i commenti (se presenti)
+// Stili per i commenti
 .post-comments {
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 1px solid #444;
+  border-top: 1px solid $border-color;
 }
 
 // Responsive styles for posts
 @media (max-width: 768px) {
   .post {
     padding: 40px 0;
-
+    
     .container {
       padding: 0 15px;
     }
-
+    
     .post-header {
       .post-title {
         font-size: 2rem;
       }
     }
-
+    
     .post-content {
       h2 { font-size: 1.75em; }
       h3 { font-size: 1.5em; }
@@ -188,7 +194,7 @@ $max-width: 1200px;
         font-size: 1.75rem;
       }
     }
-
+    
     .post-content {
       font-size: 0.95em;
     }
