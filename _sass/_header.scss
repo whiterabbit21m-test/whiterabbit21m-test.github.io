@@ -1,4 +1,4 @@
-// Assicurati che queste variabili siano coerenti con il resto del tuo SCSS
+// Variabili (assicurati che siano coerenti con il resto del tuo SCSS)
 $background-color: #121212;
 $text-color: #ffffff;
 $accent-color: #4CAF50;
@@ -29,13 +29,11 @@ $card-bg-color: #1E1E1E;
     display: inline-block;
     text-decoration: none;
   }
-
   .logo-image {
     max-height: 50px;
     width: auto;
     vertical-align: middle;
   }
-
   .site-title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -45,33 +43,35 @@ $card-bg-color: #1E1E1E;
   }
 }
 
-// Stili per la navigazione, se presente
 .site-nav {
   .nav-link {
     color: rgba($text-color, 0.8);
     text-decoration: none;
     margin-left: 20px;
     transition: color 0.3s ease;
-
     &:hover {
       color: $accent-color;
     }
   }
 }
 
+// Stili per il toggle del menu
+.menu-toggle {
+  display: none; // Nascosto di default
+}
+
 // Responsive styles
 @media (max-width: 768px) {
   .site-header {
     .header-container {
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-wrap: nowrap; // Cambiato da wrap a nowrap
+      justify-content: space-between; // Cambiato da center a space-between
       padding: 10px 20px;
     }
 
     .logo {
-      margin-bottom: 10px;
+      flex-grow: 1; // Permette al logo di occupare lo spazio disponibile
       text-align: center;
-      width: 100%;
 
       .site-title {
         display: block;
@@ -80,15 +80,36 @@ $card-bg-color: #1E1E1E;
       }
     }
 
-    .site-nav {
-      width: 100%;
-      text-align: center;
-      margin-top: 10px;
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      margin-left: auto; // Spinge il toggle a destra
+    }
 
-      .nav-link {
-        display: inline-block;
-        margin: 5px 10px;
-      }
+    .site-nav {
+      display: none; // Nasconde la navigazione su mobile
+    }
+  }
+
+  // Stili per il menu mobile aperto (da aggiungere al tuo CSS esistente per il menu mobile)
+  body.menu-open .site-nav {
+    display: block;
+    position: fixed;
+    top: 70px; // Regola questo valore in base all'altezza del tuo header
+    left: 0;
+    right: 0;
+    background-color: $card-bg-color;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    .nav-link {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      text-align: center;
     }
   }
 }
