@@ -40,11 +40,12 @@ $smartphone-color: #333333;
     .wallet-info {
       display: flex;
       align-items: center;
-      margin-bottom: 60px;
+      justify-content: center;
+      flex-wrap: wrap;
 
-      .info-text {
-        flex: 1;
-        padding-right: 40px;
+      .info-text, .smartphone-container {
+        flex: 1 1 300px;
+        margin: 0 20px;
 
         h2 {
           color: $text-color-light;
@@ -132,7 +133,9 @@ $smartphone-color: #333333;
     // QR Code Section
     .qr-code {
       text-align: center;
-      margin-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       h2 {
         color: $text-color-light;
