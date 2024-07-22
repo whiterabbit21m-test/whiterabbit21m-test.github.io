@@ -1,229 +1,96 @@
-// Variabili colore
-$home-bg-color: #121212; // Sfondo molto scuro, quasi nero
-$text-color-light: #ffffff;
-$accent-color: #4CAF50; // Verde più brillante per il contrasto
-$card-bg-color: #1E1E1E; // Grigio scuro per le card
+// Variabili
+$bg-color: #121212;
+$text-color: #ffffff;
+$accent-color: #4CAF50;
+$card-bg-color: #1E1E1E;
 
 .home {
-  background-color: $home-bg-color;
-  color: $text-color-light;
+  background-color: $bg-color;
+  color: $text-color;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  h1, h2 {
+    color: $text-color;
+    margin-bottom: 20px;
+  }
 
   // Hero Section
   .hero {
-    padding: 100px 0;
     text-align: center;
-    background-color: darken($home-bg-color, 3%);
+    background-color: darken($bg-color, 3%);
 
     h1 {
-      font-size: 3.5em;
-      margin-bottom: 20px;
-      color: $text-color-light;
+      font-size: 2.5em;
     }
 
     p {
       font-size: 1.2em;
-      margin-bottom: 30px;
-      color: rgba($text-color-light, 0.9);
+      opacity: 0.9;
     }
   }
 
-  // Main Content Grid
-  .main-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    padding: 80px 0;
-    background-color: lighten($home-bg-color, 5%);
+  // Main Content Section
+  .main-content {
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
 
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  // Tech Overview Section
-  .tech-overview {
-    h2 {
-      color: $text-color-light;
-      margin-bottom: 20px;
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
     }
 
-    p {
-      color: rgba($text-color-light, 0.9);
-      margin-bottom: 20px;
+    .tech-overview, .applications {
+      background-color: $card-bg-color;
+      padding: 30px;
+      border-radius: 8px;
     }
 
-    .tech-features {
+    .feature-list {
       list-style-type: none;
       padding: 0;
 
       li {
+        margin-bottom: 10px;
         display: flex;
         align-items: center;
-        margin-bottom: 15px;
 
         i {
           color: $accent-color;
           margin-right: 10px;
-          font-size: 1.2em;
         }
       }
     }
-  }
 
-  // Innovation Showcase Section
-  .innovation-showcase {
-    h2 {
-      color: $text-color-light;
-      margin-bottom: 20px;
-    }
-
-    .innovation-card {
-      background-color: $card-bg-color;
-      padding: 20px;
-      border-radius: 8px;
+    .app-item {
       margin-bottom: 20px;
 
       h3 {
         color: $accent-color;
-        margin-bottom: 10px;
-      }
-
-      p {
-        color: rgba($text-color-light, 0.9);
       }
     }
   }
 
-  // Applications Section
-  .applications {
-    padding: 80px 0;
-    background-color: $home-bg-color;
-
-    h2 {
-      text-align: center;
-      margin-bottom: 50px;
-      color: $text-color-light;
-    }
-
-    .application-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .application-item {
-      text-align: center;
-      padding: 20px;
-      background-color: $card-bg-color;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: translateY(-5px);
-      }
-
-      i {
-        font-size: 3em;
-        color: $accent-color;
-        margin-bottom: 20px;
-      }
-
-      h3 {
-        color: $text-color-light;
-        margin-bottom: 15px;
-      }
-
-      p {
-        color: rgba($text-color-light, 0.8);
-      }
-    }
-  }
-
-  // Latest Developments Section
-  .latest-developments {
-    padding: 80px 0;
-    background-color: lighten($home-bg-color, 3%);
-
-    h2 {
-      text-align: center;
-      margin-bottom: 50px;
-      color: $text-color-light;
-    }
-
-    .development-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .development-card {
-      background-color: $card-bg-color;
-      padding: 20px;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: translateY(-5px);
-      }
-
-      h3 {
-        margin-bottom: 10px;
-
-        a {
-          color: $text-color-light;
-          text-decoration: none;
-          
-          &:hover {
-            color: $accent-color;
-          }
-        }
-      }
-
-      .post-meta {
-        color: rgba($text-color-light, 0.6);
-        font-size: 0.9em;
-        margin-bottom: 10px;
-      }
-
-      p {
-        color: rgba($text-color-light, 0.8);
-      }
-
-      .read-more {
-        display: inline-block;
-        margin-top: 10px;
-        color: $accent-color;
-        text-decoration: none;
-        font-weight: bold;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  // Call to Action Section
+  // CTA Section
   .cta {
-    padding: 100px 0;
     text-align: center;
-    background-color: darken($home-bg-color, 3%);
-
-    h2 {
-      color: $text-color-light;
-      margin-bottom: 20px;
-    }
-
-    p {
-      color: rgba($text-color-light, 0.9);
-      margin-bottom: 30px;
-    }
+    background-color: darken($bg-color, 3%);
 
     .cta-button {
       display: inline-block;
       background-color: $accent-color;
-      color: $text-color-light;
-      padding: 15px 30px;
+      color: $text-color;
+      padding: 12px 24px;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
@@ -232,27 +99,6 @@ $card-bg-color: #1E1E1E; // Grigio scuro per le card
       &:hover {
         background-color: darken($accent-color, 10%);
       }
-    }
-  }
-}
-
-// Responsive design
-@media (max-width: 768px) {
-  .home {
-    .hero, .applications, .latest-developments, .cta {
-      padding: 60px 0;
-    }
-
-    .hero h1 {
-      font-size: 2.5em;
-    }
-
-    .main-grid {
-      padding: 60px 0;
-    }
-
-    .application-grid, .development-grid {
-      grid-template-columns: 1fr;
     }
   }
 }
