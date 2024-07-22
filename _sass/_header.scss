@@ -1,32 +1,71 @@
-// _sass/layout/_header.scss
+// Assicurati che queste variabili siano coerenti con il resto del tuo SCSS
+$background-color: #121212;
+$text-color: #ffffff;
+$accent-color: #4CAF50;
+$card-bg-color: #1E1E1E;
+
 .site-header {
-  background-color: #333;
+  background-color: $card-bg-color; // Cambiato da #333 per coerenza
   padding: 1rem 0;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); // Aggiunto per dare profondità
+  transition: background-color 0.3s ease; // Transizione fluida per eventuali cambiamenti
+
+  &:hover {
+    background-color: lighten($card-bg-color, 5%); // Leggero effetto hover
+  }
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px; // Consistente con il resto del layout
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo {
   .logo-link {
     display: inline-block;
+    text-decoration: none; // Assicura che non ci siano sottolineature indesiderate
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8; // Leggero effetto hover
+    }
   }
+
   .logo-image {
     max-height: 50px;
     width: auto;
+    vertical-align: middle; // Allinea meglio l'immagine con il testo
   }
+
   .site-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #fff;
+    color: $text-color; // Cambiato da #fff per coerenza
+    margin-left: 10px; // Spazio tra logo e testo, se presenti entrambi
+    vertical-align: middle;
+  }
+}
+
+// Aggiunto per la navigazione, se presente
+.site-nav {
+  .nav-link {
+    color: rgba($text-color, 0.8);
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $accent-color;
+    }
   }
 }
 
@@ -38,10 +77,28 @@
       justify-content: center;
       padding: 10px 20px;
     }
+
     .logo {
       margin-bottom: 10px;
       text-align: center;
       width: 100%;
+
+      .site-title {
+        display: block; // Mette il titolo sotto il logo su schermi piccoli
+        margin-left: 0;
+        margin-top: 5px;
+      }
+    }
+
+    .site-nav {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+
+      .nav-link {
+        display: inline-block;
+        margin: 5px 10px;
+      }
     }
   }
 }
