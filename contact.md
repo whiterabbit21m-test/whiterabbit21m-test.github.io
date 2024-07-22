@@ -1,9 +1,9 @@
 ---
 layout: contact
-title: Contattaci
+title: Contact
 permalink: /contact/
 ---
 
-# Entra in contatto con noi
+# Contact Me
 
-Siamo sempre felici di sentirti. Che tu abbia una domanda sul nostro lavoro, voglia collaborare o semplicemente dire ciao, non esitare a contattarci!
+A simple “hi” or “hey” without any context will be ignored. Also, I’m not interested in trading or shitcoinery, so anything along these lines will be deleted without an answer.
