@@ -1,17 +1,14 @@
 ---
 layout: default
 ---
-
 <div class="contact-page">
   <div class="container">
     <header class="page-header">
       <h1>{{ page.title }}</h1>
     </header>
-
     <div class="contact-content">
       {{ content }}
     </div>
-
     <div class="contact-grid">
       <div class="contact-form">
         <h2>Inviaci un messaggio</h2>
@@ -31,25 +28,8 @@ layout: default
           <button type="submit" class="submit-btn">Invia Messaggio</button>
         </form>
       </div>
-
-      <div class="contact-info">
-        <h2>Informazioni di contatto</h2>
-        <ul>
-          <li><i class="fas fa-envelope"></i> {{ site.email }}</li>
-          <li><i class="fas fa-phone"></i> {{ site.phone }}</li>
-          <li><i class="fas fa-map-marker-alt"></i> {{ site.address }}</li>
-        </ul>
-        <div class="social-links">
-          {% if site.twitter_username %}
-            <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-          {% endif %}
-          {% if site.github_username %}
-            <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-          {% endif %}
-          {% if site.telegram_username %}
-            <a href="https://t.me/{{ site.telegram_username }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
-          {% endif %}
-        </div>
+      <div class="contact-image">
+        <img src="/assets/images/contact.png" alt="Immagine di contatto" class="contact-img">
       </div>
     </div>
   </div>
