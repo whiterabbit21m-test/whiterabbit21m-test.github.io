@@ -1,21 +1,28 @@
 ---
 layout: home
-title: Il Tuo Wallet Lightning
-subtitle: Veloce, sicuro e facile da usare
-wallet_title: Scopri il Nostro Wallet
-cta_link: https://tuosito.com/wallet
-cta_text: Scarica Ora
+title: @VentunoTipBot
+subtitle: Bitcoin Lightning Wallet on Telegram ⚡️ w built-in POS and Scrub.
+wallet_title: Launch the wallet on Telegram
+cta_link: https://t.me/VentunoTipBot
+cta_text: Go to @VentunoTipBot
 wallet_screenshot: /assets/images/tuo-screenshot.png
-qr_title: Connettiti Subito
+qr_title: Connect
 qr_image: /assets/images/wallet-qr-code.png
-qr_description: Scansiona per iniziare
-opensource_title: Tecnologia Open Source
-opensource_description: Utilizziamo software open source
+qr_description: Scan on your mobile and connect to the Bot
+opensource_title: Open Source
+opensource_description: Made with
 opensource_list:
-  - "Software 1 - Breve descrizione"
-  - "Software 2 - Breve descrizione"
-  - "Software 3 - Breve descrizione"
+  - "LNbits - Free and open-source lightning-network wallet/accounts system."
+  - "telebot - A Telegram bot framework in Go."
+  - "gozxing - barcode image processing library in Go."
+  - "ln-decodepay - Lightning Network BOLT11 invoice decoder."
+  - "go-lnurl - Helpers for building lnurl support into services."
 ---
 
-Qui puoi inserire una descrizione dettagliata del tuo wallet Lightning Network. 
-Questo testo apparirà nella sezione delle informazioni sul wallet.
+This is a Lightning Wallet into a Telegram Bot, but more functionalities have been added:
+
+- /casback command to show a code to get a CashBack from a shop owner
+- Notifications of Cards activations
+- Integrated full POS service
+- POS Link generation for executing POS on an external device
+- Scrub service for forwarding all incoming payments to an external address, making the POS actually not custodial if activated
