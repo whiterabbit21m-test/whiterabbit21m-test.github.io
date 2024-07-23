@@ -97,7 +97,7 @@ my other lightning addresses.
   margin-top: 40px;
 }
 .lightning-info h2 {
-  color: #4CAF50;
+  color: #ffffff;
   margin-bottom: 15px;
 }
 .lightning-info p, .lightning-info ul {
