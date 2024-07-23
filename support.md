@@ -104,12 +104,3 @@ my other lightning addresses.[^ln-addr]
   }
 }
 </style>
-
-## Altre Forme di Supporto
-
-Se preferisci supportarci in altri modi, puoi:
-
-- Condividere i nostri contenuti sui social media
-- Contribuire al nostro codice open-source su GitHub
-
-Grazie per il tuo supporto!
