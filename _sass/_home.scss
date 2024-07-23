@@ -148,7 +148,7 @@ $smartphone-color: #333333;
         height: auto; // Mantiene le proporzioni
         margin-bottom: 20px;
         border: 1px solid rgba(255, 255, 255, 0.1); // Bordo sottile per definire i contorni
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), // Glow esterno leggero
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.1), // Glow esterno leggero
                     0 0 5px rgba(255, 255, 255, 0.1);  // Glow interno più intenso
         background-color: rgba(255, 255, 255, 0.05); // Leggero sfondo per far risaltare il QR code
         padding: 10px; // Aggiunge un po' di spazio intorno al QR code      
