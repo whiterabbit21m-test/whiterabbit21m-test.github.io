@@ -10,10 +10,7 @@ permalink: /support/
 You can send an arbitrary amount of sats to [whiterabbit21m@21m.tips][21mtips] or one of
 my other lightning addresses.[^ln-addr]
 
-[21mtips]: lightning:whiterabbit21m@21m.tips
-[satsmobi]: lightning:whiterabbit21m@sats.mobi
-
-[^ln-addr]: A [Lightning Address](https://lightningaddress.com/) allows you to receive bitcoin payments using an e-mail style address format. Try it out yourself by signing up to [Stacker News](https://stacker.news/r/whiterabbit21m) or by using one of these Telegram bots: [VentunoTipBot](https://t.me/VentunoTipBot), [SatsMobiBot](https://t.me/SatsMobiBot). My lightning addresses: [whiterabbit21m@21m.tips][21mtips], [whiterabbit21m@sats.mobi][satsmobi]
+---
 
 <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
   <input type="hidden" name="storeId" value="ABCDEFGHILMNO" />
@@ -104,3 +101,9 @@ my other lightning addresses.[^ln-addr]
   }
 }
 </style>
+
+[21mtips]: lightning:whiterabbit21m@21m.tips
+[satsmobi]: lightning:whiterabbit21m@sats.mobi
+
+
+[^ln-addr]: A [Lightning Address](https://lightningaddress.com/) allows you to receive bitcoin payments using an e-mail style address format. Try it out yourself by signing up to [Stacker News](https://stacker.news/r/whiterabbit21m) or by using one of these Telegram bots: [VentunoTipBot](https://t.me/VentunoTipBot), [SatsMobiBot](https://t.me/SatsMobiBot). My lightning addresses: [whiterabbit21m@21m.tips][21mtips], [whiterabbit21m@sats.mobi][satsmobi]
