@@ -20,8 +20,8 @@ Puoi fare una donazione usando Bitcoin attraverso BTCPay Server. È sicuro, priv
 <div class="btcpay-form">
   <btcpay-form 
     style="width:300px; margin:auto;" 
-    data-btcpay-server="https://your-btcpay-server-url" 
-    data-store-id="your-store-id" 
+    data-btcpay-server="https://btcpay.whiterabbit21m.com" 
+    data-store-id="5vHj4TmiyYMCkFUpyBYf6rUDvaJ6YA7B74v2G7iYD9D2" 
     data-price="0" 
     data-currency="USD" 
     data-allow-tip="true"
@@ -30,7 +30,7 @@ Puoi fare una donazione usando Bitcoin attraverso BTCPay Server. È sicuro, priv
   </btcpay-form>
 </div>
 
-<script src="https://your-btcpay-server-url/modal/btcpay.js"></script>
+<script src="https://btcpay.whiterabbit21m.com/modal/btcpay.js"></script>
 
 ## Altre Forme di Supporto
 
