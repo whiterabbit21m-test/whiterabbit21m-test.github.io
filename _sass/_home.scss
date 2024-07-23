@@ -147,9 +147,11 @@ $smartphone-color: #333333;
         width: 100%; // Assicura che l'immagine si adatti ai contenitori più piccoli
         height: auto; // Mantiene le proporzioni
         margin-bottom: 20px;
-        border-radius: 10px; // Leggero arrotondamento agli angoli
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), // Ombra principale
-                    0 6px 6px rgba(0, 0, 0, 0.2);   // Ombra secondaria per un effetto più sottile
+        border: 1px solid rgba(255, 255, 255, 0.1); // Bordo sottile per definire i contorni
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), // Glow esterno leggero
+                    0 0 5px rgba(255, 255, 255, 0.1);  // Glow interno più intenso
+        background-color: rgba(255, 255, 255, 0.05); // Leggero sfondo per far risaltare il QR code
+        padding: 10px; // Aggiunge un po' di spazio intorno al QR code      
       }
 
       p {
