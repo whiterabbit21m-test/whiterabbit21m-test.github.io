@@ -34,23 +34,65 @@ Puoi fare una donazione usando Bitcoin attraverso BTCPay Server. È sicuro, priv
 <style>
 .btcpay-form {
   display: inline-block;
-  padding: 20px;
+  padding: 25px;
   border-radius: 10px;
-  background-color: #f8f9fa;
+  background-color: #1E1E1E;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
 .form-control {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ced4da;
+  padding: 12px;
+  border: 1px solid #333;
   border-radius: 5px;
+  background-color: #2C2C2C;
+  color: #ffffff;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
 }
-.submit {
+
+.form-control:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.submit-btn {
   display: block;
-  margin: 0 auto;
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 480px) {
+  .btcpay-form {
+    padding: 20px;
+  }
 }
 </style>
 
