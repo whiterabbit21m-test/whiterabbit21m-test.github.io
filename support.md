@@ -1,21 +1,19 @@
 ---
 layout: page
-title: Supportaci
+title: Support Me
 permalink: /support/
 ---
 
-# Supporta il Nostro Progetto
 
-Grazie per il tuo interesse nel supportare il nostro progetto! Il tuo contributo ci aiuta a continuare a fornire risorse educative e strumenti per la comunità Bitcoin.
+# Lightning Support
 
-## Perché Supportarci?
+You can send an arbitrary amount of sats to [whiterabbit21m@21m.tips][21mtips] or one of
+my other lightning addresses.[^ln-addr]
 
-- Manteniamo risorse educative gratuite su Bitcoin
-- Sviluppiamo strumenti open-source per la comunità
+[21mtips]: lightning:whiterabbit21m@21m.tips
+[satsmobi]: lightning:whiterabbit21m@sats.mobi
 
-## Come Puoi Supportarci
-
-Puoi fare una donazione usando Bitcoin attraverso BTCPay Server. È sicuro, privato e ci permette di ricevere il 100% della tua donazione.
+[^ln-addr]: A [Lightning Address](https://lightningaddress.com/) allows you to receive bitcoin payments using an e-mail style address format. Try it out yourself by signing up to [Stacker News](https://stacker.news/r/whiterabbit21m) or by using one of these Telegram bots: [VentunoTipBot](https://t.me/VentunoTipBot), [SatsMobiBot](https://t.me/SatsMobiBot). My lightning addresses: [whiterabbit21m@21m.tips][21mtips], [whiterabbit21m@sats.mobi][satsmobi]
 
 <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
   <input type="hidden" name="storeId" value="ABCDEFGHILMNO" />
@@ -112,7 +110,6 @@ Puoi fare una donazione usando Bitcoin attraverso BTCPay Server. È sicuro, priv
 Se preferisci supportarci in altri modi, puoi:
 
 - Condividere i nostri contenuti sui social media
-- Partecipare ai nostri eventi e workshop
 - Contribuire al nostro codice open-source su GitHub
 
-Grazie per il tuo supporto! Insieme, possiamo far crescere e migliorare l'ecosistema Bitcoin.
+Grazie per il tuo supporto!
