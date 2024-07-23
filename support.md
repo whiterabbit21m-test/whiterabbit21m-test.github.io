@@ -35,7 +35,7 @@ Puoi fare una donazione usando Bitcoin attraverso BTCPay Server. È sicuro, priv
 .btcpay-form {
   display: inline-block;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: #1E1E1E;
   color: #ffffff;
   font-family: Arial, sans-serif;
@@ -52,14 +52,14 @@ Puoi fare una donazione usando Bitcoin attraverso BTCPay Server. È sicuro, priv
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #4CAF50;
+  color: #ffffff;
 }
 
 .form-control {
   width: 100%;
   padding: 12px;
   border: 1px solid #333;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: #2C2C2C;
   color: #ffffff;
   font-size: 16px;
@@ -71,27 +71,38 @@ Puoi fare una donazione usando Bitcoin attraverso BTCPay Server. È sicuro, priv
   border-color: #4CAF50;
 }
 
-.submit-btn {
-  display: block;
-  width: 100%;
-  padding: 12px;
+.cta-button {
+  display: inline-block;
   background-color: #4CAF50;
   color: #ffffff;
+  padding: 15px 30px;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  text-decoration: none;
   font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  text-align: center;
+  width: 100%;
 }
 
-.submit-btn:hover {
+.cta-button:hover, .cta-button:focus {
   background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.cta-button:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 480px) {
   .btcpay-form {
     padding: 20px;
+  }
+  
+  .cta-button {
+    padding: 12px 24px;
   }
 }
 </style>
