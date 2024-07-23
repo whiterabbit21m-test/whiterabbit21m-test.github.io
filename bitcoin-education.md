@@ -4,8 +4,6 @@ title: Bitcoin Education
 permalink: /bitcoin-education/
 ---
 
-# Esplora il mondo di Bitcoin attraverso articoli educativi. Clicca su un argomento per saperne di più!
-
 <div class="education-grid">
   {% for post in site.categories.bitcoin-education %}
     <div class="education-item">
