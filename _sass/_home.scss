@@ -147,6 +147,9 @@ $smartphone-color: #333333;
         width: 100%; // Assicura che l'immagine si adatti ai contenitori più piccoli
         height: auto; // Mantiene le proporzioni
         margin-bottom: 20px;
+        border-radius: 10px; // Leggero arrotondamento agli angoli
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), // Ombra principale
+                    0 6px 6px rgba(0, 0, 0, 0.2);   // Ombra secondaria per un effetto più sottile
       }
 
       p {
