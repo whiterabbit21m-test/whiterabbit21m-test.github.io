@@ -10,8 +10,6 @@ permalink: /support/
 You can send an arbitrary amount of sats to [whiterabbit21m@21m.tips][21mtips] or one of
 my other lightning addresses.[^ln-addr]
 
----
-
 <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
   <input type="hidden" name="storeId" value="ABCDEFGHILMNO" />
   <input type="hidden" name="checkoutDesc" value="Donazione per supportare il progetto" />
