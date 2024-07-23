@@ -17,18 +17,26 @@ Grazie per il tuo interesse nel supportare il nostro progetto! Il tuo contributo
 
 Puoi fare una donazione usando Bitcoin attraverso BTCPay Server. È sicuro, privato e ci permette di ricevere il 100% della tua donazione.
 
-<div class="btcpay-form">
-  <btcpay-form 
-    style="width:300px; margin:auto;" 
-    data-btcpay-server="https://btcpay.whiterabbit21m.com" 
-    data-store-id="5vHj4TmiyYMCkFUpyBYf6rUDvaJ6YA7B74v2G7iYD9D2" 
-    data-price="0" 
-    data-currency="USD" 
-    data-allow-tip="true"
-    data-custom-amount="true"
-    data-button-text="Dona con Bitcoin">
-  </btcpay-form>
-</div>
+<button class="btcpay-custom-button" onclick="openBTCPayModalDonation()">Dona con Bitcoin</button>
+
+<button class="btcpay-custom-button" onclick="openBTCPayModalDonation()">Dona con Bitcoin</button>
+
+<script>
+function openBTCPayModalDonation() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var data = JSON.parse(this.responseText);
+      window.open(data.url, '_blank');
+    }
+  };
+  xhttp.open("POST", "https://btcpay.whiterabbit21m.com/api/v1/invoices", true);
+  xhttp.setRequestHeader("Content-Type", "application/json");
+  xhttp.setRequestHeader("Authorization", "Bearer 123456789");
+  var data = JSON.stringify({"storeId": "ABCDEFGHILMNO", "amount": "0", "currency": "USD", "allowCustomPaymentAmounts": true});
+  xhttp.send(data);
+}
+</script>
 
 <script src="https://btcpay.whiterabbit21m.com/modal/btcpay.js"></script>
 
