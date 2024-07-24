@@ -9,9 +9,25 @@ $smartphone-color: #333333;
   background-color: $home-bg-color;
   color: $text-color-light;
 
-  // Hero Section (invariato)
+  // Hero Section
   .hero {
-    // ... (codice invariato)
+    padding: 100px 0;
+    text-align: center;
+    background-color: $card-bg-color;
+
+    .hero-content {
+      h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        color: $accent-color;
+      }
+
+      p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        color: rgba($text-color-light, 0.9);
+      }
+    }
   }
 
   // Main Content
@@ -37,12 +53,84 @@ $smartphone-color: #333333;
 
       // QR Code Section
       .qr-code-section {
-        // ... (codice invariato)
+        text-align: center;
+
+        h2 {
+          color: $accent-color;
+          margin-bottom: 20px;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          margin-bottom: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 
+            0 0 30px rgba(255, 255, 255, 0.2),
+            0 0 10px rgba(255, 255, 255, 0.2),
+            0 0 5px rgba(255, 255, 255, 0.3);
+          background-color: rgba(255, 255, 255, 0.08);
+          padding: 15px;
+        }
+
+        p {
+          color: rgba($text-color-light, 0.9);
+        }
       }
 
       // Smartphone Container
       .smartphone-container {
-        // ... (codice invariato)
+        max-width: 300px;
+
+        .smartphone {
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-bottom: 200%;
+          background-color: $smartphone-color;
+          border-radius: 30px;
+          box-shadow: 0 0 0 10px lighten($smartphone-color, 10%),
+                      0 0 0 11px darken($smartphone-color, 10%),
+                      0 20px 30px rgba(0, 0, 0, 0.5);
+          overflow: hidden;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 20px;
+            width: 150px;
+            background-color: darken($smartphone-color, 10%);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+          }
+
+          .screenshot {
+            position: absolute;
+            top: 25px;
+            left: 2px;
+            right: 2px;
+            bottom: 55px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 2px;
+          }
+        }
       }
     }
 
@@ -86,9 +174,43 @@ $smartphone-color: #333333;
       }
     }
 
-    // Open Source Software Section (invariato)
+    // Open Source Software Section
     .open-source {
-      // ... (codice invariato)
+      background-color: $card-bg-color;
+      padding: 40px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 1200px;
+      box-sizing: border-box;
+
+      h2 {
+        color: $accent-color;
+        margin-bottom: 20px;
+      }
+
+      p {
+        color: rgba($text-color-light, 0.9);
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+
+        li {
+          color: rgba($text-color-light, 0.9);
+          margin-bottom: 10px;
+          padding-left: 20px;
+          position: relative;
+
+          &:before {
+            content: "•";
+            color: $accent-color;
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
     }
   }
 }
@@ -119,7 +241,13 @@ $smartphone-color: #333333;
 
 @media screen and (max-width: 768px) {
   .home-container {
-    // ... (codice esistente)
+    .hero {
+      padding: 60px 0;
+
+      .hero-content h1 {
+        font-size: 2.5em;
+      }
+    }
 
     .main-content {
       padding: 40px 0;
