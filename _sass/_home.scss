@@ -13,13 +13,12 @@ $smartphone-color: #333333;
   .hero {
     padding: 100px 0;
     text-align: center;
-    background-color: $card-bg-color;
 
     .hero-content {
       h1 {
         font-size: 3.5em;
         margin-bottom: 20px;
-        color: $accent-color;
+        color: $text-color-light;
       }
 
       p {
@@ -37,7 +36,7 @@ $smartphone-color: #333333;
     flex-direction: column;
     align-items: center;
 
-    // Unified Wallet Info Section
+    // Wallet Info Section
     .wallet-info-unified {
       display: flex;
       justify-content: space-between;
@@ -46,52 +45,18 @@ $smartphone-color: #333333;
       max-width: 1200px;
       margin-bottom: 60px;
 
-      .qr-code-section, .info-text, .smartphone-container {
+      .info-text {
         flex: 1;
-        margin: 0 20px;
-      }
-
-      // QR Code Section
-      .qr-code-section {
-        text-align: center;
+        padding-right: 20px;
 
         h2 {
-          color: $accent-color;
+          color: $text-color-light;
           margin-bottom: 20px;
-        }
-
-        img {
-          max-width: 100%;
-          height: auto;
-          margin-bottom: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          box-shadow: 
-            0 0 30px rgba(255, 255, 255, 0.2),
-            0 0 10px rgba(255, 255, 255, 0.2),
-            0 0 5px rgba(255, 255, 255, 0.3);
-          background-color: rgba(255, 255, 255, 0.08);
-          padding: 15px;
         }
 
         p {
           color: rgba($text-color-light, 0.9);
-        }
-      }
-
-      // Info Text Section
-      .info-text {
-        h2 {
-          color: $accent-color;
-          margin-bottom: 20px;
-        }
-
-        p, ul {
-          color: rgba($text-color-light, 0.9);
-          margin-bottom: 20px;
-        }
-
-        ul {
-          padding-left: 20px;
+          margin-bottom: 30px;
         }
 
         .cta-button {
@@ -110,8 +75,32 @@ $smartphone-color: #333333;
         }
       }
 
-      // Smartphone Container
+      .qr-code-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+          color: $text-color-light;
+          margin-bottom: 20px;
+        }
+
+        img {
+          max-width: 200px;
+          width: 100%;
+          height: auto;
+          margin-bottom: 20px;
+        }
+
+        p {
+          color: rgba($text-color-light, 0.9);
+        }
+      }
+
       .smartphone-container {
+        flex: 1;
         max-width: 300px;
 
         .smartphone {
@@ -142,7 +131,7 @@ $smartphone-color: #333333;
           &::after {
             content: '';
             position: absolute;
-            bottom: 10px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
             height: 40px;
@@ -153,10 +142,10 @@ $smartphone-color: #333333;
 
           .screenshot {
             position: absolute;
-            top: 25px;
-            left: 2px;
-            right: 2px;
-            bottom: 55px;
+            top: 20px;
+            left: 10px;
+            right: 10px;
+            bottom: 60px;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -176,7 +165,7 @@ $smartphone-color: #333333;
       box-sizing: border-box;
 
       h2 {
-        color: $accent-color;
+        color: $text-color-light;
         margin-bottom: 20px;
       }
 
@@ -215,10 +204,11 @@ $smartphone-color: #333333;
         flex-direction: column;
         align-items: center;
 
-        .qr-code-section, .info-text, .smartphone-container {
+        .info-text, .qr-code-container, .smartphone-container {
           width: 100%;
           max-width: 500px;
-          margin: 0 0 40px 0;
+          margin-bottom: 40px;
+          padding-right: 0;
         }
       }
     }
