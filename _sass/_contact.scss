@@ -39,10 +39,15 @@ $card-bg-color: #1E1E1E;
 
   .contact-image {
     width: 100%;
-    height: 200px;
+    height: 0;
+    padding-top: 56.25%; // Aspect ratio 16:9
+    position: relative;
     overflow: hidden;
 
     .contact-img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -89,15 +94,15 @@ $card-bg-color: #1E1E1E;
     .submit-btn {
       background-color: $accent-color;
       color: $text-color-light;
-      padding: 10px 20px; // Ridotto il padding
+      padding: 10px 20px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
       font-weight: bold;
-      width: auto; // Cambiato da width: 100% a width: auto
-      display: inline-block; // Aggiunto per mantenere il pulsante inline
-
+      width: auto;
+      display: inline-block;
+      
       &:hover {
         background-color: darken($accent-color, 10%);
         transform: translateY(-2px);
@@ -121,6 +126,18 @@ $card-bg-color: #1E1E1E;
 
     .contact-form {
       padding: 20px;
+    }
+
+    .contact-image {
+      padding-top: 75%; // Aspect ratio 4:3 per schermi più piccoli
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-page {
+    .contact-image {
+      padding-top: 100%; // Aspect ratio 1:1 per schermi molto piccoli
     }
   }
 }
