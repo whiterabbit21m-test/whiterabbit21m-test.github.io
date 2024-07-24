@@ -38,7 +38,7 @@ $card-bg-color: #1E1E1E;
   }
 
   .contact-image {
-    width: 70%;
+    width: 100%;
     height: 0;
     padding-top: 56.25%; // Aspect ratio 16:9
     position: relative;
@@ -48,7 +48,7 @@ $card-bg-color: #1E1E1E;
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 75%;
       height: 100%;
       object-fit: cover;
     }
