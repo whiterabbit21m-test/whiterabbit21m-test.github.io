@@ -18,16 +18,14 @@
   }
 }
 
-.btcpay-container {
-  background-color: #1E1E1E;
-  border-radius: 8px;
-  padding: 25px;
+.btcpay-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 40px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btcpay-logo {
-  text-align: center;
   margin-bottom: 20px;
 
   img {
@@ -36,12 +34,18 @@
   }
 }
 
+.btcpay-container {
+  background-color: #1E1E1E;
+  border-radius: 8px;
+  padding: 25px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .btcpay-form {
   font-family: Arial, sans-serif;
   color: #ffffff;
-  max-width: 400px;
-  width: 100%;
-  margin: 0 auto;
 }
 
 .form-group {
@@ -93,6 +97,16 @@
 
   &:active {
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .btcpay-container {
+    padding: 20px;
+  }
+  
+  .cta-button {
+    padding: 12px 24px;
   }
 }
 
