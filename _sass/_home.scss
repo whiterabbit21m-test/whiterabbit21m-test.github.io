@@ -40,22 +40,21 @@ $smartphone-color: #333333;
     // Unified Wallet Info Section
     .wallet-info-unified {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
       width: 100%;
       max-width: 1200px;
       margin-bottom: 60px;
-      padding: 0 20px;
+      padding: 0 40px;
 
       .qr-code-section, .smartphone-container {
         flex: 0 1 auto;
-        margin: 0;
       }
 
       // QR Code Section
       .qr-code-section {
         text-align: center;
-        max-width: 45%;
+        max-width: 40%;
 
         h2 {
           color: $accent-color;
@@ -63,7 +62,7 @@ $smartphone-color: #333333;
         }
 
         img {
-          max-width: 50%;
+          max-width: 70%;
           height: auto;
           margin: 0 auto 20px;
           border: 1px solid rgba(255, 255, 255, 0.2);
@@ -224,7 +223,7 @@ $smartphone-color: #333333;
       .wallet-info-unified {
         flex-direction: column;
         align-items: center;
-        padding: 0;
+        padding: 0 20px;
 
         .qr-code-section, .smartphone-container {
           width: 100%;
