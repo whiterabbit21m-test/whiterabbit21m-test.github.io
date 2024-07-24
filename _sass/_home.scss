@@ -75,23 +75,25 @@ $smartphone-color: #333333;
         }
       }
 
-      .qr-code-container {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      .qr-code-section {
         text-align: center;
 
         h2 {
-          color: $text-color-light;
+          color: $accent-color;
           margin-bottom: 20px;
         }
 
         img {
-          max-width: 200px;
-          width: 100%;
+          max-width: 100%;
           height: auto;
           margin-bottom: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 
+            0 0 30px rgba(255, 255, 255, 0.2),
+            0 0 10px rgba(255, 255, 255, 0.2),
+            0 0 5px rgba(255, 255, 255, 0.3);
+          background-color: rgba(255, 255, 255, 0.08);
+          padding: 15px;
         }
 
         p {
