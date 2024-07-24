@@ -13,12 +13,13 @@ $smartphone-color: #333333;
   .hero {
     padding: 100px 0;
     text-align: center;
+    background-color: $card-bg-color;
 
     .hero-content {
       h1 {
         font-size: 3.5em;
         margin-bottom: 20px;
-        color: $text-color-light;
+        color: $accent-color;
       }
 
       p {
@@ -36,7 +37,7 @@ $smartphone-color: #333333;
     flex-direction: column;
     align-items: center;
 
-    // Wallet Info Section
+    // Unified Wallet Info Section
     .wallet-info-unified {
       display: flex;
       justify-content: space-between;
@@ -45,36 +46,12 @@ $smartphone-color: #333333;
       max-width: 1200px;
       margin-bottom: 60px;
 
-      .info-text {
+      .qr-code-section, .info-text, .smartphone-container {
         flex: 1;
-        padding-right: 20px;
-
-        h2 {
-          color: $text-color-light;
-          margin-bottom: 20px;
-        }
-
-        p {
-          color: rgba($text-color-light, 0.9);
-          margin-bottom: 30px;
-        }
-
-        .cta-button {
-          display: inline-block;
-          background-color: $accent-color;
-          color: $text-color-light;
-          padding: 15px 30px;
-          border-radius: 5px;
-          text-decoration: none;
-          font-weight: bold;
-          transition: background-color 0.3s ease;
-
-          &:hover {
-            background-color: darken($accent-color, 10%);
-          }
-        }
+        margin: 0 20px;
       }
 
+      // QR Code Section
       .qr-code-section {
         text-align: center;
 
@@ -101,8 +78,40 @@ $smartphone-color: #333333;
         }
       }
 
+      // Info Text Section
+      .info-text {
+        h2 {
+          color: $accent-color;
+          margin-bottom: 20px;
+        }
+
+        p, ul {
+          color: rgba($text-color-light, 0.9);
+          margin-bottom: 20px;
+        }
+
+        ul {
+          padding-left: 20px;
+        }
+
+        .cta-button {
+          display: inline-block;
+          background-color: $accent-color;
+          color: $text-color-light;
+          padding: 15px 30px;
+          border-radius: 5px;
+          text-decoration: none;
+          font-weight: bold;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: darken($accent-color, 10%);
+          }
+        }
+      }
+
+      // Smartphone Container
       .smartphone-container {
-        flex: 1;
         max-width: 300px;
 
         .smartphone {
@@ -133,7 +142,7 @@ $smartphone-color: #333333;
           &::after {
             content: '';
             position: absolute;
-            bottom: 15px;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             height: 40px;
@@ -144,10 +153,10 @@ $smartphone-color: #333333;
 
           .screenshot {
             position: absolute;
-            top: 20px;
-            left: 10px;
-            right: 10px;
-            bottom: 60px;
+            top: 25px;
+            left: 2px;
+            right: 2px;
+            bottom: 55px;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -167,7 +176,7 @@ $smartphone-color: #333333;
       box-sizing: border-box;
 
       h2 {
-        color: $text-color-light;
+        color: $accent-color;
         margin-bottom: 20px;
       }
 
@@ -206,11 +215,10 @@ $smartphone-color: #333333;
         flex-direction: column;
         align-items: center;
 
-        .info-text, .qr-code-container, .smartphone-container {
+        .qr-code-section, .info-text, .smartphone-container {
           width: 100%;
           max-width: 500px;
-          margin-bottom: 40px;
-          padding-right: 0;
+          margin: 0 0 40px 0;
         }
       }
     }
