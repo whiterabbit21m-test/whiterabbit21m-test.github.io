@@ -65,12 +65,8 @@ $smartphone-color: #333333;
           max-width: 70%;
           height: auto;
           margin: 0 auto 20px;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          box-shadow: 
-            0 0 30px rgba(255, 255, 255, 0.2),
-            0 0 10px rgba(255, 255, 255, 0.2),
-            0 0 5px rgba(255, 255, 255, 0.3);
-          background-color: rgba(255, 255, 255, 0.08);
+          // Rimossi gli effetti di ombra e il bordo
+          background-color: white; // Aggiunto sfondo bianco per migliore contrasto
           padding: 15px;
         }
 
@@ -81,13 +77,13 @@ $smartphone-color: #333333;
 
       // Smartphone Container
       .smartphone-container {
-        width: 300px; // Cambiato da max-width a width fissa
-        height: 600px; // Aggiunta altezza fissa
+        width: 300px;
+        height: 600px;
 
         .smartphone {
           position: relative;
           width: 100%;
-          height: 100%; // Cambiato da 0 a 100%
+          height: 100%;
           background-color: $smartphone-color;
           border-radius: 30px;
           box-shadow: 0 0 0 10px lighten($smartphone-color, 10%),
@@ -236,7 +232,7 @@ $smartphone-color: #333333;
         }
 
         .smartphone-container {
-          height: 500px; // Ridotta l'altezza per schermi più piccoli
+          height: 500px;
         }
       }
 
