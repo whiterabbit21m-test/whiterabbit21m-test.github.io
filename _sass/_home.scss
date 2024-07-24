@@ -81,13 +81,13 @@ $smartphone-color: #333333;
 
       // Smartphone Container
       .smartphone-container {
-        max-width: 300px;
+        width: 300px; // Cambiato da max-width a width fissa
+        height: 600px; // Aggiunta altezza fissa
 
         .smartphone {
           position: relative;
           width: 100%;
-          height: 0;
-          padding-bottom: 200%;
+          height: 100%; // Cambiato da 0 a 100%
           background-color: $smartphone-color;
           border-radius: 30px;
           box-shadow: 0 0 0 10px lighten($smartphone-color, 10%),
@@ -233,6 +233,10 @@ $smartphone-color: #333333;
 
         .qr-code-section img {
           max-width: 60%;
+        }
+
+        .smartphone-container {
+          height: 500px; // Ridotta l'altezza per schermi più piccoli
         }
       }
 
