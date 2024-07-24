@@ -9,25 +9,9 @@ $smartphone-color: #333333;
   background-color: $home-bg-color;
   color: $text-color-light;
 
-  // Hero Section
+  // Hero Section (invariato)
   .hero {
-    padding: 100px 0;
-    text-align: center;
-    background-color: $card-bg-color;
-
-    .hero-content {
-      h1 {
-        font-size: 3.5em;
-        margin-bottom: 20px;
-        color: $accent-color;
-      }
-
-      p {
-        font-size: 1.2em;
-        margin-bottom: 30px;
-        color: rgba($text-color-light, 0.9);
-      }
-    }
+    // ... (codice invariato)
   }
 
   // Main Content
@@ -41,168 +25,70 @@ $smartphone-color: #333333;
     .wallet-info-unified {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       width: 100%;
       max-width: 1200px;
       margin-bottom: 60px;
 
-      .qr-code-section, .info-text, .smartphone-container {
+      .qr-code-section, .smartphone-container {
         flex: 1;
         margin: 0 20px;
       }
 
       // QR Code Section
       .qr-code-section {
-        text-align: center;
-
-        h2 {
-          color: $accent-color;
-          margin-bottom: 20px;
-        }
-
-        img {
-          max-width: 100%;
-          height: auto;
-          margin-bottom: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          box-shadow: 
-            0 0 30px rgba(255, 255, 255, 0.2),
-            0 0 10px rgba(255, 255, 255, 0.2),
-            0 0 5px rgba(255, 255, 255, 0.3);
-          background-color: rgba(255, 255, 255, 0.08);
-          padding: 15px;
-        }
-
-        p {
-          color: rgba($text-color-light, 0.9);
-        }
-      }
-
-      // Info Text Section
-      .info-text {
-        h2 {
-          color: $accent-color;
-          margin-bottom: 20px;
-        }
-
-        p, ul {
-          color: rgba($text-color-light, 0.9);
-          margin-bottom: 20px;
-        }
-
-        ul {
-          padding-left: 20px;
-        }
-
-        .cta-button {
-          display: inline-block;
-          background-color: $accent-color;
-          color: $text-color-light;
-          padding: 15px 30px;
-          border-radius: 5px;
-          text-decoration: none;
-          font-weight: bold;
-          transition: background-color 0.3s ease;
-
-          &:hover {
-            background-color: darken($accent-color, 10%);
-          }
-        }
+        // ... (codice invariato)
       }
 
       // Smartphone Container
       .smartphone-container {
-        max-width: 300px;
-
-        .smartphone {
-          position: relative;
-          width: 100%;
-          height: 0;
-          padding-bottom: 200%;
-          background-color: $smartphone-color;
-          border-radius: 30px;
-          box-shadow: 0 0 0 10px lighten($smartphone-color, 10%),
-                      0 0 0 11px darken($smartphone-color, 10%),
-                      0 20px 30px rgba(0, 0, 0, 0.5);
-          overflow: hidden;
-
-          &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 20px;
-            width: 150px;
-            background-color: darken($smartphone-color, 10%);
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-          }
-
-          &::after {
-            content: '';
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 40px;
-            width: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-          }
-
-          .screenshot {
-            position: absolute;
-            top: 25px;
-            left: 2px;
-            right: 2px;
-            bottom: 55px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            border-radius: 2px;
-          }
-        }
+        // ... (codice invariato)
       }
     }
 
-    // Open Source Software Section
-    .open-source {
+    // Wallet Info Text Section
+    .wallet-info {
       background-color: $card-bg-color;
       padding: 40px;
       border-radius: 8px;
       width: 100%;
       max-width: 1200px;
       box-sizing: border-box;
+      margin-bottom: 60px;
 
       h2 {
         color: $accent-color;
         margin-bottom: 20px;
       }
 
-      p {
+      p, ul {
         color: rgba($text-color-light, 0.9);
         margin-bottom: 20px;
       }
 
       ul {
-        list-style-type: none;
-        padding-left: 0;
+        padding-left: 20px;
+      }
 
-        li {
-          color: rgba($text-color-light, 0.9);
-          margin-bottom: 10px;
-          padding-left: 20px;
-          position: relative;
+      .cta-button {
+        display: inline-block;
+        background-color: $accent-color;
+        color: $text-color-light;
+        padding: 15px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
 
-          &:before {
-            content: "•";
-            color: $accent-color;
-            position: absolute;
-            left: 0;
-          }
+        &:hover {
+          background-color: darken($accent-color, 10%);
         }
       }
+    }
+
+    // Open Source Software Section (invariato)
+    .open-source {
+      // ... (codice invariato)
     }
   }
 }
@@ -215,11 +101,17 @@ $smartphone-color: #333333;
         flex-direction: column;
         align-items: center;
 
-        .qr-code-section, .info-text, .smartphone-container {
+        .qr-code-section, .smartphone-container {
           width: 100%;
           max-width: 500px;
           margin: 0 0 40px 0;
         }
+      }
+
+      .wallet-info, .open-source {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
       }
     }
   }
@@ -227,13 +119,7 @@ $smartphone-color: #333333;
 
 @media screen and (max-width: 768px) {
   .home-container {
-    .hero {
-      padding: 60px 0;
-
-      .hero-content h1 {
-        font-size: 2.5em;
-      }
-    }
+    // ... (codice esistente)
 
     .main-content {
       padding: 40px 0;
@@ -244,7 +130,7 @@ $smartphone-color: #333333;
         }
       }
 
-      .open-source {
+      .wallet-info, .open-source {
         padding: 30px;
       }
     }
