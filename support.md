@@ -7,24 +7,22 @@ permalink: /support/
 You can send an arbitrary amount of sats to [whiterabbit21m@21m.tips][21mtips] or one of
 my other lightning addresses.
 
-<div class="btcpay-wrapper">
+<div class="btcpay-container">
   <div class="btcpay-logo">
     <img src="/assets/images/btcpay-logo.svg" alt="BTCPay Server Logo">
   </div>
-  <div class="btcpay-container">
-    <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
-      <input type="hidden" name="storeId" value="5vHj4TmiyYMCkFUpyBYf6rUDvaJ6YA7B74v2G7iYD9D2" />
-      <input type="hidden" name="checkoutDesc" value="Donation" />
-      <input type="hidden" name="browserRedirect" value="https://www.tuosito.com/grazie" />
-      <input type="hidden" name="currency" value="USD" />
-      
-      <div class="form-group">
-        <label for="btcpay-input-price">Importo della donazione (USD):</label>
-        <input type="number" id="btcpay-input-price" name="price" value="5" min="1" step="1" class="form-control">
-      </div>
-      <button type="submit" class="cta-button">Dona con Bitcoin</button>
-    </form>
-  </div>
+  <form method="POST" action="https://btcpay.whiterabbit21m.com/api/v1/invoices" class="btcpay-form btcpay-form--block">
+    <input type="hidden" name="storeId" value="5vHj4TmiyYMCkFUpyBYf6rUDvaJ6YA7B74v2G7iYD9D2" />
+    <input type="hidden" name="checkoutDesc" value="Donation" />
+    <input type="hidden" name="browserRedirect" value="https://www.tuosito.com/grazie" />
+    <input type="hidden" name="currency" value="USD" />
+    
+    <div class="form-group">
+      <label for="btcpay-input-price">Importo della donazione (USD):</label>
+      <input type="number" id="btcpay-input-price" name="price" value="5" min="1" step="1" class="form-control">
+    </div>
+    <button type="submit" class="cta-button">Dona con Bitcoin</button>
+  </form>
 </div>
 
 <div class="lightning-info">
