@@ -49,12 +49,12 @@ $smartphone-color: #333333;
       .qr-code-section, .smartphone-container {
         flex: 1;
         margin: 0 20px;
-        max-width: 45%;
       }
 
       // QR Code Section
       .qr-code-section {
         text-align: center;
+        max-width: 45%; // Limitiamo solo la larghezza del QR code
 
         h2 {
           color: $accent-color;
@@ -81,7 +81,7 @@ $smartphone-color: #333333;
 
       // Smartphone Container
       .smartphone-container {
-        max-width: 250px;
+        max-width: 300px; // Ripristinato a 300px come nell'originale
 
         .smartphone {
           position: relative;
@@ -226,7 +226,7 @@ $smartphone-color: #333333;
 
         .qr-code-section, .smartphone-container {
           width: 100%;
-          max-width: 400px;
+          max-width: 500px; // Ripristinato a 500px come nell'originale
           margin: 0 0 40px 0;
         }
 
