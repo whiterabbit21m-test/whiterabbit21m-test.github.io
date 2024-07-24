@@ -54,7 +54,7 @@ $smartphone-color: #333333;
       // QR Code Section
       .qr-code-section {
         text-align: center;
-        max-width: 40%;
+        max-width: 45%; // Aumentato leggermente
 
         h2 {
           color: $accent-color;
@@ -62,12 +62,10 @@ $smartphone-color: #333333;
         }
 
         img {
-          max-width: 70%;
+          max-width: 80%; // Aumentato da 70% a 80%
           height: auto;
           margin: 0 auto 20px;
-          // Rimossi gli effetti di ombra e il bordo
-          background-color: white; // Aggiunto sfondo bianco per migliore contrasto
-          padding: 15px;
+          // Rimosso il padding e il background-color
         }
 
         p {
@@ -228,7 +226,7 @@ $smartphone-color: #333333;
         }
 
         .qr-code-section img {
-          max-width: 60%;
+          max-width: 70%; // Aumentato da 60% a 70%
         }
 
         .smartphone-container {
@@ -261,6 +259,10 @@ $smartphone-color: #333333;
       .wallet-info-unified {
         .smartphone-container {
           display: none; // Nasconde il container smartphone su schermi molto piccoli
+        }
+
+        .qr-code-section img {
+          max-width: 80%; // Aumentato ulteriormente per schermi molto piccoli
         }
       }
 
