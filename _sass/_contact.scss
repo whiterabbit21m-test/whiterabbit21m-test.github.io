@@ -89,13 +89,14 @@ $card-bg-color: #1E1E1E;
     .submit-btn {
       background-color: $accent-color;
       color: $text-color-light;
-      padding: 15px 30px;
+      padding: 10px 20px; // Ridotto il padding
       border: none;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
       font-weight: bold;
-      width: 100%;
+      width: auto; // Cambiato da width: 100% a width: auto
+      display: inline-block; // Aggiunto per mantenere il pulsante inline
 
       &:hover {
         background-color: darken($accent-color, 10%);
