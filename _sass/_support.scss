@@ -1,3 +1,8 @@
+// Assicurati che queste variabili siano definite nel tuo file principale di variabili o aggiungile qui
+$accent-color: #4CAF50;
+$text-color: #ffffff;
+$card-bg-color: #1E1E1E;
+
 .support-page {
   max-width: 800px;
   margin: 0 auto;
@@ -10,11 +15,13 @@
 
   p {
     margin-bottom: 15px;
+    color: $text-color;
   }
 
   ul {
     margin-bottom: 20px;
     padding-left: 20px;
+    color: $text-color;
   }
 }
 
@@ -35,7 +42,7 @@
 }
 
 .btcpay-container {
-  background-color: #1E1E1E;
+  background-color: $card-bg-color;
   border-radius: 8px;
   padding: 25px;
   width: 100%;
@@ -45,7 +52,7 @@
 
 .btcpay-form {
   font-family: Arial, sans-serif;
-  color: #ffffff;
+  color: $text-color;
 }
 
 .form-group {
@@ -55,7 +62,7 @@
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #ffffff;
+    color: $text-color;
   }
 
   .form-control {
@@ -64,7 +71,7 @@
     border: 1px solid #333;
     border-radius: 4px;
     background-color: #2C2C2C;
-    color: #ffffff;
+    color: $text-color;
     font-size: 16px;
     transition: border-color 0.3s ease;
 
@@ -78,7 +85,7 @@
 .cta-button {
   display: inline-block;
   background-color: $accent-color;
-  color: #ffffff;
+  color: $text-color;
   padding: 15px 30px;
   border: none;
   border-radius: 5px;
@@ -100,29 +107,19 @@
   }
 }
 
-@media (max-width: 480px) {
-  .btcpay-container {
-    padding: 20px;
-  }
-  
-  .cta-button {
-    padding: 12px 24px;
-  }
-}
-
 .lightning-info {
-  background-color: #1E1E1E;
+  background-color: $card-bg-color;
   padding: 25px;
   border-radius: 8px;
   margin-top: 40px;
 
   h2 {
-    color: #ffffff;
+    color: $text-color;
     margin-bottom: 15px;
   }
 
   p, ul {
-    color: #ffffff;
+    color: $text-color;
   }
 
   a {
