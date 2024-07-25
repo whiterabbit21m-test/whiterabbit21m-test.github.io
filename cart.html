@@ -3,17 +3,8 @@ layout: page
 title: Cart
 permalink: /cart/
 ---
-<div class="cart-container">
-  <h1>Your Cart</h1>
-  <div id="cart-items">
-    <!-- Cart items will be dynamically inserted here by JavaScript -->
-  </div>
-  <p>Total: <span id="cart-total">0 USD</span></p>
-  <button id="checkout-button" class="cta-button">Proceed to Checkout</button>
-</div>
-
-<div id="checkout-modal" class="modal">
-  <div class="modal-content">
+<div class="cart-checkout-container">
+  <div class="checkout-form-container">
     <h2>Checkout</h2>
     <form id="checkout-form">
       <input type="text" name="name" placeholder="Full Name" required>
@@ -24,6 +15,14 @@ permalink: /cart/
       <input type="text" name="country" placeholder="Country" required>
       <button type="submit" class="cta-button">Complete Purchase</button>
     </form>
+  </div>
+  
+  <div class="cart-summary-container">
+    <h2>Your Cart</h2>
+    <div id="cart-items">
+      <!-- Cart items will be dynamically inserted here by JavaScript -->
+    </div>
+    <p>Total: <span id="cart-total">0 USD</span></p>
   </div>
 </div>
 
