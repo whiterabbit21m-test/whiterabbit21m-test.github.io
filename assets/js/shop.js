@@ -1,5 +1,3 @@
-// shop.js
-
 document.addEventListener('DOMContentLoaded', () => {
   const productSections = document.querySelectorAll('.product-section');
   const categoryLinks = document.querySelectorAll('.product-categories a');
