@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         resolve({
           invoiceId: 'dummy-invoice-id',
-          checkoutUrl: 'https://btcpay.example.com/invoice/dummy-invoice-id'
+          checkoutUrl: 'https://btcpay.whiterabbit21m.com/invoice/dummy-invoice-id'
         });
       }, 1000);
     });
