@@ -1,9 +1,10 @@
-// Assicurati che queste variabili siano coerenti con il resto del tuo SCSS
+// Variabili esistenti
 $text-color: #ffffff;
 $accent-color: #4CAF50;
 $background-color: #121212;
 $card-bg-color: #1E1E1E;
 
+// Stili esistenti
 .nav-wrapper {
   display: flex;
   align-items: center;
@@ -20,15 +21,12 @@ $card-bg-color: #1E1E1E;
     margin: 0;
     display: flex;
   }
-
   .nav-item {
     margin-left: 1.5rem;
-
     &:first-child {
       margin-left: 0;
     }
   }
-
   .nav-link {
     color: rgba($text-color, 0.8);
     text-decoration: none;
@@ -58,13 +56,44 @@ $card-bg-color: #1E1E1E;
       }
     }
   }
+
+  // Nuovi stili per l'icona del carrello
+  .cart-icon {
+    position: relative;
+    
+    .nav-link {
+      display: flex;
+      align-items: center;
+      
+      svg {
+        width: 24px;
+        height: 24px;
+        stroke: currentColor;
+        margin-right: 5px;
+      }
+    }
+
+    #cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: $accent-color;
+      color: $text-color;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+      font-weight: bold;
+      min-width: 18px;
+      text-align: center;
+    }
+  }
 }
 
+// Media query esistente
 @media (max-width: 768px) {
   .nav-wrapper {
-    justify-content: flex-end; // Spinge il bottone a destra
+    justify-content: flex-end;
   }
-
   .menu-toggle {
     display: block;
     background: none;
@@ -72,7 +101,6 @@ $card-bg-color: #1E1E1E;
     cursor: pointer;
     padding: 10px;
     z-index: 1001;
-
     span {
       display: block;
       width: 25px;
@@ -82,11 +110,10 @@ $card-bg-color: #1E1E1E;
       transition: 0.4s;
     }
   }
-
   .main-nav {
     position: fixed;
     top: 0;
-    right: -250px; // Nascosto fuori dallo schermo
+    right: -250px;
     width: 250px;
     height: 100vh;
     background-color: $card-bg-color;
@@ -95,35 +122,45 @@ $card-bg-color: #1E1E1E;
     
     .nav-list {
       flex-direction: column;
-      padding-top: 60px; // Spazio per il pulsante di toggle
+      padding-top: 60px;
     }
-
     .nav-item {
       margin: 0;
     }
-
     .nav-link {
       display: block;
       padding: 15px 20px;
       border-bottom: 1px solid rgba($text-color, 0.1);
-
       &::after {
         display: none;
       }
-
       &:hover,
       &.active {
         transform: none;
         background-color: rgba($accent-color, 0.1);
       }
     }
-  }
 
+    // Aggiustamenti per l'icona del carrello nel menu mobile
+    .cart-icon {
+      .nav-link {
+        justify-content: flex-start;
+        
+        svg {
+          margin-right: 10px;
+        }
+      }
+      
+      #cart-count {
+        position: static;
+        margin-left: 5px;
+      }
+    }
+  }
   body.menu-open {
     .main-nav {
-      right: 0; // Mostra il menu
+      right: 0;
     }
-
     .menu-toggle {
       span:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
@@ -136,13 +173,9 @@ $card-bg-color: #1E1E1E;
       }
     }
   }
-
-  // Previeni lo scrolling del body quando il menu è aperto
   body.menu-open {
     overflow: hidden;
   }
-
-  // Overlay scuro quando il menu è aperto
   body.menu-open::after {
     content: '';
     position: fixed;
@@ -155,21 +188,18 @@ $card-bg-color: #1E1E1E;
   }
 }
 
-// Animazione per il menu mobile
+// Animazioni esistenti
 @keyframes slideIn {
   from { right: -250px; }
   to { right: 0; }
 }
-
 @keyframes slideOut {
   from { right: 0; }
   to { right: -250px; }
 }
-
 body.menu-open .main-nav {
   animation: slideIn 0.3s forwards;
 }
-
 body:not(.menu-open) .main-nav {
   animation: slideOut 0.3s forwards;
 }
