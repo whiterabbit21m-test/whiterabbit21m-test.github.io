@@ -1,23 +1,44 @@
 // shop.js
-let cart = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  const productSections = document.querySelectorAll('.product-section');
+  const categoryLinks = document.querySelectorAll('.product-categories a');
   const cartItems = document.getElementById('cart-items');
   const cartTotal = document.getElementById('cart-total');
   const checkoutButton = document.getElementById('checkout-button');
   const checkoutModal = document.getElementById('checkout-modal');
   const checkoutForm = document.getElementById('checkout-form');
+  let cart = [];
 
-  addToCartButtons.forEach(button => {
+  // Funzione per mostrare una categoria specifica
+  function showCategory(categoryId) {
+    productSections.forEach(section => {
+      if (section.id === categoryId) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
+      }
+    });
+  }
+
+  // Aggiungi event listener per i link delle categorie
+  categoryLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const categoryId = link.getAttribute('href').substring(1);
+      showCategory(categoryId);
+    });
+  });
+
+  // Mostra la prima categoria all'avvio
+  if (productSections.length > 0) {
+    showCategory(productSections[0].id);
+  }
+
+  // Aggiungi event listener per i pulsanti "Add to Cart"
+  document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', addToCart);
   });
-
-  checkoutButton.addEventListener('click', () => {
-    checkoutModal.style.display = 'block';
-  });
-
-  checkoutForm.addEventListener('submit', handleCheckout);
 
   function addToCart(event) {
     const productId = event.target.dataset.id;
@@ -38,10 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function findProduct(id) {
-    // This would need to be implemented to find the product in your data
-    // For now, let's return a dummy product
+    // Questa funzione dovrebbe cercare il prodotto in tutte le categorie
+    // Per ora, restituiamo un prodotto fittizio
     return { id, name: 'Product ' + id, price: '10.00' };
   }
+
+  checkoutButton.addEventListener('click', () => {
+    checkoutModal.style.display = 'block';
+  });
+
+  checkoutForm.addEventListener('submit', handleCheckout);
 
   async function handleCheckout(event) {
     event.preventDefault();
@@ -62,10 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function createBTCPayInvoice(customerData) {
-    // This function would need to be implemented to create an invoice with BTCPay Server
-    // It should send the cart items and customer data to your server, which would then
-    // create an invoice with BTCPay Server and return the invoice ID and checkout URL
-    // For now, let's simulate a response
+    // Implementa questa funzione per creare una fattura con BTCPay Server
+    // Per ora, simuliamo una risposta
     return new Promise(resolve => {
       setTimeout(() => {
         resolve({
