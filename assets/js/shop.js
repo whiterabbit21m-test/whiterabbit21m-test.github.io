@@ -122,8 +122,8 @@ Country: ${customerData.country}
       },
       checkout: {
         speedPolicy: 'HighSpeed',
-        paymentMethods: ['BTC'],
-        defaultPaymentMethod: 'BTC'
+        paymentMethods: ['BTC', 'BTC-LightningNetwork'],
+        defaultPaymentMethod: 'BTC-LightningNetwork'
       },
       buyer: {
         name: customerData.name,
