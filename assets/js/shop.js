@@ -76,10 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const formData = new FormData(checkoutForm);
     const customerData = Object.fromEntries(formData);
     
+    customerData.cart = cart.map(item => ({
+      id: item.id,
+      name: item.name,
+      price: item.price
+    }));
+
     try {
       const response = await createBTCPayInvoice(customerData);
-      if (response.invoiceId) {
-        window.location.href = response.checkoutUrl;
+      if (response.checkoutLink) {
+        window.location.href = response.checkoutLink;
       } else {
         alert('Error creating invoice. Please try again.');
       }
@@ -90,15 +96,50 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function createBTCPayInvoice(customerData) {
-    // Implementa questa funzione per creare una fattura con BTCPay Server
-    // Per ora, simuliamo una risposta
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve({
-          invoiceId: 'dummy-invoice-id',
-          checkoutUrl: 'https://btcpay.whiterabbit21m.com/invoice/dummy-invoice-id'
-        });
-      }, 1000);
+    // TODO: Sostituisci con l'URL del tuo server BTCPay e l'ID del tuo store
+    const btcPayServerUrl = 'https://btcpay.yourdomain.com';
+    const storeId = 'YourStoreId';
+
+    const invoiceData = {
+      price: calculateTotal(),
+      currency: 'USD',
+      orderId: Date.now().toString(),
+      itemDesc: cart.map(item => item.name).join(', '),
+      buyer: {
+        name: customerData.name,
+        email: customerData.email,
+        address1: customerData.address,
+        city: customerData.city,
+        zip: customerData.zip,
+        country: customerData.country
+      }
+    };
+
+    const response = await fetch(`${btcPayServerUrl}/api/v1/stores/${storeId}/invoices`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(invoiceData),
     });
+
+    if (!response.ok) {
+      throw new Error('Failed to create invoice');
+    }
+
+    const invoice = await response.json();
+    return { checkoutLink: invoice.checkoutLink };
+  }
+
+  // Funzione per chiudere il modal
+  window.closeModal = function() {
+    checkoutModal.style.display = 'none';
+  }
+
+  // Chiudi il modal se l'utente clicca fuori da esso
+  window.onclick = function(event) {
+    if (event.target == checkoutModal) {
+      checkoutModal.style.display = 'none';
+    }
   }
 });
