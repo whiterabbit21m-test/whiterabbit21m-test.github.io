@@ -26,7 +26,7 @@ books:
   - id: book3
     name: "Bitcoin Standard"
     description: "The decentralized alternative to central banking"
-    price: 19.99
+    price: sold out
     image: "/assets/images/products/bitcoin-standard.jpg"
     author: "Saifedean Ammous"
     pages: 304
