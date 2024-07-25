@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function createBTCPayInvoice(customerData) {
     const btcPayServerUrl = 'https://btcpay.whiterabbit21m.com';
     const storeId = '5vHj4TmiyYMCkFUpyBYf6rUDvaJ6YA7B74v2G7iYD9D2';
-    const apiKey = '4a18abbdd5919b860a6dd4d58eb4238618bdaf22'; // Sostituisci con il tuo token API reale
+    const apiKey = 'YOUR_API_KEY_HERE'; // Assicurati di sostituire questo con il tuo vero token API
 
     const invoiceData = {
       amount: calculateTotal(),
@@ -102,6 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
       metadata: {
         orderId: Date.now().toString(),
         itemDesc: cart.map(item => item.name).join(', '),
+      },
+      checkout: {
+        speedPolicy: 'HighSpeed',
+        paymentMethods: ['BTC'],
+        defaultPaymentMethod: 'BTC'
       },
       buyer: {
         name: customerData.name,
@@ -113,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    console.log('Sending invoice data:', invoiceData);
+    console.log('Sending invoice data:', JSON.stringify(invoiceData, null, 2));
 
     try {
       const response = await fetch(`${btcPayServerUrl}/api/v1/stores/${storeId}/invoices`, {
@@ -134,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const invoice = await response.json();
-      console.log('Created invoice:', invoice);
+      console.log('Created invoice:', JSON.stringify(invoice, null, 2));
       return { checkoutLink: invoice.checkoutUrl };
     } catch (error) {
       console.error('Error in createBTCPayInvoice:', error);
