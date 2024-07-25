@@ -24,7 +24,7 @@ permalink: /thank-you/
         </ul>
       </div>
       <a href="/" class="cta-button">Torna alla Home</a>
-      <p class="redirect-timer">Sarai reindirizzato alla home page in <span id="countdown">10</span> secondi.</p>
+      <p class="redirect-timer">Sarai reindirizzato alla home page in <span id="countdown">30</span> secondi.</p>
     </div>
   </div>
 </div>
@@ -33,7 +33,7 @@ permalink: /thank-you/
   // Timer per il reindirizzamento
   let timeLeft = 10;
   const countdownElement = document.getElementById('countdown');
-  const timerId = setInterval(countdown, 1000);
+  const timerId = setInterval(countdown, 3000);
 
   function countdown() {
     if (timeLeft === 0) {
