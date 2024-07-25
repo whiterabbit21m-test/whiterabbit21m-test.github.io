@@ -25,6 +25,7 @@ $card-bg-color: #1E1E1E;
     h1 {
       font-size: 2.5em;
       color: $accent-color;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
   }
 
@@ -32,7 +33,12 @@ $card-bg-color: #1E1E1E;
     background-color: $card-bg-color;
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
 
     p {
       font-size: 1.1em;
@@ -50,6 +56,28 @@ $card-bg-color: #1E1E1E;
     }
   }
 
+  .additional-info {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 8px;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      
+      li {
+        margin-bottom: 10px;
+        
+        &:before {
+          content: '→';
+          color: $accent-color;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
   .cta-button {
     display: inline-block;
     background-color: $accent-color;
@@ -59,11 +87,18 @@ $card-bg-color: #1E1E1E;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
 
     &:hover {
       background-color: darken($accent-color, 10%);
       transform: translateY(-2px);
     }
+  }
+
+  .redirect-timer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: rgba($text-color-light, 0.7);
   }
 }
 
