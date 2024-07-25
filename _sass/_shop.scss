@@ -7,35 +7,31 @@ $card-bg-color: #1E1E1E;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  
   h1, h2 {
     color: $accent-color;
     margin-bottom: 20px;
   }
 }
 
-.main-nav {
-  .nav-list {
+.product-categories {
+  margin-bottom: 30px;
+  ul {
     list-style-type: none;
     padding: 0;
     display: flex;
     align-items: center;
-    
-    .nav-item {
-      margin-right: 20px;
-      
+    li {
+      display: inline-block;
+      margin-right: 15px;
       &:last-child {
-        margin-right: 0;
+        margin-left: auto; // Spinge l'icona del carrello a destra
       }
-    }
-    
-    .nav-link {
-      color: $text-color;
-      text-decoration: none;
-      font-weight: bold;
-      
-      &:hover {
+      a {
         color: $accent-color;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -43,11 +39,15 @@ $card-bg-color: #1E1E1E;
 
 .cart-icon {
   position: relative;
-  
-  svg {
-    vertical-align: middle;
+  a {
+    display: flex;
+    align-items: center;
   }
-  
+  svg {
+    width: 24px;
+    height: 24px;
+    stroke: $accent-color;
+  }
   #cart-count {
     position: absolute;
     top: -8px;
@@ -58,7 +58,13 @@ $card-bg-color: #1E1E1E;
     padding: 2px 6px;
     font-size: 12px;
     font-weight: bold;
+    min-width: 18px;
+    text-align: center;
   }
+}
+
+.product-section {
+  margin-bottom: 40px;
 }
 
 .product-list {
@@ -72,63 +78,53 @@ $card-bg-color: #1E1E1E;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
-  
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   img {
     max-width: 100%;
     height: auto;
     margin-bottom: 15px;
   }
-  
   h3 {
     color: $accent-color;
     margin-bottom: 10px;
   }
-  
   p {
     color: $text-color;
     margin-bottom: 15px;
   }
-  
   .price {
     font-weight: bold;
     color: $accent-color;
   }
-  
   .add-to-cart {
-    background-color: $accent-color;
-    color: $text-color;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    
-    &:hover {
-      background-color: darken($accent-color, 10%);
-    }
+    @extend .cta-button;
+    width: 100%;
   }
 }
 
-.cart-container {
+.cart {
   background-color: $card-bg-color;
   border-radius: 8px;
   padding: 20px;
-  
+  margin-top: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  h2 {
+    color: $accent-color;
+    margin-bottom: 15px;
+  }
   #cart-items {
-    margin-bottom: 20px;
-    
+    margin-bottom: 15px;
     p {
       color: $text-color;
-      margin-bottom: 10px;
     }
   }
-  
   #cart-total {
     font-weight: bold;
     color: $accent-color;
   }
 }
 
-#checkout-modal {
+.modal {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -136,39 +132,62 @@ $card-bg-color: #1E1E1E;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
   .modal-content {
     background-color: $card-bg-color;
     margin: 15% auto;
     padding: 20px;
     border-radius: 8px;
     max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    h2 {
+      color: $accent-color;
+      margin-bottom: 20px;
+    }
   }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    
-    input {
-      margin-bottom: 10px;
-      padding: 8px;
-      border-radius: 4px;
-      border: 1px solid #ddd;
+}
+
+#checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background-color: #2C2C2C;
+    color: $text-color;
+    font-size: 16px;
+    &:focus {
+      outline: none;
+      border-color: $accent-color;
     }
-    
-    button {
-      background-color: $accent-color;
-      color: $text-color;
-      border: none;
-      padding: 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      
-      &:hover {
-        background-color: darken($accent-color, 10%);
-      }
-    }
+  }
+  button[type="submit"] {
+    @extend .cta-button;
+  }
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: $accent-color;
+  color: $text-color;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  text-align: center;
+  &:hover, &:focus {
+    background-color: darken($accent-color, 10%);
+    transform: translateY(-2px);
+  }
+  &:active {
+    transform: translateY(0);
   }
 }
 
@@ -181,5 +200,12 @@ $card-bg-color: #1E1E1E;
 @media (max-width: 480px) {
   .product-list {
     grid-template-columns: 1fr;
+  }
+  .modal-content {
+    width: 90%;
+    margin: 10% auto;
+  }
+  .cta-button {
+    padding: 12px 24px;
   }
 }
