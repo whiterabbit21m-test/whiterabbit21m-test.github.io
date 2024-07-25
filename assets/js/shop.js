@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
             cart.push(product);
             updateCartDisplay();
             saveCart();
-            updateCartCount();
             console.log('Product added to cart:', product);
         } else {
             console.error(`Unable to add product with id ${productId} to cart`);
@@ -43,6 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartCount();
     }
 
+    function updateCartCount() {
+        if (cartCount) {
+            cartCount.textContent = cart.length;
+            cartCount.style.display = cart.length > 0 ? 'inline' : 'none';
+        }
+    }
+
     function calculateTotal() {
         return cart.reduce((total, item) => total + parseFloat(item.price), 0).toFixed(2);
     }
@@ -57,13 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function saveCart() {
         localStorage.setItem('cart', JSON.stringify(cart));
-    }
-
-    function updateCartCount() {
-        if (cartCount) {
-            cartCount.textContent = cart.length;
-            cartCount.style.display = cart.length > 0 ? 'inline' : 'none';
-        }
+        window.dispatchEvent(new Event('storage'));
     }
 
     if (checkoutButton) {
@@ -176,6 +176,4 @@ Country: ${customerData.country}
             throw error;
         }
     }
-
-    updateCartCount();
 });
