@@ -24,7 +24,7 @@ books:
     dimensions: "17.8 x 2.3 x 23.3 cm"
 
 hardware:
-  - id: hw1
+  - id: hardware1
     name: "Trezor Model T"
     description: "Next-generation cryptocurrency hardware wallet"
     price: 159.99
@@ -36,7 +36,7 @@ hardware:
     dimensions: "64 x 39 x 10 mm"
     weight: "22g"
 
-  - id: hw2
+  - id: hardware2
     name: "Coldcard Mk4"
     description: "Air-gapped Bitcoin hardware wallet"
     price: 119.99
@@ -49,7 +49,7 @@ hardware:
     weight: "29g"
 
 services:
-  - id: serv1
+  - id: services1
     name: "Bitcoin Consultation"
     description: "One-hour personal consultation on Bitcoin investment strategies"
     price: 99.99
@@ -58,7 +58,7 @@ services:
     format: "Video call"
     includes: ["Investment strategy discussion", "Security best practices", "Q&A session"]
 
-  - id: serv2
+  - id: services2
     name: "Lightning Node Setup"
     description: "Remote assistance in setting up your own Lightning Network node"
     price: 199.99
