@@ -78,7 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       console.log('Sending customer data:', customerData);
       const response = await createBTCPayInvoice(customerData);
-      if (response.checkoutLink) {
+      console.log('Response from createBTCPayInvoice:', response);
+      if (response && response.checkoutLink) {
         console.log('Redirecting to checkout:', response.checkoutLink);
         window.location.href = response.checkoutLink;
       } else {
@@ -140,7 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const invoice = await response.json();
       console.log('Created invoice:', JSON.stringify(invoice, null, 2));
-      return { checkoutLink: invoice.checkoutUrl };
+
+      if (invoice.checkoutLink) {
+        return { checkoutLink: invoice.checkoutLink };
+      } else {
+        console.error('Unexpected response structure:', invoice);
+        throw new Error('Checkout link not found in BTCPay Server response');
+      }
     } catch (error) {
       console.error('Error in createBTCPayInvoice:', error);
       throw error;
