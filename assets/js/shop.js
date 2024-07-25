@@ -10,19 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showCategory(categoryId) {
     productSections.forEach(section => {
-      if (section.id === categoryId) {
-        section.style.display = 'block';
-      } else {
-        section.style.display = 'none';
-      }
+      section.style.display = section.id === categoryId ? 'block' : 'none';
     });
   }
 
   categoryLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      const categoryId = link.getAttribute('href').substring(1);
-      showCategory(categoryId);
+      showCategory(link.getAttribute('href').substring(1));
     });
   });
 
@@ -34,17 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', addToCart);
   });
 
-  function findProduct(id) {
-    for (let category in productsData) {
-      const product = productsData[category].find(p => p.id === id);
-      if (product) {
-        return product;
-      }
-    }
-    console.error(`Product with id ${id} not found`);
-    return null;
-  }
-
   function addToCart(event) {
     const productId = event.target.dataset.id;
     const product = findProduct(productId);
@@ -54,6 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       console.error(`Unable to add product with id ${productId} to cart`);
     }
+  }
+
+  function findProduct(id) {
+    for (let category in productsData) {
+      const product = productsData[category].find(p => p.id === id);
+      if (product) return product;
+    }
+    return null;
   }
 
   function updateCartDisplay() {
@@ -96,9 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function createBTCPayInvoice(customerData) {
-    // TODO: Sostituisci con l'URL del tuo server BTCPay e l'ID del tuo store
-    const btcPayServerUrl = https://btcpay.whiterabbit21m.com;
-    const storeId = 5vHj4TmiyYMCkFUpyBYf6rUDvaJ6YA7B74v2G7iYD9D2;
+    const btcPayServerUrl = 'https://btcpay.whiterabbit21m.com';
+    const storeId = '5vHj4TmiyYMCkFUpyBYf6rUDvaJ6YA7B74v2G7iYD9D2';
 
     const invoiceData = {
       price: calculateTotal(),
@@ -131,15 +122,15 @@ document.addEventListener('DOMContentLoaded', () => {
     return { checkoutLink: invoice.checkoutLink };
   }
 
-  // Funzione per chiudere il modal
   window.closeModal = function() {
     checkoutModal.style.display = 'none';
   }
 
-  // Chiudi il modal se l'utente clicca fuori da esso
   window.onclick = function(event) {
     if (event.target == checkoutModal) {
       checkoutModal.style.display = 'none';
     }
   }
+
+  console.log('Shop script initialized');
 });
