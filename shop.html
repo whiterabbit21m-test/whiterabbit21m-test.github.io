@@ -3,61 +3,73 @@ layout: page
 title: Shop
 permalink: /shop/
 ---
+
 <div class="shop-container">
   <h1>Shop</h1>
   
-  <div class="product-categories">
+  <nav class="product-categories">
     <h2>Categories</h2>
     <ul>
       <li><a href="#books">Books</a></li>
       <li><a href="#hardware">Hardware</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="/cart">View Cart</a></li>
+      <li class="cart-icon">
+        <a href="/cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span id="cart-count">0</span>
+        </a>
+      </li>
     </ul>
-  </div>
+  </nav>
 
-  <div id="books" class="product-section">
-    <h2>Books</h2>
-    <div class="product-list">
-      {% for book in site.data.products.books %}
-        <div class="product-card">
-          <img src="{{ book.image }}" alt="{{ book.name }}">
-          <h3>{{ book.name }}</h3>
-          <p>{{ book.description }}</p>
-          <p class="price">{{ book.price }} USD</p>
-          <button class="add-to-cart" data-id="{{ book.id }}">Add to Cart</button>
-        </div>
-      {% endfor %}
+  <div class="product-section-wrapper">
+    <div id="books" class="product-section">
+      <h2>Books</h2>
+      <div class="product-list">
+        {% for book in site.data.products.books %}
+          <div class="product-card">
+            <img src="{{ book.image }}" alt="{{ book.name }}">
+            <h3>{{ book.name }}</h3>
+            <p>{{ book.description }}</p>
+            <p class="price">{{ book.price }} USD</p>
+            <button class="add-to-cart" data-id="{{ book.id }}">Add to Cart</button>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 
-  <div id="hardware" class="product-section">
-    <h2>Hardware</h2>
-    <div class="product-list">
-      {% for item in site.data.products.hardware %}
-        <div class="product-card">
-          <img src="{{ item.image }}" alt="{{ item.name }}">
-          <h3>{{ item.name }}</h3>
-          <p>{{ item.description }}</p>
-          <p class="price">{{ item.price }} USD</p>
-          <button class="add-to-cart" data-id="{{ item.id }}">Add to Cart</button>
-        </div>
-      {% endfor %}
+  <div class="product-section-wrapper">
+    <div id="hardware" class="product-section">
+      <h2>Hardware</h2>
+      <div class="product-list">
+        {% for item in site.data.products.hardware %}
+          <div class="product-card">
+            <img src="{{ item.image }}" alt="{{ item.name }}">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <p class="price">{{ item.price }} USD</p>
+            <button class="add-to-cart" data-id="{{ item.id }}">Add to Cart</button>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 
-  <div id="services" class="product-section">
-    <h2>Services</h2>
-    <div class="product-list">
-      {% for service in site.data.products.services %}
-        <div class="product-card">
-          <img src="{{ service.image }}" alt="{{ service.name }}">
-          <h3>{{ service.name }}</h3>
-          <p>{{ service.description }}</p>
-          <p class="price">{{ service.price }} USD</p>
-          <button class="add-to-cart" data-id="{{ service.id }}">Add to Cart</button>
-        </div>
-      {% endfor %}
+  <div class="product-section-wrapper">
+    <div id="services" class="product-section">
+      <h2>Services</h2>
+      <div class="product-list">
+        {% for service in site.data.products.services %}
+          <div class="product-card">
+            <img src="{{ service.image }}" alt="{{ service.name }}">
+            <h3>{{ service.name }}</h3>
+            <p>{{ service.description }}</p>
+            <p class="price">{{ service.price }} USD</p>
+            <button class="add-to-cart" data-id="{{ service.id }}">Add to Cart</button>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>
