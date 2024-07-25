@@ -1,33 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const productSections = document.querySelectorAll('.product-section');
-    const categoryLinks = document.querySelectorAll('.product-categories a');
     const cartItems = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
+    const cartCount = document.getElementById('cart-count');
     const checkoutButton = document.getElementById('checkout-button');
     const checkoutModal = document.getElementById('checkout-modal');
     const checkoutForm = document.getElementById('checkout-form');
     let cart = [];
 
     loadCart();
-
-    if (productSections.length > 0) {
-        showCategory(productSections[0].id);
-    }
-
-    function showCategory(categoryId) {
-        productSections.forEach(section => {
-            section.style.display = section.id === categoryId ? 'block' : 'none';
-        });
-    }
-
-    categoryLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            if (e.target.getAttribute('href').startsWith('#')) {
-                e.preventDefault();
-                showCategory(e.target.getAttribute('href').substring(1));
-            }
-        });
-    });
 
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', addToCart);
@@ -39,8 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (product) {
             cart.push(product);
             updateCartDisplay();
-            localStorage.setItem('cart', JSON.stringify(cart));
-            window.location.href = '/cart';
+            saveCart();
+            updateCartCount();
+            console.log('Product added to cart:', product);
         } else {
             console.error(`Unable to add product with id ${productId} to cart`);
         }
@@ -59,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItems.innerHTML = cart.map(item => `<p>${item.name} - ${item.price} USD</p>`).join('');
             cartTotal.textContent = `${calculateTotal()} USD`;
         }
+        updateCartCount();
     }
 
     function calculateTotal() {
@@ -70,6 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (savedCart) {
             cart = JSON.parse(savedCart);
             updateCartDisplay();
+        }
+    }
+
+    function saveCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function updateCartCount() {
+        if (cartCount) {
+            cartCount.textContent = cart.length;
+            cartCount.style.display = cart.length > 0 ? 'inline' : 'none';
         }
     }
 
@@ -165,11 +158,8 @@ Country: ${customerData.country}
                 body: JSON.stringify(invoiceData),
             });
 
-            console.log('BTCPay Server response status:', response.status);
-
             if (!response.ok) {
                 const errorText = await response.text();
-                console.error('BTCPay Server error response:', errorText);
                 throw new Error(`BTCPay Server responded with status ${response.status}: ${errorText}`);
             }
 
@@ -179,7 +169,6 @@ Country: ${customerData.country}
             if (invoice.checkoutLink) {
                 return { checkoutLink: invoice.checkoutLink };
             } else {
-                console.error('Unexpected response structure:', invoice);
                 throw new Error('Checkout link not found in BTCPay Server response');
             }
         } catch (error) {
@@ -188,15 +177,5 @@ Country: ${customerData.country}
         }
     }
 
-    window.closeModal = function() {
-        checkoutModal.style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-        if (event.target == checkoutModal) {
-            checkoutModal.style.display = 'none';
-        }
-    }
-
-    console.log('Shop script initialized');
+    updateCartCount();
 });
