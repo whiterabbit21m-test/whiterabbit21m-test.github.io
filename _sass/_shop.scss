@@ -2,8 +2,7 @@
 $accent-color: #4CAF50;
 $text-color: #ffffff;
 $card-bg-color: #1E1E1E;
-$remove-button-color: rgba(255, 255, 255, 0.7);
-$remove-button-hover-color: #ff4444;
+$remove-button-color: #ff4444;
 
 .shop-container {
   max-width: 1200px;
@@ -118,34 +117,26 @@ $remove-button-hover-color: #ff4444;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
-      padding: 10px 15px;
+      padding: 10px;
       background-color: rgba(lighten($card-bg-color, 10%), 0.5);
       border-radius: 4px;
 
       p {
         color: $text-color;
         margin: 0;
-        flex-grow: 1;
       }
 
       .remove-from-cart {
-        background-color: transparent;
-        color: $remove-button-color;
+        background-color: $remove-button-color;
+        color: $text-color;
         border: none;
-        font-size: 24px;
+        padding: 5px 10px;
+        border-radius: 3px;
         cursor: pointer;
-        transition: color 0.3s ease;
-        padding: 5px;
-        line-height: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
-        height: 30px;
-        margin-left: 10px;
+        transition: background-color 0.3s ease;
 
         &:hover {
-          color: $remove-button-hover-color;
+          background-color: darken($remove-button-color, 10%);
         }
       }
     }
