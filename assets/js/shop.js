@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function createBTCPayInvoice(customerData) {
     const btcPayServerUrl = 'https://btcpay.whiterabbit21m.com';
     const storeId = '5vHj4TmiyYMCkFUpyBYf6rUDvaJ6YA7B74v2G7iYD9D2';
-    const apiKey = '4a18abbdd5919b860a6dd4d58eb4238618bdaf22'; // Assicurati di sostituire questo con il tuo vero token API
+    const apiKey = '9633c153628208369db7d932556dc23d3dfc6756'; // Assicurati di sostituire questo con il tuo vero token API
 
     const invoiceData = {
       amount: calculateTotal(),
