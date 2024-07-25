@@ -46,11 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItems.innerHTML = cart.map((item, index) => `
                 <div class="cart-item">
                     <p>${item.name} - ${item.price} USD</p>
-                    <button class="remove-from-cart" data-index="${index}" aria-label="Remove item">×</button>
+                    <button class="remove-from-cart" data-index="${index}">Remove</button>
                 </div>
             `).join('');
             cartTotal.textContent = `${calculateTotal()} USD`;
 
+            // Add event listeners to remove buttons
             document.querySelectorAll('.remove-from-cart').forEach(button => {
                 button.addEventListener('click', (e) => {
                     const index = parseInt(e.target.dataset.index);
