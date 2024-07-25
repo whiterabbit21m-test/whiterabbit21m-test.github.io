@@ -133,7 +133,7 @@ $remove-button-hover-color: #ff4444;
         background-color: transparent;
         color: $remove-button-color;
         border: none;
-        font-size: 24px; // Aumentato da 18px
+        font-size: 24px;
         cursor: pointer;
         transition: color 0.3s ease;
         position: absolute;
@@ -145,19 +145,15 @@ $remove-button-hover-color: #ff4444;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 30px; // Aggiungi una larghezza fissa
-        height: 30px; // Aggiungi un'altezza fissa
-
-        &::before {
-          content: "\00d7"; // Unicode per il carattere "×"
-        }
+        width: 30px;
+        height: 30px;
 
         &:hover {
           color: $remove-button-hover-color;
         }
       }
     }
-
+  }
   
   #cart-total {
     font-weight: bold;
