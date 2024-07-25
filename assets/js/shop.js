@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartItems = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
     const cartCount = document.getElementById('cart-count');
-    const checkoutButton = document.getElementById('checkout-button');
-    const checkoutModal = document.getElementById('checkout-modal');
     const checkoutForm = document.getElementById('checkout-form');
     let cart = [];
 
@@ -46,12 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItems.innerHTML = cart.map((item, index) => `
                 <div class="cart-item">
                     <p>${item.name} - ${item.price} USD</p>
-                    <button class="remove-from-cart" data-index="${index}">Remove</button>
+                    <button class="remove-from-cart" data-index="${index}">×</button>
                 </div>
             `).join('');
             cartTotal.textContent = `${calculateTotal()} USD`;
 
-            // Add event listeners to remove buttons
             document.querySelectorAll('.remove-from-cart').forEach(button => {
                 button.addEventListener('click', (e) => {
                     const index = parseInt(e.target.dataset.index);
@@ -84,12 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function saveCart() {
         localStorage.setItem('cart', JSON.stringify(cart));
         window.dispatchEvent(new Event('storage'));
-    }
-
-    if (checkoutButton) {
-        checkoutButton.addEventListener('click', () => {
-            checkoutModal.style.display = 'block';
-        });
     }
 
     if (checkoutForm) {
