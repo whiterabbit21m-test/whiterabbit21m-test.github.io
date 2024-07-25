@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItems.innerHTML = cart.map((item, index) => `
                 <div class="cart-item">
                     <p>${item.name} - ${item.price} USD</p>
-                    <button class="remove-from-cart" data-index="${index}" aria-label="Remove item"></button>
+                    <button class="remove-from-cart" data-index="${index}" aria-label="Remove item">×</button>
                 </div>
             `).join('');
             cartTotal.textContent = `${calculateTotal()} USD`;
