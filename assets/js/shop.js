@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function createBTCPayInvoice(customerData) {
     // TODO: Sostituisci con l'URL del tuo server BTCPay e l'ID del tuo store
-    const btcPayServerUrl = 'https://btcpay.yourdomain.com';
-    const storeId = 'YourStoreId';
+    const btcPayServerUrl = https://btcpay.whiterabbit21m.com;
+    const storeId = 5vHj4TmiyYMCkFUpyBYf6rUDvaJ6YA7B74v2G7iYD9D2;
 
     const invoiceData = {
       price: calculateTotal(),
