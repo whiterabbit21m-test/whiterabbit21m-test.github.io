@@ -95,14 +95,25 @@ document.addEventListener('DOMContentLoaded', () => {
   async function createBTCPayInvoice(customerData) {
     const btcPayServerUrl = 'https://btcpay.whiterabbit21m.com';
     const storeId = '5vHj4TmiyYMCkFUpyBYf6rUDvaJ6YA7B74v2G7iYD9D2';
-    const apiKey = '9633c153628208369db7d932556dc23d3dfc6756'; // Assicurati di sostituire questo con il tuo vero token API
+    const apiKey = 'YOUR_API_KEY_HERE'; // Assicurati di sostituire questo con il tuo vero token API
+
+    // Creiamo una descrizione dettagliata che include tutte le informazioni del cliente
+    const detailedDescription = `
+      Products: ${cart.map(item => `${item.name} - $${item.price}`).join(', ')}
+      Customer: ${customerData.name}
+      Email: ${customerData.email}
+      Address: ${customerData.address}
+      City: ${customerData.city}
+      ZIP: ${customerData.zip}
+      Country: ${customerData.country}
+    `.trim();
 
     const invoiceData = {
       amount: calculateTotal(),
       currency: 'USD',
       metadata: {
         orderId: Date.now().toString(),
-        itemDesc: cart.map(item => item.name).join(', '),
+        itemDesc: detailedDescription,
       },
       checkout: {
         speedPolicy: 'HighSpeed',
