@@ -7,32 +7,35 @@ $card-bg-color: #1E1E1E;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  
   h1, h2 {
     color: $accent-color;
     margin-bottom: 20px;
   }
 }
 
-.product-categories {
-  margin-bottom: 30px;
-  ul {
+.main-nav {
+  .nav-list {
     list-style-type: none;
     padding: 0;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    li {
-      margin-right: 15px;
-      margin-bottom: 10px;
+    
+    .nav-item {
+      margin-right: 20px;
+      
       &:last-child {
-        margin-left: auto;
+        margin-right: 0;
       }
-      a {
+    }
+    
+    .nav-link {
+      color: $text-color;
+      text-decoration: none;
+      font-weight: bold;
+      
+      &:hover {
         color: $accent-color;
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-        }
       }
     }
   }
@@ -40,15 +43,11 @@ $card-bg-color: #1E1E1E;
 
 .cart-icon {
   position: relative;
-  a {
-    display: flex;
-    align-items: center;
-  }
+  
   svg {
-    width: 24px;
-    height: 24px;
-    stroke: $accent-color;
+    vertical-align: middle;
   }
+  
   #cart-count {
     position: absolute;
     top: -8px;
@@ -59,33 +58,13 @@ $card-bg-color: #1E1E1E;
     padding: 2px 6px;
     font-size: 12px;
     font-weight: bold;
-    min-width: 18px;
-    text-align: center;
   }
-}
-
-.product-section-wrapper {
-  width: 100%;
-  overflow: hidden;
-}
-
-.product-section {
-  margin-bottom: 40px;
 }
 
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
-  width: 100%;
-  
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 .product-card {
@@ -93,15 +72,11 @@ $card-bg-color: #1E1E1E;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
   
   img {
     max-width: 100%;
     height: auto;
     margin-bottom: 15px;
-    object-fit: cover;
   }
   
   h3 {
@@ -112,7 +87,6 @@ $card-bg-color: #1E1E1E;
   p {
     color: $text-color;
     margin-bottom: 15px;
-    flex-grow: 1;
   }
   
   .price {
@@ -121,35 +95,40 @@ $card-bg-color: #1E1E1E;
   }
   
   .add-to-cart {
-    @extend .cta-button;
-    width: 100%;
-    margin-top: auto;
+    background-color: $accent-color;
+    color: $text-color;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
   }
 }
 
-.cart {
+.cart-container {
   background-color: $card-bg-color;
   border-radius: 8px;
   padding: 20px;
-  margin-top: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  h2 {
-    color: $accent-color;
-    margin-bottom: 15px;
-  }
+  
   #cart-items {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    
     p {
       color: $text-color;
+      margin-bottom: 10px;
     }
   }
+  
   #cart-total {
     font-weight: bold;
     color: $accent-color;
   }
 }
 
-.modal {
+#checkout-modal {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -157,96 +136,50 @@ $card-bg-color: #1E1E1E;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.5);
+  
   .modal-content {
     background-color: $card-bg-color;
     margin: 15% auto;
     padding: 20px;
     border-radius: 8px;
     max-width: 500px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    h2 {
-      color: $accent-color;
-      margin-bottom: 20px;
-    }
   }
-}
-
-#checkout-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  input {
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #333;
-    background-color: #2C2C2C;
-    color: $text-color;
-    font-size: 16px;
-    &:focus {
-      outline: none;
-      border-color: $accent-color;
-    }
-  }
-  button[type="submit"] {
-    @extend .cta-button;
-  }
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: $accent-color;
-  color: $text-color;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
-  text-align: center;
-  &:hover, &:focus {
-    background-color: darken($accent-color, 10%);
-    transform: translateY(-2px);
-  }
-  &:active {
-    transform: translateY(0);
-  }
-}
-
-// Stili specifici per la pagina del carrello
-.cart-container {
-  background-color: $card-bg-color;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: $text-color;
-
-  #cart-items {
-    margin-bottom: 20px;
-    p {
-      padding: 10px;
-      background-color: darken($card-bg-color, 5%);
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    
+    input {
+      margin-bottom: 10px;
+      padding: 8px;
       border-radius: 4px;
-      margin-bottom: 5px;
+      border: 1px solid #ddd;
+    }
+    
+    button {
+      background-color: $accent-color;
+      color: $text-color;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
     }
   }
+}
 
-  #cart-total {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  .modal-content {
-    width: 90%;
-    margin: 10% auto;
-  }
-  .cta-button {
-    padding: 12px 24px;
+  .product-list {
+    grid-template-columns: 1fr;
   }
 }
