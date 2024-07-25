@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (product) {
       cart.push(product);
       updateCartDisplay();
+      console.log('Product added to cart:', product);
     } else {
       console.error(`Unable to add product with id ${productId} to cart`);
     }
@@ -75,15 +76,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
 
     try {
+      console.log('Sending customer data:', customerData);
       const response = await createBTCPayInvoice(customerData);
       if (response.checkoutLink) {
+        console.log('Redirecting to checkout:', response.checkoutLink);
         window.location.href = response.checkoutLink;
       } else {
-        alert('Error creating invoice. Please try again.');
+        console.error('Invalid response from createBTCPayInvoice:', response);
+        alert('Error creating invoice. Please check the console for more details.');
       }
     } catch (error) {
       console.error('Checkout error:', error);
-      alert('An error occurred during checkout. Please try again.');
+      alert(`An error occurred during checkout: ${error.message}. Please check the console for more details.`);
     }
   }
 
@@ -106,20 +110,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    const response = await fetch(`${btcPayServerUrl}/api/v1/stores/${storeId}/invoices`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(invoiceData),
-    });
+    console.log('Sending invoice data:', invoiceData);
 
-    if (!response.ok) {
-      throw new Error('Failed to create invoice');
+    try {
+      const response = await fetch(`${btcPayServerUrl}/api/v1/stores/${storeId}/invoices`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(invoiceData),
+      });
+
+      console.log('BTCPay Server response status:', response.status);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('BTCPay Server error response:', errorText);
+        throw new Error(`BTCPay Server responded with status ${response.status}: ${errorText}`);
+      }
+
+      const invoice = await response.json();
+      console.log('Created invoice:', invoice);
+      return { checkoutLink: invoice.checkoutLink };
+    } catch (error) {
+      console.error('Error in createBTCPayInvoice:', error);
+      throw error;
     }
-
-    const invoice = await response.json();
-    return { checkoutLink: invoice.checkoutLink };
   }
 
   window.closeModal = function() {
