@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCartDisplay();
+        saveCart();
+        console.log('Product removed from cart at index:', index);
+    }
+
     function findProduct(id) {
         for (let category in productsData) {
             const product = productsData[category].find(p => p.id === id);
@@ -36,8 +43,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateCartDisplay() {
         if (cartItems && cartTotal) {
-            cartItems.innerHTML = cart.map(item => `<p>${item.name} - ${item.price} USD</p>`).join('');
+            cartItems.innerHTML = cart.map((item, index) => `
+                <div class="cart-item">
+                    <p>${item.name} - ${item.price} USD</p>
+                    <button class="remove-from-cart" data-index="${index}">Remove</button>
+                </div>
+            `).join('');
             cartTotal.textContent = `${calculateTotal()} USD`;
+
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-from-cart').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.dataset.index);
+                    removeFromCart(index);
+                });
+            });
         }
         updateCartCount();
     }
