@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const apiKey = '8897f77cec2dfba2fe0c5d89fd57192b509b752a';
 
         const shopPath = '/shop/';
+        const fullShopUrl = new URL(shopPath, window.location.origin).toString();
 
         const detailedDescription = `
 Order Details:
@@ -153,7 +154,7 @@ Country: ${customerData.country}
                 speedPolicy: 'HighSpeed',
                 paymentMethods: ['BTC', 'BTC-LightningNetwork'],
                 defaultPaymentMethod: 'BTC-LightningNetwork',
-                redirectURL: 'shopPath',
+                redirectURL: fullShopUrl,
                 redirectAutomatically: true
             },
             buyer: {
