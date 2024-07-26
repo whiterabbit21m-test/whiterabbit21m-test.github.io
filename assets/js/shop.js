@@ -151,7 +151,7 @@ Country: ${customerData.country}
                 speedPolicy: 'HighSpeed',
                 paymentMethods: ['BTC', 'BTC-LightningNetwork'],
                 defaultPaymentMethod: 'BTC-LightningNetwork'
-                redirectURL: shopPath, // Aggiungi questa linea
+                redirectURL: 'shopPath' // Aggiungi questa linea
                 redirectAutomatically: true // Aggiungi questa linea per reindirizzare automaticamente
             },
             buyer: {
