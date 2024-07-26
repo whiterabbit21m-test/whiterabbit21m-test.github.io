@@ -129,11 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const detailedDescription = `
 Order Details:
---------------
 ${cart.map(item => `- ${item.name}: $${item.price}`).join('\n')}
 
 Customer Information:
----------------------
 Name: ${customerData.name}
 Email: ${customerData.email}
 Address: ${customerData.address}
