@@ -151,8 +151,6 @@ Country: ${customerData.country}
                 speedPolicy: 'HighSpeed',
                 paymentMethods: ['BTC', 'BTC-LightningNetwork'],
                 defaultPaymentMethod: 'BTC-LightningNetwork'
-                redirectURL: 'https://whiterabbit21m-test.github.io' // Aggiungi questa linea
-                redirectAutomatically: true // Aggiungi questa linea per reindirizzare automaticamente
             },
             buyer: {
                 name: customerData.name,
