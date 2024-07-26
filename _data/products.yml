@@ -10,7 +10,7 @@ books:
     publication_date: "2018-04-24"
     weight: "0.5" # in kg
     dimensions: "15.2 x 2.5 x 22.9 cm"
-    sold_out: false
+    sold_out: true
   - id: book2
     name: "Mastering Bitcoin"
     description: "Programming the Open Blockchain"
@@ -69,7 +69,7 @@ services:
     duration: "60 minutes"
     format: "Video call"
     includes: ["Investment strategy discussion", "Security best practices", "Q&A session"]
-    sold_out: false
+    sold_out: true
   - id: services2
     name: "Lightning Node Setup"
     description: "Remote assistance in setting up your own Lightning Network node"
@@ -78,4 +78,4 @@ services:
     duration: "Up to 3 hours"
     format: "Remote assistance"
     includes: ["Hardware recommendation", "Software installation", "Channel opening guidance", "Basic operation training"]
-    sold_out: false
+    sold_out: true
