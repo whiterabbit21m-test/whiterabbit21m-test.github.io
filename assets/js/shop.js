@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let cart = [];
 
     loadCart();
+    checkAndClearCart();
 
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', addToCart);
@@ -83,6 +84,23 @@ document.addEventListener('DOMContentLoaded', () => {
         window.dispatchEvent(new Event('storage'));
     }
 
+    function clearCart() {
+        cart = [];
+        saveCart();
+        updateCartDisplay();
+    }
+
+    function checkAndClearCart() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('clearCart') === 'true') {
+            clearCart();
+            // Rimuovi il parametro clearCart dall'URL
+            urlParams.delete('clearCart');
+            const newUrl = window.location.pathname + (urlParams.toString() ? '?' + urlParams.toString() : '');
+            window.history.replaceState({}, '', newUrl);
+        }
+    }
+
     if (checkoutForm) {
         checkoutForm.addEventListener('submit', handleCheckout);
     }
@@ -129,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const shopPath = '/shop/';
         const fullShopUrl = new URL(shopPath, window.location.origin).toString();
+        const redirectUrlWithClearCart = `${fullShopUrl}?clearCart=true`;
 
         const detailedDescription = `
 Order Details:
@@ -154,7 +173,7 @@ Country: ${customerData.country}
                 speedPolicy: 'HighSpeed',
                 paymentMethods: ['BTC', 'BTC-LightningNetwork'],
                 defaultPaymentMethod: 'BTC-LightningNetwork',
-                redirectURL: fullShopUrl,
+                redirectURL: redirectUrlWithClearCart,
                 redirectAutomatically: true
             },
             buyer: {
