@@ -127,6 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const storeId = '5vHj4TmiyYMCkFUpyBYf6rUDvaJ6YA7B74v2G7iYD9D2';
         const apiKey = '8897f77cec2dfba2fe0c5d89fd57192b509b752a';
 
+        const shopPath = '/shop/';
+
         const detailedDescription = `
 Order Details:
 ${cart.map(item => `- ${item.name}: $${item.price}`).join('\n')}
@@ -150,7 +152,9 @@ Country: ${customerData.country}
             checkout: {
                 speedPolicy: 'HighSpeed',
                 paymentMethods: ['BTC', 'BTC-LightningNetwork'],
-                defaultPaymentMethod: 'BTC-LightningNetwork'
+                defaultPaymentMethod: 'BTC-LightningNetwork',
+                redirectURL: shopPath,
+                redirectAutomatically: true
             },
             buyer: {
                 name: customerData.name,
