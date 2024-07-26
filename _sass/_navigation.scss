@@ -1,17 +1,15 @@
-// Variabili esistenti
+// Variables (assicurati che siano coerenti con header.scss)
 $text-color: #ffffff;
 $accent-color: #4CAF50;
-$background-color: #121212;
 $card-bg-color: #1E1E1E;
 
-// Stili esistenti
 .nav-wrapper {
   display: flex;
   align-items: center;
 }
 
 .menu-toggle {
-  display: none; // Nascosto di default
+  display: none;
 }
 
 .main-nav {
@@ -56,68 +54,40 @@ $card-bg-color: #1E1E1E;
       }
     }
   }
-
-  // Nuovi stili per l'icona del carrello
-  .cart-icon {
-    position: relative;
-    
-    .nav-link {
-      display: flex;
-      align-items: center;
-      
-      svg {
-        width: 24px;
-        height: 24px;
-        stroke: currentColor;
-        margin-right: 5px;
-      }
-    }
-
-    #cart-count {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      background-color: $accent-color;
-      color: $text-color;
-      border-radius: 50%;
-      padding: 2px 6px;
-      font-size: 12px;
-      font-weight: bold;
-      min-width: 18px;
-      text-align: center;
-    }
-  }
 }
 
-// Media query esistente
 @media (max-width: 768px) {
   .nav-wrapper {
-    justify-content: flex-end;
+    width: 100%;
+    justify-content: flex-start;
   }
+  
   .menu-toggle {
     display: block;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 5px;
     z-index: 1001;
+    
     span {
       display: block;
-      width: 25px;
-      height: 3px;
+      width: 20px;
+      height: 2px;
       background-color: $text-color;
-      margin: 5px 0;
+      margin: 4px 0;
       transition: 0.4s;
     }
   }
+  
   .main-nav {
     position: fixed;
     top: 0;
-    right: -250px;
+    left: -250px;
     width: 250px;
     height: 100vh;
     background-color: $card-bg-color;
-    transition: right 0.3s ease;
+    transition: left 0.3s ease;
     z-index: 1000;
     
     .nav-list {
@@ -140,26 +110,11 @@ $card-bg-color: #1E1E1E;
         background-color: rgba($accent-color, 0.1);
       }
     }
-
-    // Aggiustamenti per l'icona del carrello nel menu mobile
-    .cart-icon {
-      .nav-link {
-        justify-content: flex-start;
-        
-        svg {
-          margin-right: 10px;
-        }
-      }
-      
-      #cart-count {
-        position: static;
-        margin-left: 5px;
-      }
-    }
   }
+  
   body.menu-open {
     .main-nav {
-      right: 0;
+      left: 0;
     }
     .menu-toggle {
       span:nth-child(1) {
@@ -172,34 +127,35 @@ $card-bg-color: #1E1E1E;
         transform: rotate(45deg) translate(-5px, -6px);
       }
     }
-  }
-  body.menu-open {
     overflow: hidden;
-  }
-  body.menu-open::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    
+    &::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
   }
 }
 
-// Animazioni esistenti
 @keyframes slideIn {
-  from { right: -250px; }
-  to { right: 0; }
+  from { left: -250px; }
+  to { left: 0; }
 }
+
 @keyframes slideOut {
-  from { right: 0; }
-  to { right: -250px; }
+  from { left: 0; }
+  to { left: -250px; }
 }
+
 body.menu-open .main-nav {
   animation: slideIn 0.3s forwards;
 }
+
 body:not(.menu-open) .main-nav {
   animation: slideOut 0.3s forwards;
 }
