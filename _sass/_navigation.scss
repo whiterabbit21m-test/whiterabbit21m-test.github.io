@@ -56,6 +56,15 @@ $card-bg-color: #1E1E1E;
   }
 }
 
+// Gestione dello scroll
+.scroll-down .site-header {
+  transform: translateY(-100%);
+}
+
+.scroll-up .site-header {
+  transform: translateY(0);
+}
+
 @media (max-width: 768px) {
   .nav-wrapper {
     width: 100%;
