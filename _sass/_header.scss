@@ -13,7 +13,7 @@ $card-bg-color: #1E1E1E;
   left: 0;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: padding 0.3s ease;
+  transition: padding 0.3s ease, transform 0.3s ease;
 }
 
 .header-container {
@@ -23,7 +23,6 @@ $card-bg-color: #1E1E1E;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  position: relative;
 }
 
 .logo {
@@ -47,7 +46,13 @@ $card-bg-color: #1E1E1E;
   }
 }
 
+.nav-cart-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .cart-icon {
+  margin-left: 20px;
   position: relative;
   
   .nav-link {
@@ -58,7 +63,6 @@ $card-bg-color: #1E1E1E;
       width: 24px;
       height: 24px;
       stroke: currentColor;
-      margin-right: 5px;
     }
   }
   #cart-count {
@@ -74,6 +78,15 @@ $card-bg-color: #1E1E1E;
     min-width: 18px;
     text-align: center;
   }
+}
+
+// Scroll behavior
+.scroll-down .site-header {
+  transform: translateY(-100%);
+}
+
+.scroll-up .site-header {
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
@@ -94,7 +107,12 @@ $card-bg-color: #1E1E1E;
     }
   }
   
+  .nav-cart-wrapper {
+    order: -1; // Move to the left in mobile view
+  }
+  
   .cart-icon {
+    margin-left: 0;
     position: absolute;
     right: 10px;
     top: 50%;
