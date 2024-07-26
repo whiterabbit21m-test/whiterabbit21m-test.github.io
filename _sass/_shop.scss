@@ -3,11 +3,17 @@ $accent-color: #4CAF50;
 $text-color: #ffffff;
 $card-bg-color: #1E1E1E;
 $remove-button-color: #ff4444;
+$page-max-width: 1200px; // Larghezza massima della pagina
+
+.container {
+  width: 100%;
+  max-width: $page-max-width;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
 .shop-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  @extend .container;
   
   h1, h2 {
     color: $accent-color;
@@ -121,14 +127,13 @@ $remove-button-color: #ff4444;
   }
 }
 
-// New styles for cart and checkout
+// Styles for cart and checkout
 .cart-checkout-container {
+  @extend .container;
   display: flex;
   justify-content: space-between;
   gap: 30px;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
+  margin-top: 30px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -138,6 +143,7 @@ $remove-button-color: #ff4444;
 .checkout-form-container,
 .cart-summary-container {
   flex: 1;
+  min-width: 0; // Allows flex items to shrink below their base size
   background-color: $card-bg-color;
   border-radius: 8px;
   padding: 20px;
