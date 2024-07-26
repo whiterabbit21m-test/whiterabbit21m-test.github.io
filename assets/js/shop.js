@@ -89,6 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function handleCheckout(event) {
         event.preventDefault();
+
+        // Controllo se il carrello è vuoto o se l'importo totale è 0
+        if (cart.length === 0 || calculateTotal() === '0.00') {
+            alert('Your cart is empty. Please add items to your cart before checking out.');
+            return; // Esce dalla funzione senza creare l'invoice
+        }
+
         const formData = new FormData(checkoutForm);
         const customerData = Object.fromEntries(formData);
         
@@ -118,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function createBTCPayInvoice(customerData) {
         const btcPayServerUrl = 'https://btcpay.whiterabbit21m.com';
         const storeId = '5vHj4TmiyYMCkFUpyBYf6rUDvaJ6YA7B74v2G7iYD9D2';
-        const apiKey = '8897f77cec2dfba2fe0c5d89fd57192b509b752a'; // Assicurati di sostituire questo con il tuo vero token API
+        const apiKey = '8897f77cec2dfba2fe0c5d89fd57192b509b752a';
 
         const detailedDescription = `
 Order Details:
