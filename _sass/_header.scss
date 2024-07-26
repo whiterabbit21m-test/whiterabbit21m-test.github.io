@@ -96,9 +96,13 @@ $card-bg-color: #1E1E1E;
   
   .header-container {
     padding: 0 10px;
+    position: relative; // Add this
   }
   
   .logo {
+    position: absolute; // Add this
+    left: 50%; // Add this
+    transform: translateX(-50%); // Add this
     .logo-image {
       max-height: 40px;
     }
@@ -108,14 +112,16 @@ $card-bg-color: #1E1E1E;
   }
   
   .nav-cart-wrapper {
-    order: -1; // Move to the left in mobile view
+    width: 100%; // Add this
+    justify-content: space-between; // Add this
   }
   
   .cart-icon {
     margin-left: 0;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+  }
+
+  // Add these styles for the menu toggle
+  .menu-toggle {
+    order: -1; // Ensure it's on the left
   }
 }
