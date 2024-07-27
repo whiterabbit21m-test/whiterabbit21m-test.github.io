@@ -71,4 +71,24 @@ layout: default
   {% endif %}
 </div>
 
+<script>
+  var productData = {
+    id: "{{ page.id }}",
+    name: "{{ page.name | escape }}",
+    price: "{{ page.price }}",
+    sold_out: {% if page.sold_out %}true{% else %}false{% endif %}
+  };
+</script>
+
 <script src="{{ '/assets/js/shop.js' | relative_url }}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const addToCartButton = document.querySelector('.add-to-cart');
+  if (addToCartButton) {
+    addToCartButton.addEventListener('click', function() {
+      addToCart(productData);
+    });
+  }
+});
+</script>
