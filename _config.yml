@@ -5,7 +5,7 @@ description: >- # questo significa ignorare newline fino a "baseurl:"
   Questo è il mio sito personale creato con Jekyll. Qui condivido i miei pensieri
   su sviluppo web, design e tecnologia.
 baseurl: "" # il sottopath del tuo sito, e.g. /blog
-url: "https://www.tuosito.com" # l'host base & protocollo per il tuo sito, e.g. http://example.com
+url: "https://www.whiterabbit21m.org" # l'host base & protocollo per il tuo sito, e.g. http://example.com
 
 # Social media
 twitter_username: whiterabbit21m
@@ -48,8 +48,11 @@ collections:
   posts:
     output: true
     permalink: /blog/:year/:month/:day/:title/
+  products:
+    output: true
+    permalink: /products/:name
 
-# Impostazioni di default per i post
+# Impostazioni di default per i post e i prodotti
 defaults:
   -
     scope:
@@ -59,6 +62,12 @@ defaults:
       layout: "post"
       author: "whiterabbit21m"
       comments: true
+  -
+    scope:
+      path: ""
+      type: "products"
+    values:
+      layout: "product"
 
 # Impostazioni di paginazione
 paginate: 6
