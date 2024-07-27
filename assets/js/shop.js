@@ -8,22 +8,41 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCart();
     checkAndClearCart();
 
+    // Gestione dell'aggiunta al carrello dalla pagina principale del negozio
     document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', addToCart);
+        button.addEventListener('click', function() {
+            const productId = this.dataset.id;
+            const product = findProduct(productId);
+            if (product) {
+                addToCart(product);
+            }
+        });
     });
 
-    function addToCart(event) {
-        const productId = event.target.dataset.id;
-        const product = findProduct(productId);
+    // Gestione dell'aggiunta al carrello dalla pagina di dettaglio del prodotto
+    const addToCartDetailPage = document.querySelector('.product-detail .add-to-cart');
+    if (addToCartDetailPage) {
+        addToCartDetailPage.addEventListener('click', function() {
+            const product = {
+                id: this.dataset.id,
+                name: document.querySelector('.product-detail h1').textContent,
+                price: document.querySelector('.product-detail .price').textContent.replace(' USD', ''),
+                sold_out: false // Assumiamo che se il bottone è cliccabile, il prodotto non è esaurito
+            };
+            addToCart(product);
+        });
+    }
+
+    function addToCart(product) {
         if (product && !product.sold_out) {
             cart.push(product);
             updateCartDisplay();
             saveCart();
             console.log('Product added to cart:', product);
         } else if (product && product.sold_out) {
-            console.error(`Product with id ${productId} is sold out`);
+            console.error(`Product with id ${product.id} is sold out`);
         } else {
-            console.error(`Unable to add product with id ${productId} to cart`);
+            console.error(`Unable to add product with id ${product.id} to cart`);
         }
     }
 
@@ -35,9 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function findProduct(id) {
-        for (let category in productsData) {
-            const product = productsData[category].find(p => p.id === id);
-            if (product) return product;
+        if (typeof productsData !== 'undefined') {
+            for (let category in productsData) {
+                const product = productsData[category].find(p => p.id === id);
+                if (product) return product;
+            }
+        } else if (typeof productData !== 'undefined') {
+            return productData;
         }
         return null;
     }
@@ -219,3 +242,9 @@ Country: ${customerData.country}
         }
     }
 });
+
+// Esponi la funzione addToCart globalmente
+window.addToCart = function(product) {
+    const event = new CustomEvent('addToCart', { detail: product });
+    document.dispatchEvent(event);
+};
