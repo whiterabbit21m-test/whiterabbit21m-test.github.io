@@ -114,18 +114,15 @@ $sold-out-color: #d32f2f;
     img {
       filter: grayscale(100%);
     }
-  }
-  
-  .sold-out-button {
-    @extend .cta-button;
-    width: 100%;
-    margin-top: 15px;
-    background-color: $sold-out-color;
-    cursor: not-allowed;
     
-    &:hover, &:focus {
-      background-color: darken($sold-out-color, 10%);
-      transform: none;
+    .sold-out-button {
+      background-color: $sold-out-color;
+      cursor: not-allowed;
+      
+      &:hover, &:focus {
+        background-color: darken($sold-out-color, 10%);
+        transform: none;
+      }
     }
   }
 }
@@ -151,6 +148,16 @@ $sold-out-color: #d32f2f;
   
   &:active {
     transform: translateY(0);
+  }
+  
+  &.sold-out-button {
+    background-color: $sold-out-color;
+    cursor: not-allowed;
+    
+    &:hover, &:focus {
+      background-color: darken($sold-out-color, 10%);
+      transform: none;
+    }
   }
 }
 
@@ -199,7 +206,6 @@ $sold-out-color: #d32f2f;
   }
 }
 
-// Stili per il carrello e il checkout
 .cart-checkout-container {
   @extend .container;
   display: flex;
