@@ -50,7 +50,7 @@ collections:
     permalink: /blog/:year/:month/:day/:title/
   products:
     output: true
-    permalink: /products/:name
+    permalink: /products/:title/
 
 # Impostazioni di default per i post e i prodotti
 defaults:
