@@ -102,7 +102,7 @@ $sold-out-color: #d32f2f;
     margin-top: auto;
   }
   
-  .add-to-cart {
+  .add-to-cart, .sold-out-button {
     @extend .cta-button;
     width: 100%;
     margin-top: 15px;
@@ -121,7 +121,6 @@ $sold-out-color: #d32f2f;
       
       &:hover, &:focus {
         background-color: darken($sold-out-color, 10%);
-        transform: none;
       }
     }
   }
@@ -156,7 +155,6 @@ $sold-out-color: #d32f2f;
     
     &:hover, &:focus {
       background-color: darken($sold-out-color, 10%);
-      transform: none;
     }
   }
 }
