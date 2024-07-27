@@ -8,30 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCart();
     checkAndClearCart();
 
-    // Gestione dell'aggiunta al carrello dalla pagina principale del negozio
+    // Gestione dell'aggiunta al carrello per tutti i pulsanti "Aggiungi al Carrello"
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', function() {
             const productId = this.dataset.id;
-            const product = findProduct(productId);
+            let product;
+
+            if (document.querySelector('.product-detail')) {
+                // Siamo nella pagina di dettaglio del prodotto
+                product = {
+                    id: productId,
+                    name: document.querySelector('.product-detail h1').textContent,
+                    price: document.querySelector('.product-detail .price').textContent.replace(' USD', ''),
+                    sold_out: false // Assumiamo che se il bottone è cliccabile, il prodotto non è esaurito
+                };
+            } else {
+                // Siamo nella pagina principale del negozio
+                product = findProduct(productId);
+            }
+
             if (product) {
                 addToCart(product);
             }
         });
     });
-
-    // Gestione dell'aggiunta al carrello dalla pagina di dettaglio del prodotto
-    const addToCartDetailPage = document.querySelector('.product-detail .add-to-cart');
-    if (addToCartDetailPage) {
-        addToCartDetailPage.addEventListener('click', function() {
-            const product = {
-                id: this.dataset.id,
-                name: document.querySelector('.product-detail h1').textContent,
-                price: document.querySelector('.product-detail .price').textContent.replace(' USD', ''),
-                sold_out: false // Assumiamo che se il bottone è cliccabile, il prodotto non è esaurito
-            };
-            addToCart(product);
-        });
-    }
 
     function addToCart(product) {
         if (product && !product.sold_out) {
@@ -59,8 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const product = productsData[category].find(p => p.id === id);
                 if (product) return product;
             }
-        } else if (typeof productData !== 'undefined') {
-            return productData;
         }
         return null;
     }
@@ -242,9 +240,3 @@ Country: ${customerData.country}
         }
     }
 });
-
-// Esponi la funzione addToCart globalmente
-window.addToCart = function(product) {
-    const event = new CustomEvent('addToCart', { detail: product });
-    document.dispatchEvent(event);
-};
