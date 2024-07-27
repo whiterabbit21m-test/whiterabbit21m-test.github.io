@@ -1,22 +1,22 @@
 ---
 layout: page
-title: Negozio
+title: Shop
 permalink: /shop/
 ---
 <div class="shop-container">
-  <h1>Negozio</h1>
+  <h1>Shop</h1>
   
   <nav class="product-categories">
     <h2>Categorie</h2>
     <ul>
-      <li><a href="#books" class="category-link" data-category="books">Libri</a></li>
+      <li><a href="#books" class="category-link" data-category="books">Books</a></li>
       <li><a href="#hardware" class="category-link" data-category="hardware">Hardware</a></li>
       <li><a href="#services" class="category-link" data-category="services">Servizi</a></li>
     </ul>
   </nav>
   
   <div id="books" class="product-section" style="display: none;">
-    <h2>Libri</h2>
+    <h2>Books</h2>
     <div class="product-list">
       {% for book in site.data.products.books %}
         <div class="product-card{% if book.sold_out %} sold-out{% endif %}">
@@ -25,9 +25,9 @@ permalink: /shop/
           <p>{{ book.description }}</p>
           <p class="price">{{ book.price }} USD</p>
           {% if book.sold_out %}
-            <button class="sold-out-button" disabled>Esaurito</button>
+            <button class="sold-out-button" disabled>Sold Out</button>
           {% else %}
-            <button class="add-to-cart" data-id="{{ book.id }}">Aggiungi al Carrello</button>
+            <button class="add-to-cart" data-id="{{ book.id }}">Add to Cart</button>
           {% endif %}
         </div>
       {% endfor %}
@@ -44,9 +44,9 @@ permalink: /shop/
           <p>{{ item.description }}</p>
           <p class="price">{{ item.price }} USD</p>
           {% if item.sold_out %}
-            <button class="sold-out-button" disabled>Esaurito</button>
+            <button class="sold-out-button" disabled>Sold Out</button>
           {% else %}
-            <button class="add-to-cart" data-id="{{ item.id }}">Aggiungi al Carrello</button>
+            <button class="add-to-cart" data-id="{{ item.id }}">Add to Cart</button>
           {% endif %}
         </div>
       {% endfor %}
@@ -54,7 +54,7 @@ permalink: /shop/
   </div>
   
   <div id="services" class="product-section" style="display: none;">
-    <h2>Servizi</h2>
+    <h2>Services</h2>
     <div class="product-list">
       {% for service in site.data.products.services %}
         <div class="product-card{% if service.sold_out %} sold-out{% endif %}">
@@ -63,9 +63,9 @@ permalink: /shop/
           <p>{{ service.description }}</p>
           <p class="price">{{ service.price }} USD</p>
           {% if service.sold_out %}
-            <button class="sold-out-button" disabled>Esaurito</button>
+            <button class="sold-out-button" disabled>Sold Out</button>
           {% else %}
-            <button class="add-to-cart" data-id="{{ service.id }}">Aggiungi al Carrello</button>
+            <button class="add-to-cart" data-id="{{ service.id }}">Add to Cart</button>
           {% endif %}
         </div>
       {% endfor %}
