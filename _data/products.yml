@@ -43,7 +43,7 @@ hardware:
     image: "/assets/images/products/trezor-model-t.jpg"
     manufacturer: "SatoshiLabs"
     connectivity: "USB-C"
-    supported_coins: ["Bitcoin", "Ethereum", "Litecoin", "and 1000+ more"]
+    supported_coins: ["Bitcoin"]
     screen: "Full-color touchscreen"
     dimensions: "64 x 39 x 10 mm"
     weight: "22g"
