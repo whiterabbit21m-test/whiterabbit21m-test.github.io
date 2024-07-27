@@ -15,7 +15,7 @@ layout: default
       </div>
       <div class="contact-form">
         <h2>Inviaci un messaggio</h2>
-        <form action="https://formspree.io/f/your_form_id" method="POST">
+        <form action="https://formspree.io/f/tuoformidqui" method="POST">
           <div class="form-group">
             <label for="name">Nome</label>
             <input type="text" id="name" name="name" required>
@@ -28,6 +28,8 @@ layout: default
             <label for="message">Messaggio</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
+          <input type="hidden" name="_subject" value="Nuovo messaggio dal sito web">
+          <input type="hidden" name="_next" value="https://tuosito.com/grazie.html">
           <button type="submit" class="submit-btn">Invia Messaggio</button>
         </form>
       </div>
